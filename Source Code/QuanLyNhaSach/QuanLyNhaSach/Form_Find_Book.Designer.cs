@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaSach
 {
-    partial class Guest
+    partial class Form_Find_Book
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Back = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MSSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_Back = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +84,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 59);
             this.panel1.TabIndex = 2;
+            // 
+            // btn_Back
+            // 
+            this.btn_Back.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Back.Location = new System.Drawing.Point(713, 16);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(75, 23);
+            this.btn_Back.TabIndex = 1;
+            this.btn_Back.Text = "Back";
+            this.btn_Back.UseVisualStyleBackColor = false;
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
             // dataGridView1
             // 
@@ -216,22 +228,22 @@
             this.label6.Text = "Tác Giả";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btn_Back
+            // button1
             // 
-            this.btn_Back.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Back.Location = new System.Drawing.Point(713, 16);
-            this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(75, 23);
-            this.btn_Back.TabIndex = 1;
-            this.btn_Back.Text = "Back";
-            this.btn_Back.UseVisualStyleBackColor = false;
-            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(408, 251);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // Guest
+            // Form_Find_Book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 496);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -243,7 +255,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
-            this.Name = "Guest";
+            this.Name = "Form_Find_Book";
             this.Text = "Guest";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -275,5 +287,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_Back;
+        private System.Windows.Forms.Button button1;
     }
 }

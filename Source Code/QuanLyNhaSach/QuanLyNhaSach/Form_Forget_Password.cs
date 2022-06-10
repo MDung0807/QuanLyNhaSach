@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaSach
 {
-    public partial class Internal : Form
+    public partial class Form_Forget_Password : Form
     {
-        public Internal()
+        public Form_Forget_Password()
         {
             InitializeComponent();
+        }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

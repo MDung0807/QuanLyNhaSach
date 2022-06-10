@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaSach
 {
-    partial class Home
+    partial class Form_Home
     {
         /// <summary>
         /// Required designer variable.
@@ -98,8 +98,9 @@
             this.btn_Internal.TabIndex = 5;
             this.btn_Internal.Text = "Người nội bộ";
             this.btn_Internal.UseVisualStyleBackColor = false;
+            this.btn_Internal.Click += new System.EventHandler(this.btn_Internal_Click);
             // 
-            // Home
+            // Form_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -111,7 +112,7 @@
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Home_title);
-            this.Name = "Home";
+            this.Name = "Form_Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Home";
             this.ResumeLayout(false);

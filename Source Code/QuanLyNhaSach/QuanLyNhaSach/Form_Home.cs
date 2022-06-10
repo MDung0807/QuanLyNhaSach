@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaSach
 {
-    public partial class Home : Form
+    public partial class Form_Home : Form
     {
-        public Home()
+        public Form_Home()
         {
             InitializeComponent();
         }
@@ -24,8 +24,14 @@ namespace QuanLyNhaSach
 
         private void btn_Guest_Click(object sender, EventArgs e)
         {
-            Form fmGuset = new Guest();
+            Form fmGuset = new Form_Find_Book();
             fmGuset.ShowDialog();
+        }
+
+        private void btn_Internal_Click(object sender, EventArgs e)
+        {
+            Form fmInternal = new Form_Internal();
+            fmInternal.ShowDialog();
         }
     }
 }

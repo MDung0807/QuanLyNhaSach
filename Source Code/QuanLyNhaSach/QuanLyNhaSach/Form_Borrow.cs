@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaSach
 {
-    public partial class Guest : Form
+    public partial class Form_Borrow : Form
     {
-        public Guest()
+        public Form_Borrow()
         {
             InitializeComponent();
         }
 
-        private void btn_Back_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
     }
 }
