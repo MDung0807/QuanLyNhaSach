@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaSach
 {
-    public partial class Form_Employee : Form
+    public partial class Form_Staff : Form
     {
-        public Form_Employee()
+        public Form_Staff()
         {
             InitializeComponent();
         }
@@ -44,6 +44,11 @@ namespace QuanLyNhaSach
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+
+        }
+
+        private void Form_Employee_Load(object sender, EventArgs e)
+        {
 
         }
     }

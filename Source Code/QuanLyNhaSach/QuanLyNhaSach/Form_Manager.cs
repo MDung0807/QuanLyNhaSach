@@ -33,5 +33,10 @@ namespace QuanLyNhaSach
             Form fmQLNV = new Form_QLNV();
             fmQLNV.ShowDialog();
         }
+
+        private void Form_Manager_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

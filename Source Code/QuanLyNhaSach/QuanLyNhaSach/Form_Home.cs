@@ -30,8 +30,13 @@ namespace QuanLyNhaSach
 
         private void btn_Internal_Click(object sender, EventArgs e)
         {
-            Form fmInternal = new Form_Internal();
+            Form fmInternal = new Form_Login();
             fmInternal.ShowDialog();
+        }
+
+        private void Form_Home_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

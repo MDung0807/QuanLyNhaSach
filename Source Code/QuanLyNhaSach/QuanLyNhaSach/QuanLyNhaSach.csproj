@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BS layer\BLBorrow.cs" />
+    <Compile Include="BS layer\BLCustomer.cs" />
+    <Compile Include="BS layer\BLForgetPassword.cs" />
+    <Compile Include="BS layer\BLLogin.cs" />
+    <Compile Include="BS layer\BLQLNV.cs" />
+    <Compile Include="BS layer\BLSignUp.cs" />
+    <Compile Include="DB layer\DBMain.cs" />
     <Compile Include="Form_Borrow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +71,17 @@
     <Compile Include="Form_Customer.Designer.cs">
       <DependentUpon>Form_Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Employee.cs">
+    <Compile Include="Form_SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Employee.Designer.cs">
-      <DependentUpon>Form_Employee.cs</DependentUpon>
+    <Compile Include="Form_SignUp.Designer.cs">
+      <DependentUpon>Form_SignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Staff.Designer.cs">
+      <DependentUpon>Form_Staff.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Find_Book.cs">
       <SubType>Form</SubType>
@@ -88,11 +101,11 @@
     <Compile Include="Form_Home.Designer.cs">
       <DependentUpon>Form_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Internal.cs">
+    <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Internal.Designer.cs">
-      <DependentUpon>Form_Internal.cs</DependentUpon>
+    <Compile Include="Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Leader.cs">
       <SubType>Form</SubType>
@@ -123,8 +136,11 @@
     <EmbeddedResource Include="Form_Customer.resx">
       <DependentUpon>Form_Customer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Employee.resx">
-      <DependentUpon>Form_Employee.cs</DependentUpon>
+    <EmbeddedResource Include="Form_SignUp.resx">
+      <DependentUpon>Form_SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Staff.resx">
+      <DependentUpon>Form_Staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Find_Book.resx">
       <DependentUpon>Form_Find_Book.cs</DependentUpon>
@@ -135,8 +151,8 @@
     <EmbeddedResource Include="Form_Home.resx">
       <DependentUpon>Form_Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Internal.resx">
-      <DependentUpon>Form_Internal.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Leader.resx">
       <DependentUpon>Form_Leader.cs</DependentUpon>
@@ -173,5 +189,6 @@
   <ItemGroup>
     <None Include="Resources\store_book.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
