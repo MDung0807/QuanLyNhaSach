@@ -22,7 +22,9 @@ namespace QuanLyNhaSach.BS_Layer
                              MaCuon = p.MaCuon,
                              SoTien = p.CuonSach.DauSach.GiaMuon,
                              NgayMuon = p.NgayMuon,
+                             HanTra = p.HanTra,
                              NgayTra = p.NgayTra,
+                             TienPhat = p.TienPhat,
                              DangMuon = p.DangMuon,
                              DaThanhToan = p.DaThanhToan
                          };
@@ -33,14 +35,16 @@ namespace QuanLyNhaSach.BS_Layer
             dataTable.Columns.Add("MaCuon");
             dataTable.Columns.Add("SoTien");
             dataTable.Columns.Add("NgayMuon");
+            dataTable.Columns.Add("HanTra");
             dataTable.Columns.Add("NgayTra");
+            dataTable.Columns.Add("TienPhat");
             dataTable.Columns.Add("DangMuon");
             dataTable.Columns.Add("DaThanhToan");
 
             foreach (var item in result)
             {   
                 if (item.DangMuon == true)
-                    dataTable.Rows.Add(item.MaKH, item.TenKH, item.MaCuon, item.SoTien, item.NgayMuon, item.NgayTra, item.DangMuon, item.DaThanhToan);
+                    dataTable.Rows.Add(item.MaKH, item.TenKH, item.MaCuon, item.SoTien, item.NgayMuon, item.HanTra, item.NgayTra, item.TienPhat, item.DangMuon, item.DaThanhToan);
             }
 
             return dataTable;
@@ -52,14 +56,14 @@ namespace QuanLyNhaSach.BS_Layer
             {
                 result = "Khách hàng không tồn tại";
                 return;
-
             }
+
             if (check_CuonSach_FlagXoa(MaCuon) == true)
             {
                 result = "Cuốn sách không tồn tại";
                 return;
-
             }
+
             QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
           
             Muon muon = new Muon();
@@ -77,6 +81,7 @@ namespace QuanLyNhaSach.BS_Layer
 
             result = "Đã thêm vảo giỏ hàng thành công";
             string option = "Muon";
+
             Set_Flag_Cuon_Sach(MaKH, MaCuon, option);
         }
         public void KH_Tra_Sach(string MaKH, string MaCuon)
@@ -87,9 +92,16 @@ namespace QuanLyNhaSach.BS_Layer
                           where p.MaKH == MaKH && p.MaCuon == MaCuon
                           select p).SingleOrDefault();
 
-            //result.TrangThai = true;
             result.DangMuon = false;
-            result.NgayTra = DateTime.Now;
+            result.NgayTra = Convert.ToDateTime(DateTime.Now);
+
+            if (DateTime.Compare(Convert.ToDateTime(result.NgayTra), Convert.ToDateTime(result.HanTra)) > 0) // Returning overdue books
+            {
+                TimeSpan interval = Convert.ToDateTime(result.NgayTra).Subtract(Convert.ToDateTime(result.HanTra));
+                int date = interval.Days;
+                result.TienPhat = Convert.ToString(date * 5000);
+            }    
+
             qlnsentity.SaveChanges();
 
             string option = "Tra";
@@ -108,6 +120,7 @@ namespace QuanLyNhaSach.BS_Layer
             { 
                 result.CuonSach.Flag = false; 
             }
+
             else if (option == "Tra")
             {
                 result.CuonSach.Flag = true;

@@ -13,6 +13,7 @@ namespace QuanLyNhaSach.BS_Layer
         public DataTable Tim_MK (string MaNV, string TenNV, string SDT)
         {
             QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
+
             var result = from p in qlnsentity.TaiKhoans
                          where p.NhanVien.TenNV == TenNV && p.NhanVien.TenNV == TenNV && p.NhanVien.soDT == SDT
                          select new

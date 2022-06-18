@@ -118,16 +118,16 @@ namespace QuanLyNhaSach.View_Layer
             {
                 try
                 {
-                    string MaNV = txtStaffID.Text;
-                    string TenNV = txtFullName.Text;
-                    string CongViec = txtJob.Text;
-                    string Luong = txtIncome.Text;
-                    string DiaChi = txtAddress.Text;
+                    string MaNV = txtStaffID.Text.Trim();
+                    string TenNV = txtFullName.Text.Trim();
+                    string CongViec = txtJob.Text.Trim();
+                    string Luong = txtIncome.Text.Trim();
+                    string DiaChi = txtAddress.Text.Trim();
                     DateTime NgSinh = Convert.ToDateTime(dtpDayOfBirth.Value);
                     bool GioiTinh = Convert.ToBoolean(cbSex.CheckState);
-                    string SDT = txtPhone.Text;
-                    string user = txtUser.Text;
-                    string pass = txtPass.Text;
+                    string SDT = txtPhone.Text.Trim();
+                    string user = txtUser.Text.Trim();
+                    string pass = txtPass.Text.Trim();
                     qlnv.Them_NV(MaNV, TenNV, CongViec, Luong, DiaChi, NgSinh, GioiTinh, SDT, user, pass);
                     MessageBox.Show("Đã thêm thông tin thành công");
                     Load_Data();
@@ -141,14 +141,14 @@ namespace QuanLyNhaSach.View_Layer
             {
                 try
                 {
-                    string MaNV = txtStaffID.Text;
-                    string TenNV = txtFullName.Text;
-                    string CongViec = txtJob.Text;
-                    string Luong = txtIncome.Text;
-                    string DiaChi = txtAddress.Text;
+                    string MaNV = txtStaffID.Text.Trim();
+                    string TenNV = txtFullName.Text.Trim();
+                    string CongViec = txtJob.Text.Trim();
+                    string Luong = txtIncome.Text.Trim();
+                    string DiaChi = txtAddress.Text.Trim();
                     DateTime NgSinh = Convert.ToDateTime(dtpDayOfBirth.Value);
                     bool GioiTinh = Convert.ToBoolean(cbSex.CheckState);
-                    string SDT = txtPhone.Text;
+                    string SDT = txtPhone.Text.Trim();
                     qlnv.Sua_TT_NV(MaNV, TenNV, CongViec, Luong, DiaChi, NgSinh, GioiTinh, SDT);
                     MessageBox.Show("Đã sửa thông tin thành công");
                     Load_Data();
@@ -162,7 +162,7 @@ namespace QuanLyNhaSach.View_Layer
             {
                 try
                 {
-                    string MaNV = txtStaffID.Text;
+                    string MaNV = txtStaffID.Text.Trim();
 
                     qlnv.Xoa_NV(MaNV);
                     MessageBox.Show("Đã xóa thông tin thành công");
@@ -177,7 +177,7 @@ namespace QuanLyNhaSach.View_Layer
             {
                 try
                 {
-                    string MaNV = txtStaffID.Text;
+                    string MaNV = txtStaffID.Text.Trim();
 
                     dgvQLNV.DataSource = qlnv.Tim_NV(MaNV);
                 }

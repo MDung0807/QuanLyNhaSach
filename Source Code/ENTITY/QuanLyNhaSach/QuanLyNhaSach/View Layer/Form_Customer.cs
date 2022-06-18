@@ -109,11 +109,11 @@ namespace QuanLyNhaSach.View_Layer
                 try
                 {
                     string MaKH, TenKH, DiaChi, SDT;
-                    MaKH = txtMaKH.Text;
-                    TenKH = txtHoTen.Text;
-                    DiaChi = txtAddress.Text;
+                    MaKH = txtMaKH.Text.Trim();
+                    TenKH = txtHoTen.Text.Trim();
+                    DiaChi = txtAddress.Text.Trim();
                     DateTime NgSinh = Convert.ToDateTime(DateOfBirth.Text);
-                    SDT = txtSDT.Text;
+                    SDT = txtSDT.Text.Trim();
 
                     dpKhachHang.Them_Khach_Hang(MaKH, TenKH, NgSinh, DiaChi, SDT);
 
@@ -130,7 +130,7 @@ namespace QuanLyNhaSach.View_Layer
                 try
                 {
                     string MaKH;
-                    MaKH = txtMaKH.Text;
+                    MaKH = txtMaKH.Text.Trim();
                     dpKhachHang.Xoa_KH(MaKH);
 
                     MessageBox.Show("Bạn đã xóa thành công");
@@ -166,8 +166,8 @@ namespace QuanLyNhaSach.View_Layer
                 try
                 {
                     string MaKH, TenKH;
-                    MaKH = txtMaKH.Text;
-                    TenKH = txtHoTen.Text;
+                    MaKH = txtMaKH.Text.Trim();
+                    TenKH = txtHoTen.Text.Trim();
 
                     dgvQLKhachHang.DataSource = dpKhachHang.Tim_Khach_Hang(MaKH, TenKH);
                 }
@@ -184,12 +184,11 @@ namespace QuanLyNhaSach.View_Layer
         {
             int r = dgvQLKhachHang.CurrentCell.RowIndex;
 
-            txtMaKH.Text = dgvQLKhachHang.Rows[r].Cells[0].Value.ToString();
-            txtHoTen.Text = dgvQLKhachHang.Rows[r].Cells[1].Value.ToString();
-            txtAddress.Text = dgvQLKhachHang.Rows[r].Cells[2].Value.ToString();
+            txtMaKH.Text = dgvQLKhachHang.Rows[r].Cells[0].Value.ToString().Trim();
+            txtHoTen.Text = dgvQLKhachHang.Rows[r].Cells[1].Value.ToString().Trim();
+            txtAddress.Text = dgvQLKhachHang.Rows[r].Cells[2].Value.ToString().Trim();
             DateOfBirth.Value = Convert.ToDateTime(dgvQLKhachHang.Rows[r].Cells[3].Value.ToString());
-            txtSDT.Text = dgvQLKhachHang.Rows[r].Cells[4].Value.ToString();
-
+            txtSDT.Text = dgvQLKhachHang.Rows[r].Cells[4].Value.ToString().Trim();
         }
     }
 }

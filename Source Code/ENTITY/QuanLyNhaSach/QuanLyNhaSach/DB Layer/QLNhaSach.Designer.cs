@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\DB Layer\QLNhaSach.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\ENTITY\QuanLyNhaSach\QuanLyNhaSach\DB Layer\QLNhaSach.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

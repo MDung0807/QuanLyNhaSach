@@ -52,11 +52,11 @@ namespace QuanLyNhaSach.View_Layer
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string user = txtUsername.Text;
-            string pass = txtPassword.Text;
+            string user = txtUsername.Text.Trim();
+            string pass = txtPassword.Text.Trim();
             if (quyen == "Nhanvien")
             {
-                if (Login.Check_Login(user, pass, quyen))
+                if (Login.Check_Login_IsTrue(user, pass, quyen))
                 {
 
                     Form fmEmployee = new Form_Employee("Nhân Viên " + user);
@@ -70,7 +70,7 @@ namespace QuanLyNhaSach.View_Layer
             }    
             else if (quyen == "Quanli")
             {
-                if (Login.Check_Login(user, pass, quyen))
+                if (Login.Check_Login_IsTrue(user, pass, quyen))
                 {
                     Form fmManager = new Form_Manager();
                     fmManager.ShowDialog();

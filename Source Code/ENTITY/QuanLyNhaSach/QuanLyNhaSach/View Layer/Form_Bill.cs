@@ -31,18 +31,26 @@ namespace QuanLyNhaSach.View_Layer
             string TenKH = null, MaSach = null;
             int SoLuong, ThanhTien;
 
-            var result = pay.Pay_Bill(MaKH);
-            TenKH = result.Item1;
-            MaSach = result.Item2;
-            SoLuong = result.Item3;
-            ThanhTien = result.Item4;
+            try
+            {
+                var result = pay.Pay_Bill(MaKH);
+                TenKH = result.Item1;
+                MaSach = result.Item2;
+                SoLuong = result.Item3;
+                ThanhTien = result.Item4;
 
-            txtMaKH.Text = MaKH;
-            //txtMaSach.Text = MaSach;
-            txtSoLuon.Text = Convert.ToString(SoLuong);
-            txtTenKH.Text = TenKH;
-            txtThanhTien.Text = Convert.ToString(ThanhTien);
-            txtTongTien.Text = Convert.ToString(ThanhTien);
+                txtMaKH.Text = MaKH;
+                //txtMaSach.Text = MaSach;
+                txtSoLuon.Text = Convert.ToString(SoLuong);
+                txtTenKH.Text = TenKH;
+                txtThanhTien.Text = Convert.ToString(ThanhTien);
+                txtTongTien.Text = Convert.ToString(ThanhTien);
+            }
+            catch
+            {
+                MessageBox.Show("Không thể in hóa đơn, lỗi rồi!!!");
+            } 
+            
 
             txtMaKH.Enabled = false;
             txtTenKH.Enabled = false;

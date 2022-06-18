@@ -26,8 +26,15 @@ namespace QuanLyNhaSach.View_Layer
 
         void Load_Data () // Update data to the form
         {
-            dgvMuon.DataSource = muon_sach.Lay_TT();
-            Clear();
+            try
+            {
+                dgvMuon.DataSource = muon_sach.Lay_TT();
+                Clear();
+            }
+            catch
+            {
+                MessageBox.Show("Không thể load data, lỗi rồi!!!");
+            }
         }
 
         void Clear () // Delete data for txt
@@ -76,8 +83,8 @@ namespace QuanLyNhaSach.View_Layer
             {
                 try
                 {
-                    string MaKH = txtMaKH.Text;
-                    string MaCuon = txtMaSach.Text;
+                    string MaKH = txtMaKH.Text.Trim();
+                    string MaCuon = txtMaSach.Text.Trim();
                     muon_sach.KH_Tra_Sach(MaKH, MaCuon);
                     MessageBox.Show("Đã trả thành công");
                     Load_Data();
@@ -92,8 +99,8 @@ namespace QuanLyNhaSach.View_Layer
             {
                 try
                 {
-                    string MaKH = txtMaKH.Text;
-                    string MaCuon = txtMaSach.Text;
+                    string MaKH = txtMaKH.Text.Trim();
+                    string MaCuon = txtMaSach.Text.Trim();
                     DateTime NgMuon = DateTime.Now;
                     muon_sach.KH_Muon_Sach(MaKH, MaCuon, NgMuon, ref result);
                     MessageBox.Show(result);

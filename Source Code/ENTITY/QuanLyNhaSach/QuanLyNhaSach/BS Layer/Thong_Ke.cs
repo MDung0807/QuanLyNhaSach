@@ -12,33 +12,70 @@ namespace QuanLyNhaSach.BS_Layer
     {
         public (int, int, int, DataTable) Thong_Ke_Tu_Viec_Mua_Va_Muon_Sach ()
         {
+            int sum_muon = So_Tien_Cho_Muon_Sach();
+            int sum_ban = So_Tien_Ban_Sach() ;
+            int nop_phat = So_Tien_Phat();
+            DataTable dataTable = Thong_Ke_SL_Sach_Tren_Moi_Dau_Sach();
+           
+            return (sum_muon, sum_ban, nop_phat, dataTable);
+        }
+
+        int So_Tien_Cho_Muon_Sach()
+        {
             QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
 
             var result_muon = from p in qlnsentity.Muons
                               where p.DaThanhToan == true
                               select p;
 
+            int sum_muon = 0;
+
+            foreach (var muon in result_muon)
+            {
+                sum_muon += Convert.ToInt32(muon.CuonSach.DauSach.GiaMuon);
+            }
+            
+            return sum_muon;
+        }
+
+        int So_Tien_Ban_Sach ()
+        {
+            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
+
             var result_mua = from p in qlnsentity.Muas
                              where p.DaThanhToan == true
                              select p;
 
-            int sum_muon = 0;
-            int sum_mua = 0;
-            int nop_phat = 0;
-            foreach (var muon in result_muon)
-            {
-                sum_muon += Convert.ToInt32(muon.CuonSach.DauSach.GiaMuon);
-            }    
-
+            int sum_ban = 0;
             foreach (var mua in result_mua)
             {
-                sum_mua += Convert.ToInt32(mua.CuonSach.DauSach.GiaMua);
+                sum_ban += Convert.ToInt32(mua.CuonSach.DauSach.GiaMua);
             }
+
+            return sum_ban;
+        }
+        
+        int So_Tien_Phat()
+        {
+            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
+
+            var result_muon = from p in qlnsentity.Muons
+                              where p.DaThanhToan == true
+                              select p;
+
+            int nop_phat = 0;
 
             foreach (var phat in result_muon)
             {
                 nop_phat += Convert.ToInt32(phat.TienPhat);
             }
+
+            return nop_phat;
+        }
+
+        DataTable Thong_Ke_SL_Sach_Tren_Moi_Dau_Sach ()
+        {
+            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
 
             var result_dau_sach = from p in qlnsentity.CuonSaches
                                   where p.Flag == true
@@ -60,7 +97,8 @@ namespace QuanLyNhaSach.BS_Layer
             {
                 dataTable.Rows.Add(item.MaSach, item.TuaSach, item.SL);
             }
-            return (sum_muon, sum_mua, nop_phat, dataTable);
+
+            return dataTable;
         }
     }
 }

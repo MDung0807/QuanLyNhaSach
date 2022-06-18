@@ -43,7 +43,7 @@ namespace QuanLyNhaSach.View_Layer
 
         void Find_book()
         {
-            string tua_sach = txt_BookName.Text;
+            string tua_sach = txt_BookName.Text.Trim();
             try
             {
                 dgvFindBook.DataSource = find_book.Tim_Sach(tua_sach);

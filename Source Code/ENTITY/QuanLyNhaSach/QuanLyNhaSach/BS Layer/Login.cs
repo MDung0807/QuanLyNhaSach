@@ -10,7 +10,7 @@ namespace QuanLyNhaSach.BS_Layer
 {
     internal class Login
     {
-        public bool Check_Login (string user, string pass, string quyen)
+        public bool Check_Login_IsTrue (string user, string pass, string quyen)
         {
             QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
             var result = (from p in qlnsentity.TaiKhoans
@@ -23,17 +23,15 @@ namespace QuanLyNhaSach.BS_Layer
                               FlagXoa = p.FlagXoa
                           });
 
-            if (result.Count() > 0)
+            if (result.Count() > 0) // Account found
             {
-
                 foreach (var item in result)
-                    if (item.FlagXoa == true)
+                    if (item.FlagXoa == true) // account has been deleted
                     {
                         return false;
                     }
                 return true;
             }
-
 
             return false;
 

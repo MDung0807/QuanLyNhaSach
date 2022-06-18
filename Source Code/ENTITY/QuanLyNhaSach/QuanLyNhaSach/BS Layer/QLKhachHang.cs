@@ -13,6 +13,7 @@ namespace QuanLyNhaSach.BS_Layer
         public DataTable Lay_TT_Khach()
         {
             QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
+
             var result = from p in qlnsentity.KhachHangs
                          select new
                          {
@@ -36,6 +37,7 @@ namespace QuanLyNhaSach.BS_Layer
                 if (item.Flag_Xoa == false)
                     dataTable.Rows.Add(item.MaKH, item.TenKH, item.DiaChi, item.NgSinh, item.SDT);
             }
+
             return dataTable;
         }
 

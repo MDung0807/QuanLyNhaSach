@@ -24,7 +24,15 @@ namespace QuanLyNhaSach.View_Layer
 
         void Load_Data()
         {
-            dgvBuy.DataSource = buy.Lay_TT_Mua();
+            try
+            {
+                dgvBuy.DataSource = buy.Lay_TT_Mua();
+                Clear();
+            }
+            catch
+            {
+                MessageBox.Show("Không thể load data, lỗi rồi!!!");
+            }
         }
 
         void Clear ()
@@ -42,8 +50,8 @@ namespace QuanLyNhaSach.View_Layer
         {
             try
             {
-                string MaKH = txtMaKH.Text;
-                string MaCuon = txtMaCuon.Text;
+                string MaKH = txtMaKH.Text.Trim();
+                string MaCuon = txtMaCuon.Text.Trim();
                 DateTime NgMuon = DateTime.Now;
 
                 buy.Them_KH_Mua(MaKH, MaCuon, NgMuon, ref result);
@@ -71,8 +79,8 @@ namespace QuanLyNhaSach.View_Layer
         {
             int r = dgvBuy.CurrentCell.RowIndex;
 
-            txtMaKH.Text = dgvBuy.Rows[r].Cells[0].Value.ToString();
-            txtMaCuon.Text = dgvBuy.Rows[r].Cells[2].Value.ToString();
+            txtMaKH.Text = dgvBuy.Rows[r].Cells[0].Value.ToString().Trim();
+            txtMaCuon.Text = dgvBuy.Rows[r].Cells[2].Value.ToString().Trim();
         }
     }
 }

@@ -24,7 +24,15 @@ namespace QuanLyNhaSach.View_Layer
 
         void Load_Data ()
         {
-            dgvPay.DataSource = pay.Lay_TT_Pay();
+            try
+            {
+                dgvPay.DataSource = pay.Lay_TT_Pay();
+            }
+            catch
+            {
+                MessageBox.Show("Không thể load dữ liệu");
+            }
+
             dgvPay.AutoResizeColumns();
             this.option = null;
             this.btnBill.Enabled = false;
@@ -37,6 +45,7 @@ namespace QuanLyNhaSach.View_Layer
 
             Form_Bill fmBill = new Form_Bill(MaKH);
             fmBill.ShowDialog();
+
             try
             {
                 pay.DaThanhToan(MaKH);

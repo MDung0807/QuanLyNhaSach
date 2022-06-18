@@ -26,15 +26,16 @@ namespace QuanLyNhaSach.BS_Layer
             dataTable.Columns.Add("MaCuon");
             dataTable.Columns.Add("MaKH");
             dataTable.Columns.Add("Gia");
+            dataTable.Columns.Add("MaSach");
 
             foreach (var item in result_muon)
             {
-                dataTable.Rows.Add(item.MaCuon, item.MaKH, item.CuonSach.DauSach.GiaMuon);
+                dataTable.Rows.Add(item.MaCuon, item.MaKH, item.CuonSach.DauSach.GiaMuon, item.CuonSach.DauSach.MaSach);
             }    
 
             foreach (var item in result_mua)
             {
-                dataTable.Rows.Add(item.MaCuon, item.MaKH, item.CuonSach.DauSach.GiaMua);
+                dataTable.Rows.Add(item.MaCuon, item.MaKH, item.CuonSach.DauSach.GiaMua, item.CuonSach.DauSach.MaSach);
             }
 
             return dataTable;
@@ -120,12 +121,13 @@ namespace QuanLyNhaSach.BS_Layer
             string TenSach = dataTable.Rows[0][3].ToString();
             int SoLuong = dataTable.Rows.Count;
             int ThanhTien = 0;
+
             for (int i =0; i< SoLuong; i++)
             {
                 ThanhTien += Convert.ToInt32(dataTable.Rows[i][4].ToString());
             }
-            return (TenKH, MaSach, SoLuong, ThanhTien);
 
+            return (TenKH, MaSach, SoLuong, ThanhTien);
 
         }
 
@@ -146,6 +148,7 @@ namespace QuanLyNhaSach.BS_Layer
                 foreach (var item in result_mua)
                     item.DaThanhToan = true;
             }    
+
             if (result_mua != null)
             {
                 foreach (var item in result_mua)

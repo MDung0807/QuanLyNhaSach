@@ -10,7 +10,7 @@ namespace QuanLyNhaSach.BS_Layer
 {
     internal class Mua_Sach
     {
-        public DataTable Lay_TT_Mua()
+        public DataTable Lay_TT_Mua() // Load Data
         {
             QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
             var result = from p in qlnsentity.Muas
@@ -45,16 +45,18 @@ namespace QuanLyNhaSach.BS_Layer
 
         public void Them_KH_Mua(string MaKH, string MaCuon, DateTime NgMua, ref string result)
         {
-            if (check_KH_Is_FlagXoa(MaKH) == true)
+            if (check_KH_Is_FlagXoa(MaKH) == true) 
             {
                 result = "Khách Hàng Không Tồn Tại";
                 return;
             }
+
             if (check_CuonSach_FlagXoa(MaCuon) == true)
             {
                 result = "Cuốn Sách Không Tồn Tại";
                 return;
             }    
+
             QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
 
             Mua mua = new Mua();
@@ -74,15 +76,17 @@ namespace QuanLyNhaSach.BS_Layer
 
         }
 
-        void Set_Flag_Cuon_Sach(string MaKH, string MaCuon)
+        void Set_Flag_Cuon_Sach(string MaKH, string MaCuon) // set flag in CUonSach value false
         {
             QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
             var result1 = (from p in qlnsentity.Muas
                            where p.MaKH == MaKH && p.MaCuon == MaCuon
                            select p).SingleOrDefault();
 
-           
+
             result1.CuonSach.Flag = false;
+            
+            qlnsentity.SaveChanges();
 
         }
 

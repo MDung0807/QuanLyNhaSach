@@ -26,12 +26,21 @@ namespace QuanLyNhaSach.View_Layer
 
         private void btnFindPass_Click(object sender, EventArgs e)
         {
-            string MaNV = txtMaNV.Text;
-            string TenNV = txtUsername.Text;
-            string SDT = txtSDT.Text;
+            try
+            {
+                string MaNV = txtMaNV.Text.Trim();
+                string TenNV = txtUsername.Text.Trim();
+                string SDT = txtSDT.Text.Trim();
 
-            dgvFindPass.DataSource = find_pass.Tim_MK(MaNV, TenNV, SDT);
-            dgvFindPass.AutoResizeColumns();
+                dgvFindPass.DataSource = find_pass.Tim_MK(MaNV, TenNV, SDT);
+                dgvFindPass.AutoResizeColumns();
+                MessageBox.Show("Đã tìm được tên tài khoản và mật khẩu");
+
+            }
+            catch
+            {
+                MessageBox.Show("Không thể tìm tên tài khoản và mật khẩu");
+            }
         }
     }
 }
