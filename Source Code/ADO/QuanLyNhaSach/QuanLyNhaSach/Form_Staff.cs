@@ -51,5 +51,11 @@ namespace QuanLyNhaSach
         {
 
         }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            Form form = new Form_Pay();
+            form.ShowDialog();
+        }
     }
 }

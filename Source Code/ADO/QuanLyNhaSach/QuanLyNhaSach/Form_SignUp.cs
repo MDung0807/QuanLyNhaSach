@@ -54,70 +54,6 @@ namespace QuanLyNhaSach
                 MessageBox.Show("Không thêm được. Lỗi rồi!");
             }
         }
-        private void Passvisible1_Click(object sender, EventArgs e)
-        {
-            if (this.Passvisible1.Visible == true)
-            {
-                this.Passvisible1.Visible = false;
-                this.Passinvisible1.Visible = true;
-                this.txtPassword.PasswordChar = '\0';
-            }
-            else
-            {
-                this.Passvisible1.Visible = true;
-                this.Passinvisible1.Visible = false;
-                txtPassword.PasswordChar = '✽';
-            }
-        }
-
-        private void Passinvisible1_Click(object sender, EventArgs e)
-        {
-            if (this.Passinvisible1.Visible == false)
-            {
-                this.Passvisible1.Visible = false;
-                this.Passinvisible1.Visible = true;
-                this.txtPassword.PasswordChar = '\0';
-            }
-            else
-            {
-                this.Passvisible1.Visible = true;
-                this.Passinvisible1.Visible = false;
-                txtPassword.PasswordChar = '✽';
-            }
-        }
-
-        private void Passinvisible2_Click(object sender, EventArgs e)
-        {
-            if (this.Passinvisible2.Visible == false)
-            {
-                this.Passvisible2.Visible = false;
-                this.Passinvisible2.Visible = true;
-                this.txtConfirmPass.PasswordChar = '\0';
-            }
-            else
-            {
-                this.Passvisible2.Visible = true;
-                this.Passinvisible2.Visible = false;
-                this.txtConfirmPass.PasswordChar = '✽';
-            }
-        }
-
-        private void Passvisible2_Click(object sender, EventArgs e)
-        {
-            if (this.Passvisible2.Visible == true)
-            {
-                this.Passvisible2.Visible = false;
-                this.Passinvisible2.Visible = true;
-                this.txtConfirmPass.PasswordChar = '\0';
-            }
-            else
-            {
-                this.Passvisible2.Visible = true;
-                this.Passinvisible2.Visible = false;
-                this.txtConfirmPass.PasswordChar = '✽';
-            }
-        }
-
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             this.txtPassword.PasswordChar = '✽';
@@ -126,6 +62,75 @@ namespace QuanLyNhaSach
         private void txtConfirmPass_KeyPress(object sender, KeyPressEventArgs e)
         {
             this.txtConfirmPass.PasswordChar = '✽';
+        }
+
+        private void ptbPassinvisible1_Click(object sender, EventArgs e)
+        {
+            if (this.ptbPassinvisible1.Visible == false)
+            {
+                this.ptbPassvisible1.Visible = false;
+                this.ptbPassinvisible1.Visible = true;
+                this.txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                this.ptbPassvisible1.Visible = true;
+                this.ptbPassinvisible1.Visible = false;
+                txtPassword.PasswordChar = '✽';
+            }
+        }
+
+        private void ptbPassvisible1_Click(object sender, EventArgs e)
+        {
+            if (this.ptbPassvisible1.Visible == true)
+            {
+                this.ptbPassvisible1.Visible = false;
+                this.ptbPassinvisible1.Visible = true;
+                this.txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                this.ptbPassvisible1.Visible = true;
+                this.ptbPassinvisible1.Visible = false;
+                txtPassword.PasswordChar = '✽';
+            }
+        }
+
+        private void ptbPassinvisible2_Click(object sender, EventArgs e)
+        {
+            if (this.ptbPassinvisible2.Visible == false)
+            {
+                this.ptbPassvisible2.Visible = false;
+                this.ptbPassinvisible2.Visible = true;
+                this.txtConfirmPass.PasswordChar = '\0';
+            }
+            else
+            {
+                this.ptbPassvisible2.Visible = true;
+                this.ptbPassinvisible2.Visible = false;
+                this.txtConfirmPass.PasswordChar = '✽';
+            }
+        }
+
+        private void ptbPassvisible2_Click(object sender, EventArgs e)
+        {
+            if (this.ptbPassvisible2.Visible == true)
+            {
+                this.ptbPassvisible2.Visible = false;
+                this.ptbPassinvisible2.Visible = true;
+                this.txtConfirmPass.PasswordChar = '\0';
+            }
+            else
+            {
+                this.ptbPassvisible2.Visible = true;
+                this.ptbPassinvisible2.Visible = false;
+                this.txtConfirmPass.PasswordChar = '✽';
+            }
+        }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

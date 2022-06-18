@@ -35,6 +35,7 @@
             this.btnBorrow = new System.Windows.Forms.Button();
             this.btnBuy = new System.Windows.Forms.Button();
             this.btnQLKH = new System.Windows.Forms.Button();
+            this.btnPay = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1067, 123);
             this.panel1.TabIndex = 0;
@@ -53,7 +54,7 @@
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(951, 15);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 28);
             this.btnBack.TabIndex = 1;
@@ -75,7 +76,7 @@
             // btnFindBook
             // 
             this.btnFindBook.Location = new System.Drawing.Point(177, 304);
-            this.btnFindBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFindBook.Margin = new System.Windows.Forms.Padding(4);
             this.btnFindBook.Name = "btnFindBook";
             this.btnFindBook.Size = new System.Drawing.Size(100, 28);
             this.btnFindBook.TabIndex = 2;
@@ -86,7 +87,7 @@
             // btnBorrow
             // 
             this.btnBorrow.Location = new System.Drawing.Point(663, 388);
-            this.btnBorrow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrow.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(193, 28);
             this.btnBorrow.TabIndex = 3;
@@ -97,7 +98,7 @@
             // btnBuy
             // 
             this.btnBuy.Location = new System.Drawing.Point(177, 388);
-            this.btnBuy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(100, 28);
             this.btnBuy.TabIndex = 4;
@@ -108,7 +109,7 @@
             // btnQLKH
             // 
             this.btnQLKH.Location = new System.Drawing.Point(663, 304);
-            this.btnQLKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLKH.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLKH.Name = "btnQLKH";
             this.btnQLKH.Size = new System.Drawing.Size(193, 28);
             this.btnQLKH.TabIndex = 5;
@@ -116,18 +117,30 @@
             this.btnQLKH.UseVisualStyleBackColor = true;
             this.btnQLKH.Click += new System.EventHandler(this.btnQLKH_Click);
             // 
-            // Form_Employee
+            // btnPay
+            // 
+            this.btnPay.Location = new System.Drawing.Point(374, 388);
+            this.btnPay.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(100, 28);
+            this.btnPay.TabIndex = 6;
+            this.btnPay.Text = "Thanh Toán";
+            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // Form_Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btnQLKH);
             this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.btnBorrow);
             this.Controls.Add(this.btnFindBook);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Form_Employee";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Form_Staff";
             this.Text = "Employee";
             this.Load += new System.EventHandler(this.Form_Employee_Load);
             this.panel1.ResumeLayout(false);
@@ -145,5 +158,6 @@
         private System.Windows.Forms.Button btnBorrow;
         private System.Windows.Forms.Button btnBuy;
         private System.Windows.Forms.Button btnQLKH;
+        private System.Windows.Forms.Button btnPay;
     }
 }

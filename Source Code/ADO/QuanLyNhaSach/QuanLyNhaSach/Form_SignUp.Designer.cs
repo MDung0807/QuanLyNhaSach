@@ -29,10 +29,6 @@ namespace QuanLyNhaSach
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Back = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnFinish = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -55,83 +51,43 @@ namespace QuanLyNhaSach
             this.label12 = new System.Windows.Forms.Label();
             this.txtStaffID = new System.Windows.Forms.TextBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
-            this.Passvisible1 = new System.Windows.Forms.PictureBox();
-            this.Passvisible2 = new System.Windows.Forms.PictureBox();
-            this.Passinvisible1 = new System.Windows.Forms.PictureBox();
-            this.Passinvisible2 = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Passvisible1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Passvisible2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Passinvisible1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Passinvisible2)).BeginInit();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.btn_Back = new System.Windows.Forms.Button();
+            this.btnFinish = new System.Windows.Forms.Button();
+            this.ptbPassvisible1 = new System.Windows.Forms.PictureBox();
+            this.ptbPassinvisible1 = new System.Windows.Forms.PictureBox();
+            this.ptbPassinvisible2 = new System.Windows.Forms.PictureBox();
+            this.ptbPassvisible2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPassvisible1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPassinvisible1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPassinvisible2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPassvisible2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.btn_Back);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1085, 84);
-            this.panel1.TabIndex = 62;
-            // 
-            // btn_Back
-            // 
-            this.btn_Back.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btn_Back.Location = new System.Drawing.Point(969, 15);
-            this.btn_Back.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(100, 28);
-            this.btn_Back.TabIndex = 1;
-            this.btn_Back.Text = "Back";
-            this.btn_Back.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(491, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Đăng Ký";
-            // 
-            // btnFinish
-            // 
-            this.btnFinish.Location = new System.Drawing.Point(496, 492);
-            this.btnFinish.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(136, 28);
-            this.btnFinish.TabIndex = 71;
-            this.btnFinish.Text = "Hoàn Thành";
-            this.btnFinish.UseVisualStyleBackColor = true;
-            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(312, 339);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 20);
+            this.label3.Size = new System.Drawing.Size(97, 23);
             this.label3.TabIndex = 66;
-            this.label3.Text = "Username";
+            this.label3.Text = "Tài Khoản";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(312, 384);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(315, 382);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.Size = new System.Drawing.Size(94, 23);
             this.label2.TabIndex = 65;
-            this.label2.Text = "Password";
+            this.label2.Text = "Mật Khẩu";
             // 
             // txtPassword
             // 
@@ -162,13 +118,14 @@ namespace QuanLyNhaSach
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(248, 423);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(229, 423);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 20);
+            this.label4.Size = new System.Drawing.Size(180, 23);
             this.label4.TabIndex = 73;
-            this.label4.Text = "Confirm Password";
+            this.label4.Text = "Xác Nhận Mật Khẩu";
             // 
             // txtAddress
             // 
@@ -181,22 +138,24 @@ namespace QuanLyNhaSach
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label9.Location = new System.Drawing.Point(601, 112);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 20);
+            this.label9.Size = new System.Drawing.Size(73, 23);
             this.label9.TabIndex = 88;
             this.label9.Text = "Địa Chỉ";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(83, 214);
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(88, 211);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 20);
+            this.label8.Size = new System.Drawing.Size(96, 23);
             this.label8.TabIndex = 87;
             this.label8.Text = "Công Việc";
             // 
@@ -210,6 +169,7 @@ namespace QuanLyNhaSach
             // 
             // dtpDayOfBirth
             // 
+            this.dtpDayOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDayOfBirth.Location = new System.Drawing.Point(724, 163);
             this.dtpDayOfBirth.Name = "dtpDayOfBirth";
             this.dtpDayOfBirth.Size = new System.Drawing.Size(200, 22);
@@ -218,9 +178,10 @@ namespace QuanLyNhaSach
             // cbSex
             // 
             this.cbSex.AutoSize = true;
+            this.cbSex.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSex.Location = new System.Drawing.Point(724, 215);
             this.cbSex.Name = "cbSex";
-            this.cbSex.Size = new System.Drawing.Size(59, 21);
+            this.cbSex.Size = new System.Drawing.Size(65, 23);
             this.cbSex.TabIndex = 84;
             this.cbSex.Text = "Nam";
             this.cbSex.UseVisualStyleBackColor = true;
@@ -244,66 +205,72 @@ namespace QuanLyNhaSach
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label7.Location = new System.Drawing.Point(559, 264);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 20);
+            this.label7.Size = new System.Drawing.Size(118, 23);
             this.label7.TabIndex = 81;
             this.label7.Text = "Số điện thoại";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Location = new System.Drawing.Point(589, 216);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 20);
+            this.label6.Size = new System.Drawing.Size(91, 23);
             this.label6.TabIndex = 80;
             this.label6.Text = "Giới Tính";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label5.Location = new System.Drawing.Point(580, 163);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 20);
+            this.label5.Size = new System.Drawing.Size(95, 23);
             this.label5.TabIndex = 79;
             this.label5.Text = "Ngày Sinh";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(97, 264);
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label10.Location = new System.Drawing.Point(118, 263);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 20);
+            this.label10.Size = new System.Drawing.Size(66, 23);
             this.label10.TabIndex = 78;
             this.label10.Text = "Lương";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(80, 163);
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label11.Location = new System.Drawing.Point(83, 162);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(89, 20);
+            this.label11.Size = new System.Drawing.Size(101, 23);
             this.label11.TabIndex = 76;
             this.label11.Text = "Họ Và Tên";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label12.Location = new System.Drawing.Point(55, 110);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(114, 20);
+            this.label12.Size = new System.Drawing.Size(129, 23);
             this.label12.TabIndex = 74;
             this.label12.Text = "Mã Nhân Viên";
             // 
@@ -323,55 +290,106 @@ namespace QuanLyNhaSach
             this.txtFullName.Size = new System.Drawing.Size(208, 22);
             this.txtFullName.TabIndex = 77;
             // 
-            // Passvisible1
+            // pictureBox6
             // 
-            this.Passvisible1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Passvisible1.Location = new System.Drawing.Point(806, 382);
-            this.Passvisible1.Name = "Passvisible1";
-            this.Passvisible1.Size = new System.Drawing.Size(24, 20);
-            this.Passvisible1.TabIndex = 90;
-            this.Passvisible1.TabStop = false;
-            this.Passvisible1.Click += new System.EventHandler(this.Passvisible1_Click);
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = global::QuanLyNhaSach.Properties.Resources.icons8_user_64__2_;
+            this.pictureBox6.Location = new System.Drawing.Point(473, 12);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(137, 89);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 102;
+            this.pictureBox6.TabStop = false;
             // 
-            // Passvisible2
+            // btn_Back
             // 
-            this.Passvisible2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Passvisible2.Location = new System.Drawing.Point(806, 425);
-            this.Passvisible2.Name = "Passvisible2";
-            this.Passvisible2.Size = new System.Drawing.Size(24, 20);
-            this.Passvisible2.TabIndex = 91;
-            this.Passvisible2.TabStop = false;
-            this.Passvisible2.Click += new System.EventHandler(this.Passvisible2_Click);
+            this.btn_Back.BackgroundImage = global::QuanLyNhaSach.Properties.Resources.backcolorlogin;
+            this.btn_Back.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_Back.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Back.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Back.Location = new System.Drawing.Point(59, 482);
+            this.btn_Back.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(150, 49);
+            this.btn_Back.TabIndex = 1;
+            this.btn_Back.Text = "Back";
+            this.btn_Back.UseVisualStyleBackColor = true;
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
-            // Passinvisible1
+            // btnFinish
             // 
-            this.Passinvisible1.BackColor = System.Drawing.Color.Red;
-            this.Passinvisible1.Location = new System.Drawing.Point(806, 382);
-            this.Passinvisible1.Name = "Passinvisible1";
-            this.Passinvisible1.Size = new System.Drawing.Size(24, 20);
-            this.Passinvisible1.TabIndex = 92;
-            this.Passinvisible1.TabStop = false;
-            this.Passinvisible1.Click += new System.EventHandler(this.Passinvisible1_Click);
+            this.btnFinish.BackgroundImage = global::QuanLyNhaSach.Properties.Resources.backcolorlogin;
+            this.btnFinish.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinish.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnFinish.Location = new System.Drawing.Point(880, 482);
+            this.btnFinish.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(150, 49);
+            this.btnFinish.TabIndex = 71;
+            this.btnFinish.Text = "Hoàn Thành";
+            this.btnFinish.UseVisualStyleBackColor = true;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
-            // Passinvisible2
+            // ptbPassvisible1
             // 
-            this.Passinvisible2.BackColor = System.Drawing.Color.Red;
-            this.Passinvisible2.Location = new System.Drawing.Point(806, 425);
-            this.Passinvisible2.Name = "Passinvisible2";
-            this.Passinvisible2.Size = new System.Drawing.Size(24, 20);
-            this.Passinvisible2.TabIndex = 93;
-            this.Passinvisible2.TabStop = false;
-            this.Passinvisible2.Click += new System.EventHandler(this.Passinvisible2_Click);
+            this.ptbPassvisible1.BackColor = System.Drawing.Color.Transparent;
+            this.ptbPassvisible1.Image = global::QuanLyNhaSach.Properties.Resources.icons8_eye_64;
+            this.ptbPassvisible1.Location = new System.Drawing.Point(749, 382);
+            this.ptbPassvisible1.Name = "ptbPassvisible1";
+            this.ptbPassvisible1.Size = new System.Drawing.Size(34, 22);
+            this.ptbPassvisible1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbPassvisible1.TabIndex = 103;
+            this.ptbPassvisible1.TabStop = false;
+            this.ptbPassvisible1.Click += new System.EventHandler(this.ptbPassvisible1_Click);
+            // 
+            // ptbPassinvisible1
+            // 
+            this.ptbPassinvisible1.BackgroundImage = global::QuanLyNhaSach.Properties.Resources.backcolorlogin;
+            this.ptbPassinvisible1.Image = global::QuanLyNhaSach.Properties.Resources.icons8_invisible_64;
+            this.ptbPassinvisible1.Location = new System.Drawing.Point(749, 382);
+            this.ptbPassinvisible1.Name = "ptbPassinvisible1";
+            this.ptbPassinvisible1.Size = new System.Drawing.Size(34, 23);
+            this.ptbPassinvisible1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbPassinvisible1.TabIndex = 104;
+            this.ptbPassinvisible1.TabStop = false;
+            this.ptbPassinvisible1.Click += new System.EventHandler(this.ptbPassinvisible1_Click);
+            // 
+            // ptbPassinvisible2
+            // 
+            this.ptbPassinvisible2.BackgroundImage = global::QuanLyNhaSach.Properties.Resources.backcolorlogin;
+            this.ptbPassinvisible2.Image = global::QuanLyNhaSach.Properties.Resources.icons8_invisible_64;
+            this.ptbPassinvisible2.Location = new System.Drawing.Point(749, 423);
+            this.ptbPassinvisible2.Name = "ptbPassinvisible2";
+            this.ptbPassinvisible2.Size = new System.Drawing.Size(34, 23);
+            this.ptbPassinvisible2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbPassinvisible2.TabIndex = 105;
+            this.ptbPassinvisible2.TabStop = false;
+            this.ptbPassinvisible2.Click += new System.EventHandler(this.ptbPassinvisible2_Click);
+            // 
+            // ptbPassvisible2
+            // 
+            this.ptbPassvisible2.BackColor = System.Drawing.Color.Transparent;
+            this.ptbPassvisible2.Image = global::QuanLyNhaSach.Properties.Resources.icons8_eye_64;
+            this.ptbPassvisible2.Location = new System.Drawing.Point(749, 422);
+            this.ptbPassvisible2.Name = "ptbPassvisible2";
+            this.ptbPassvisible2.Size = new System.Drawing.Size(34, 23);
+            this.ptbPassvisible2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbPassvisible2.TabIndex = 106;
+            this.ptbPassvisible2.TabStop = false;
+            this.ptbPassvisible2.Click += new System.EventHandler(this.ptbPassvisible2_Click);
             // 
             // Form_SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1085, 554);
-            this.Controls.Add(this.Passvisible2);
-            this.Controls.Add(this.Passvisible1);
-            this.Controls.Add(this.Passinvisible2);
-            this.Controls.Add(this.Passinvisible1);
+            this.Controls.Add(this.ptbPassvisible1);
+            this.Controls.Add(this.ptbPassvisible2);
+            this.Controls.Add(this.ptbPassinvisible2);
+            this.Controls.Add(this.ptbPassinvisible1);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -390,7 +408,6 @@ namespace QuanLyNhaSach
             this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtConfirmPass);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -399,22 +416,17 @@ namespace QuanLyNhaSach
             this.Name = "Form_SignUp";
             this.Text = "Form_SignUp";
             this.Load += new System.EventHandler(this.Form_SignUp_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Passvisible1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Passvisible2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Passinvisible1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Passinvisible2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPassvisible1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPassinvisible1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPassinvisible2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPassvisible2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_Back;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFinish;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -438,9 +450,11 @@ namespace QuanLyNhaSach
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.TextBox txtFullName;
-        private System.Windows.Forms.PictureBox Passvisible2;
-        public System.Windows.Forms.PictureBox Passvisible1;
-        public System.Windows.Forms.PictureBox Passinvisible1;
-        public System.Windows.Forms.PictureBox Passinvisible2;
+        private System.Windows.Forms.Button btn_Back;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox ptbPassvisible1;
+        private System.Windows.Forms.PictureBox ptbPassinvisible1;
+        private System.Windows.Forms.PictureBox ptbPassinvisible2;
+        private System.Windows.Forms.PictureBox ptbPassvisible2;
     }
 }

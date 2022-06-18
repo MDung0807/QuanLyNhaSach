@@ -69,5 +69,14 @@ namespace QuanLyNhaSach.BS_layer
         {
             return db.ExecuteQueryDataSet("SELECT * FROM NhanVien Where MaNV LIKE '%" + MaNhanVien + "%' and TenNV LIKE N'%" + TenNhanVien + "%'", CommandType.Text);
         }
+        public bool ThemTaiKhoan(string MaNhanVien, string Quyen, string TaiKhoan, string MatKhau, ref string err)
+        {
+            string sqlString = "Insert Into TaiKhoan Values('" +
+                            MaNhanVien + "',N'" +
+                            Quyen + "',N'" +
+                            TaiKhoan + "',N'" +
+                            MatKhau + "')";
+            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
     }
 }

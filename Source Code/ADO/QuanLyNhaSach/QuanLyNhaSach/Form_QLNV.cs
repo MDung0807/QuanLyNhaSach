@@ -35,14 +35,18 @@ namespace QuanLyNhaSach
  
                 dgvQLNV.DataSource = dtQLNV;
                 dgvQLNV.AutoResizeColumns();
-                
+
                 txtStaffID.ResetText();
                 txtFullName.ResetText();
                 txtJob.ResetText();
                 txtIncome.ResetText();
                 txtAddress.ResetText();
                 txtPhone.ResetText();
+                txtUsername.ResetText();
+                txtPassword.ResetText();
 
+                this.txtUsername.Enabled = false;
+                this.txtPassword.Enabled = false;
                 this.btnSave.Enabled = false;
                 this.btnCancle.Enabled = false;
 
@@ -82,9 +86,13 @@ namespace QuanLyNhaSach
             txtIncome.ResetText();
             txtAddress.ResetText();
             txtPhone.ResetText();
+            txtUsername.ResetText();
+            txtPassword.ResetText();
 
             this.btnSave.Enabled = true;
             this.btnCancle.Enabled = true;
+            this.txtUsername.Enabled = true;
+            this.txtPassword.Enabled = true;
 
             this.btnAdd.Enabled = false;
             this.btnUpdate.Enabled = false;
@@ -150,6 +158,8 @@ namespace QuanLyNhaSach
             txtIncome.ResetText();
             txtAddress.ResetText();
             txtPhone.ResetText();
+            txtUsername.ResetText();
+            txtPassword.ResetText();
 
             this.btnAdd.Enabled = true;
             this.btnUpdate.Enabled = true;
@@ -159,6 +169,8 @@ namespace QuanLyNhaSach
 
             this.btnSave.Enabled = false;
             this.btnCancle.Enabled = false;
+            this.txtUsername.Enabled = false;
+            this.txtPassword.Enabled = false;
 
             dgvQLNV_CellClick(null, null);
         }
@@ -172,6 +184,8 @@ namespace QuanLyNhaSach
                     BLQLNV blQLNV = new BLQLNV();
                     bool flag = false;
                     blQLNV.ThemNhanVien(this.txtStaffID.Text, this.txtFullName.Text, this.txtJob.Text, this.txtIncome.Text, this.txtAddress.Text, this.dtpDayOfBirth.Value.ToString(), this.cbSex.Checked.ToString(), this.txtPhone.Text, flag.ToString(), ref err);
+                    string quyen = "Nhanvien";
+                    blQLNV.ThemTaiKhoan(this.txtStaffID.Text, quyen, this.txtUsername.Text, this.txtPassword.Text, ref err);
                     LoadData();
                     MessageBox.Show("Đã thêm xong!");
                 }
@@ -252,6 +266,8 @@ namespace QuanLyNhaSach
             txtIncome.ResetText();
             txtAddress.ResetText();
             txtPhone.ResetText();
+            txtUsername.ResetText();
+            txtPassword.ResetText();
         }
     }
 }
