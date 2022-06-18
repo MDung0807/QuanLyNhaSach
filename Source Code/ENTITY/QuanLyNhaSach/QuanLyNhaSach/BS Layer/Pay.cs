@@ -145,7 +145,7 @@ namespace QuanLyNhaSach.BS_Layer
 
             if (result_muon != null)
             {
-                foreach (var item in result_mua)
+                foreach (var item in result_muon)
                     item.DaThanhToan = true;
             }    
 
