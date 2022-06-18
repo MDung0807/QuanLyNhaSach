@@ -19,9 +19,9 @@ namespace QuanLyNhaSach.BS_layer
         }
         public DataSet LayNhanVien()
         {
-            return db.ExecuteQueryDataSet("SELECT * FROM NhanVien", CommandType.Text);
+            return db.ExecuteQueryDataSet("SELECT MaNV, TenNV, CongViec, Luong, DiaChi, NgaySinh, GioiTinh, soDT FROM NhanVien Where FlagXoa='False'", CommandType.Text);
         }
-        public bool ThemNhanVien(string MaNhanVien, string HoTen, string CongViec, string Luong, string DiaChi, string NgaySinh, string Nam, string SoDienThoai, ref string err)
+        public bool ThemNhanVien(string MaNhanVien, string HoTen, string CongViec, string Luong, string DiaChi, string NgaySinh, string Nam, string SoDienThoai, string flag, ref string err)
         {
             string sqlString = "Insert Into NhanVien Values('" +
                             MaNhanVien + "',N'" +
@@ -31,12 +31,23 @@ namespace QuanLyNhaSach.BS_layer
                             DiaChi + "','" +
                             NgaySinh + "','" +
                             Nam + "','" +    
-                            SoDienThoai + "')";
+                            SoDienThoai + "','" +
+                            flag + "')";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool XoaNhanVien(ref string err, string MaNhanVien)
+        public bool XoaNhanVien(ref string err, string MaNhanVien, string flag)
         {
-            string sqlString = "Delete From NhanVien Where MaNV='" +
+            string sqlString = "Update NhanVien Set FlagXoa='" +
+                        flag + 
+                        "'Where MaNV='" +
+                        MaNhanVien + "'";
+            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+        public bool XoaTaiKhoan(ref string err, string MaNhanVien, string flag)
+        {
+            string sqlString = "Update TaiKhoan Set FlagXoa='" +
+                        flag +
+                        "'Where MaNV='" +
                         MaNhanVien + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
@@ -53,6 +64,10 @@ namespace QuanLyNhaSach.BS_layer
                             "'Where MaNV='" +
                             MaNhanVien + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+        public DataSet TimKiemNhanVien(string MaNhanVien, string TenNhanVien)
+        {
+            return db.ExecuteQueryDataSet("SELECT * FROM NhanVien Where MaNV LIKE '%" + MaNhanVien + "%' and TenNV LIKE N'%" + TenNhanVien + "%'", CommandType.Text);
         }
     }
 }

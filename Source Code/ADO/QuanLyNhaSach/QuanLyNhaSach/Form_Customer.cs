@@ -154,7 +154,8 @@ namespace QuanLyNhaSach
                 try
                 {
                     BLCustomer blCustomer = new BLCustomer();
-                    blCustomer.ThemKhachHang(this.txtCustomerID.Text, this.txtFullName.Text, this.txtAddress.Text, this.dtpDayOfBirth.Value.ToString(), this.txtPhone.Text, ref err);
+                    bool flag = false;
+                    blCustomer.ThemKhachHang(this.txtCustomerID.Text, this.txtFullName.Text, this.txtAddress.Text, this.dtpDayOfBirth.Value.ToString(), this.txtPhone.Text, flag.ToString(), ref err);
                     LoadData();
                     MessageBox.Show("Đã thêm xong!");
                 }
@@ -179,13 +180,13 @@ namespace QuanLyNhaSach
                 int r = dgvCUSTOMER.CurrentCell.RowIndex;
 
                 string strCustomer = dgvCUSTOMER.Rows[r].Cells[0].Value.ToString();
-
+                bool flag = true;
                 DialogResult traloi;
                 traloi = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (traloi == DialogResult.Yes)
                 {
-                    dbCustomer.XoaKhachHang(ref err, strCustomer);
+                    dbCustomer.XoaKhachHang(ref err, strCustomer, flag.ToString());
                     LoadData();
                     MessageBox.Show("Đã xóa xong!");
                 }
@@ -202,7 +203,36 @@ namespace QuanLyNhaSach
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            try
+            {
+                BLCustomer blCus = new BLCustomer();
+                dtCustomer = new DataTable();
+                dtCustomer.Clear();
 
+                DataSet ds = blCus.TimKiemKhachHang(this.txtCustomerID.Text, this.txtFullName.Text);
+                dtCustomer = ds.Tables[0];
+
+                dgvCUSTOMER.DataSource = dtCustomer;
+                dgvCUSTOMER.AutoResizeColumns();
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Không tìm thấy thông tin!");
+            }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void btnCLear_Click(object sender, EventArgs e)
+        {
+            txtCustomerID.ResetText();
+            txtFullName.ResetText();
+            txtAddress.ResetText();
+            txtPhone.ResetText();
         }
     }
 }

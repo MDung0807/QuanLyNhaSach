@@ -65,5 +65,15 @@ namespace QuanLyNhaSach
                 MessageBox.Show("Không tìm thấy thông tin!");
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            this.txtStaffID.ResetText();
+            this.txtFullName.ResetText();
+            this.txtPhone.ResetText();
+            this.lblStaffID.ResetText();
+            this.lblUserName.ResetText();
+            this.lblPassword.ResetText();
+        }
     }
 }

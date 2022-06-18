@@ -32,19 +32,20 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvBORROW = new System.Windows.Forms.DataGridView();
-            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Borrow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReturnBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtMaSach = new System.Windows.Forms.TextBox();
-            this.btnReturn = new System.Windows.Forms.Button();
+            this.cmbCustomerID = new System.Windows.Forms.ComboBox();
+            this.cmbBookID = new System.Windows.Forms.ComboBox();
             this.btnBorrow = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnReload = new System.Windows.Forms.Button();
+            this.MaCuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HanTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TienPhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DangMuon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBORROW)).BeginInit();
             this.SuspendLayout();
@@ -85,86 +86,32 @@
             // 
             // dgvBORROW
             // 
+            this.dgvBORROW.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBORROW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBORROW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaCuon,
             this.MaKH,
-            this.HoTen,
-            this.MaSach,
-            this.Borrow,
-            this.NgayThanhToan,
+            this.NgayMuon,
             this.NgayTra,
-            this.ReturnBook});
+            this.HanTra,
+            this.TienPhat,
+            this.DangMuon});
             this.dgvBORROW.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvBORROW.Location = new System.Drawing.Point(0, 344);
             this.dgvBORROW.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBORROW.Name = "dgvBORROW";
+            this.dgvBORROW.ReadOnly = true;
             this.dgvBORROW.RowHeadersWidth = 51;
+            this.dgvBORROW.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBORROW.Size = new System.Drawing.Size(1035, 210);
             this.dgvBORROW.TabIndex = 1;
             this.dgvBORROW.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBORROW_CellClick);
-            // 
-            // MaKH
-            // 
-            this.MaKH.HeaderText = "MaKH";
-            this.MaKH.MinimumWidth = 6;
-            this.MaKH.Name = "MaKH";
-            this.MaKH.Width = 125;
-            // 
-            // HoTen
-            // 
-            this.HoTen.HeaderText = "HoTen";
-            this.HoTen.MinimumWidth = 6;
-            this.HoTen.Name = "HoTen";
-            this.HoTen.Width = 125;
-            // 
-            // MaSach
-            // 
-            this.MaSach.HeaderText = "MaSach";
-            this.MaSach.MinimumWidth = 6;
-            this.MaSach.Name = "MaSach";
-            this.MaSach.Width = 125;
-            // 
-            // Borrow
-            // 
-            this.Borrow.HeaderText = "Borrow";
-            this.Borrow.MinimumWidth = 6;
-            this.Borrow.Name = "Borrow";
-            this.Borrow.Width = 125;
-            // 
-            // NgayThanhToan
-            // 
-            this.NgayThanhToan.HeaderText = "NgayThanhToan";
-            this.NgayThanhToan.MinimumWidth = 6;
-            this.NgayThanhToan.Name = "NgayThanhToan";
-            this.NgayThanhToan.Width = 125;
-            // 
-            // NgayTra
-            // 
-            this.NgayTra.HeaderText = "NgayTra";
-            this.NgayTra.MinimumWidth = 6;
-            this.NgayTra.Name = "NgayTra";
-            this.NgayTra.Width = 125;
-            // 
-            // ReturnBook
-            // 
-            this.ReturnBook.HeaderText = "ReturnBook";
-            this.ReturnBook.MinimumWidth = 6;
-            this.ReturnBook.Name = "ReturnBook";
-            this.ReturnBook.Width = 125;
-            // 
-            // txtMaKH
-            // 
-            this.txtMaKH.Location = new System.Drawing.Point(416, 138);
-            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(315, 22);
-            this.txtMaKH.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(224, 143);
+            this.label2.Location = new System.Drawing.Point(254, 209);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 20);
@@ -175,52 +122,129 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(280, 209);
+            this.label3.Location = new System.Drawing.Point(307, 156);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 20);
+            this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Mã Sách";
+            this.label3.Text = "Mã Cuốn";
             // 
-            // txtMaSach
+            // cmbCustomerID
             // 
-            this.txtMaSach.Location = new System.Drawing.Point(416, 204);
-            this.txtMaSach.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaSach.Name = "txtMaSach";
-            this.txtMaSach.Size = new System.Drawing.Size(315, 22);
-            this.txtMaSach.TabIndex = 4;
+            this.cmbCustomerID.FormattingEnabled = true;
+            this.cmbCustomerID.Location = new System.Drawing.Point(439, 209);
+            this.cmbCustomerID.Name = "cmbCustomerID";
+            this.cmbCustomerID.Size = new System.Drawing.Size(314, 24);
+            this.cmbCustomerID.TabIndex = 9;
             // 
-            // btnReturn
+            // cmbBookID
             // 
-            this.btnReturn.Location = new System.Drawing.Point(648, 278);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(100, 28);
-            this.btnReturn.TabIndex = 6;
-            this.btnReturn.Text = "Trả Sách";
-            this.btnReturn.UseVisualStyleBackColor = true;
+            this.cmbBookID.FormattingEnabled = true;
+            this.cmbBookID.Location = new System.Drawing.Point(439, 156);
+            this.cmbBookID.Name = "cmbBookID";
+            this.cmbBookID.Size = new System.Drawing.Size(314, 24);
+            this.cmbBookID.TabIndex = 10;
             // 
             // btnBorrow
             // 
-            this.btnBorrow.Location = new System.Drawing.Point(284, 278);
-            this.btnBorrow.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBorrow.Location = new System.Drawing.Point(330, 276);
             this.btnBorrow.Name = "btnBorrow";
-            this.btnBorrow.Size = new System.Drawing.Size(100, 28);
-            this.btnBorrow.TabIndex = 2;
+            this.btnBorrow.Size = new System.Drawing.Size(121, 35);
+            this.btnBorrow.TabIndex = 11;
             this.btnBorrow.Text = "Mượn Sách";
             this.btnBorrow.UseVisualStyleBackColor = true;
+            this.btnBorrow.Click += new System.EventHandler(this.btnBorrow_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(537, 276);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(121, 35);
+            this.btnReturn.TabIndex = 13;
+            this.btnReturn.Text = "Trả Sách";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnReload
+            // 
+            this.btnReload.Location = new System.Drawing.Point(739, 276);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(121, 35);
+            this.btnReload.TabIndex = 14;
+            this.btnReload.Text = "Reload";
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
+            // MaCuon
+            // 
+            this.MaCuon.DataPropertyName = "MaCuon";
+            this.MaCuon.HeaderText = "Mã Cuốn";
+            this.MaCuon.MinimumWidth = 6;
+            this.MaCuon.Name = "MaCuon";
+            this.MaCuon.ReadOnly = true;
+            // 
+            // MaKH
+            // 
+            this.MaKH.DataPropertyName = "MaKH";
+            this.MaKH.HeaderText = "Mã Khách Hàng";
+            this.MaKH.MinimumWidth = 6;
+            this.MaKH.Name = "MaKH";
+            this.MaKH.ReadOnly = true;
+            // 
+            // NgayMuon
+            // 
+            this.NgayMuon.DataPropertyName = "NgayMuon";
+            this.NgayMuon.HeaderText = "Ngày Mượn";
+            this.NgayMuon.MinimumWidth = 6;
+            this.NgayMuon.Name = "NgayMuon";
+            this.NgayMuon.ReadOnly = true;
+            // 
+            // NgayTra
+            // 
+            this.NgayTra.DataPropertyName = "NgayTra";
+            this.NgayTra.HeaderText = "Ngày Trả";
+            this.NgayTra.MinimumWidth = 6;
+            this.NgayTra.Name = "NgayTra";
+            this.NgayTra.ReadOnly = true;
+            // 
+            // HanTra
+            // 
+            this.HanTra.DataPropertyName = "HanTra";
+            this.HanTra.HeaderText = "Hạn Trả";
+            this.HanTra.MinimumWidth = 6;
+            this.HanTra.Name = "HanTra";
+            this.HanTra.ReadOnly = true;
+            // 
+            // TienPhat
+            // 
+            this.TienPhat.DataPropertyName = "TienPhat";
+            this.TienPhat.HeaderText = "Tiền Phạt";
+            this.TienPhat.MinimumWidth = 6;
+            this.TienPhat.Name = "TienPhat";
+            this.TienPhat.ReadOnly = true;
+            // 
+            // DangMuon
+            // 
+            this.DangMuon.DataPropertyName = "DangMuon";
+            this.DangMuon.HeaderText = "Đang Mượn";
+            this.DangMuon.MinimumWidth = 6;
+            this.DangMuon.Name = "DangMuon";
+            this.DangMuon.ReadOnly = true;
+            this.DangMuon.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DangMuon.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Form_Borrow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 554);
+            this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnBorrow);
-            this.Controls.Add(this.txtMaSach);
+            this.Controls.Add(this.cmbBookID);
+            this.Controls.Add(this.cmbCustomerID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtMaKH);
             this.Controls.Add(this.dgvBORROW);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -241,18 +265,19 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvBORROW;
-        private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMaSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Borrow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayThanhToan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayTra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReturnBook;
-        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.ComboBox cmbCustomerID;
+        private System.Windows.Forms.ComboBox cmbBookID;
         private System.Windows.Forms.Button btnBorrow;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaCuon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayMuon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayTra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HanTra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TienPhat;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn DangMuon;
     }
 }

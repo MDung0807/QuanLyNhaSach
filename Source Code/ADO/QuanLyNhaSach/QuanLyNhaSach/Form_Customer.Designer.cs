@@ -34,6 +34,11 @@
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.dgvCUSTOMER = new System.Windows.Forms.DataGridView();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnReload = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,11 +54,7 @@
             this.dtpDayOfBirth = new System.Windows.Forms.DateTimePicker();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancle = new System.Windows.Forms.Button();
-            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCLear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCUSTOMER)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -128,6 +129,46 @@
             this.dgvCUSTOMER.TabIndex = 16;
             this.dgvCUSTOMER.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCUSTOMER_CellClick);
             // 
+            // MaKH
+            // 
+            this.MaKH.DataPropertyName = "MaKH";
+            this.MaKH.HeaderText = "Mã Khách Hàng";
+            this.MaKH.MinimumWidth = 6;
+            this.MaKH.Name = "MaKH";
+            this.MaKH.ReadOnly = true;
+            // 
+            // TenKH
+            // 
+            this.TenKH.DataPropertyName = "TenKH";
+            this.TenKH.HeaderText = "Họ Tên";
+            this.TenKH.MinimumWidth = 6;
+            this.TenKH.Name = "TenKH";
+            this.TenKH.ReadOnly = true;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa Chỉ";
+            this.DiaChi.MinimumWidth = 6;
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.MinimumWidth = 6;
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.ReadOnly = true;
+            // 
+            // soDT
+            // 
+            this.soDT.DataPropertyName = "soDT";
+            this.soDT.HeaderText = "Số Điện Thoại";
+            this.soDT.MinimumWidth = 6;
+            this.soDT.Name = "soDT";
+            this.soDT.ReadOnly = true;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -150,6 +191,7 @@
             this.btnReload.TabIndex = 2;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // label1
             // 
@@ -257,6 +299,7 @@
             // 
             // dtpDayOfBirth
             // 
+            this.dtpDayOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDayOfBirth.Location = new System.Drawing.Point(687, 143);
             this.dtpDayOfBirth.Name = "dtpDayOfBirth";
             this.dtpDayOfBirth.Size = new System.Drawing.Size(200, 22);
@@ -284,51 +327,23 @@
             this.btnCancle.UseVisualStyleBackColor = true;
             this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
             // 
-            // MaKH
+            // btnCLear
             // 
-            this.MaKH.DataPropertyName = "MaKH";
-            this.MaKH.HeaderText = "Mã Khách Hàng";
-            this.MaKH.MinimumWidth = 6;
-            this.MaKH.Name = "MaKH";
-            this.MaKH.ReadOnly = true;
-            // 
-            // TenKH
-            // 
-            this.TenKH.DataPropertyName = "TenKH";
-            this.TenKH.HeaderText = "Họ Tên";
-            this.TenKH.MinimumWidth = 6;
-            this.TenKH.Name = "TenKH";
-            this.TenKH.ReadOnly = true;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa Chỉ";
-            this.DiaChi.MinimumWidth = 6;
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.ReadOnly = true;
-            // 
-            // NgaySinh
-            // 
-            this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ngày Sinh";
-            this.NgaySinh.MinimumWidth = 6;
-            this.NgaySinh.Name = "NgaySinh";
-            this.NgaySinh.ReadOnly = true;
-            // 
-            // soDT
-            // 
-            this.soDT.DataPropertyName = "soDT";
-            this.soDT.HeaderText = "Số Điện Thoại";
-            this.soDT.MinimumWidth = 6;
-            this.soDT.Name = "soDT";
-            this.soDT.ReadOnly = true;
+            this.btnCLear.Location = new System.Drawing.Point(542, 278);
+            this.btnCLear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCLear.Name = "btnCLear";
+            this.btnCLear.Size = new System.Drawing.Size(100, 28);
+            this.btnCLear.TabIndex = 59;
+            this.btnCLear.Text = "Clear";
+            this.btnCLear.UseVisualStyleBackColor = true;
+            this.btnCLear.Click += new System.EventHandler(this.btnCLear_Click);
             // 
             // Form_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnCLear);
             this.Controls.Add(this.btnCancle);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dtpDayOfBirth);
@@ -386,5 +401,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn soDT;
+        private System.Windows.Forms.Button btnCLear;
     }
 }

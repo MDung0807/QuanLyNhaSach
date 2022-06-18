@@ -16,7 +16,6 @@ namespace QuanLyNhaSach
     public partial class Form_Borrow : Form
     {
         DataTable dtBorrow = null;
-        //bool Them;
         string err;
         BLBorrow dbBr = new BLBorrow();
         public Form_Borrow()
@@ -34,14 +33,9 @@ namespace QuanLyNhaSach
                 DataSet ds = dbBr.LayDuLieu();
                 dtBorrow = ds.Tables[0];
 
-                // Đưa dữ liệu lên DataGridView 
                 dgvBORROW.DataSource = dtBorrow;
-                // Thay đổi độ rộng cột 
                 dgvBORROW.AutoResizeColumns();
-                // Xóa trống các đối tượng trong Panel 
-                txtMaKH.ResetText();
-                txtMaSach.ResetText();
-                //
+
                 dgvBORROW_CellClick(null, null);
 
             }
@@ -50,9 +44,34 @@ namespace QuanLyNhaSach
                 MessageBox.Show("Không lấy được nội dung trong table BORROW. Lỗi!!!");
             }
         }
+        void LoadcmbCustomerID()
+        {
+            dtBorrow = new DataTable();
+            dtBorrow.Clear();
+
+            DataSet ds = dbBr.LayMaKhachHang();
+            dtBorrow = ds.Tables[0];
+
+            cmbCustomerID.ValueMember = "MaKH";
+            cmbCustomerID.DataSource = dtBorrow;
+        }
+        void LoadcmbBookID()
+        {
+            dtBorrow = new DataTable();
+            dtBorrow.Clear();
+
+            DataSet ds = dbBr.LayMaCuon();
+            dtBorrow = ds.Tables[0];
+
+            cmbBookID.ValueMember = "MaCuon";
+            cmbBookID.DataSource = dtBorrow;
+        }
         private void Form_Borrow_Load(object sender, EventArgs e)
         {
             LoadData();
+            LoadcmbCustomerID();
+            LoadcmbBookID();
+
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -61,11 +80,83 @@ namespace QuanLyNhaSach
         }
         private void dgvBORROW_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Thứ tự dòng hiện hành 
             int r = dgvBORROW.CurrentCell.RowIndex;
-            // Chuyển thông tin lên panel 
-            txtMaKH.Text = dgvBORROW.Rows[r].Cells[0].Value.ToString();
-            txtMaSach.Text = dgvBORROW.Rows[r].Cells[1].Value.ToString();
+
+            cmbBookID.SelectedValue = dgvBORROW.Rows[r].Cells[0].Value.ToString();
+            cmbCustomerID.SelectedValue = dgvBORROW.Rows[r].Cells[1].Value.ToString();
+            
+        }
+
+        private void btnBorrow_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BLBorrow blBr = new BLBorrow();
+                bool DangMuon = true;
+                DateTime ngaymuon = DateTime.Today;
+                DateTime hantra = new DateTime(ngaymuon.Year, ngaymuon.Month + 1, ngaymuon.Day);
+                int r = dgvBORROW.CurrentCell.RowIndex;
+
+                if (dgvBORROW.Rows[r].Cells[0].Value.ToString().Equals(cmbBookID.SelectedValue) &&
+                    dgvBORROW.Rows[r].Cells[1].Value.ToString().Equals(cmbCustomerID.SelectedValue) &&
+                    (bool)dgvBORROW.Rows[r].Cells[6].Value == false)
+                {
+                    blBr.CapNhatMuonSach(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString(), ngaymuon.ToString(), hantra.ToString(), DangMuon.ToString(), ref err);
+                    LoadData();
+                    MessageBox.Show("Đã mượn xong!");
+                }
+                else if (dgvBORROW.Rows[r].Cells[0].Value.ToString().Equals(cmbBookID.SelectedValue) &&
+                    dgvBORROW.Rows[r].Cells[1].Value.ToString().Equals(cmbCustomerID.SelectedValue) &&
+                    (bool)dgvBORROW.Rows[r].Cells[6].Value == true)
+                {
+                    LoadData();
+                    MessageBox.Show("Đang có người mượn!");
+                }
+                else
+                {
+                    blBr.MuonSach(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString(), ngaymuon.ToString(), hantra.ToString(), DangMuon.ToString(), ref err);
+                    LoadData();
+                    MessageBox.Show("Đã mượn xong!");
+                }
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Không tìm thấy thông tin!");
+            }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BLBorrow blBr = new BLBorrow();
+                bool DangMuon = false;
+                int r = dgvBORROW.CurrentCell.RowIndex;
+                DateTime ngaytra = DateTime.Today;
+                int tienphat = 0;
+                DateTime hantra = (DateTime)dgvBORROW.Rows[r].Cells[4].Value;
+                double day = ngaytra.Subtract(hantra).TotalDays;
+                if (day > 0)
+                {
+                    tienphat = (int)day*5000;
+                }    
+
+                //dgvBORROW.Rows.Remove(dgvBORROW.Rows[r]);
+                
+                blBr.CapNhatTraSach(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString(), ngaytra.ToString(), tienphat.ToString(), DangMuon.ToString(), ref err);
+                LoadData();
+                MessageBox.Show("Đã trả xong!");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Không tìm thấy thông tin!");
+            }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

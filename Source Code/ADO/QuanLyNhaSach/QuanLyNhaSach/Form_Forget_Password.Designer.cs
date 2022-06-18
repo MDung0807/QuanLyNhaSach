@@ -41,6 +41,10 @@
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblStaffID = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,7 +142,7 @@
             // 
             // btnFindPass
             // 
-            this.btnFindPass.Location = new System.Drawing.Point(461, 420);
+            this.btnFindPass.Location = new System.Drawing.Point(553, 396);
             this.btnFindPass.Margin = new System.Windows.Forms.Padding(4);
             this.btnFindPass.Name = "btnFindPass";
             this.btnFindPass.Size = new System.Drawing.Size(100, 28);
@@ -151,7 +155,7 @@
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(684, 201);
+            this.lblUserName.Location = new System.Drawing.Point(792, 201);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(15, 20);
@@ -162,7 +166,7 @@
             // 
             this.lblStaffID.AutoSize = true;
             this.lblStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffID.Location = new System.Drawing.Point(684, 126);
+            this.lblStaffID.Location = new System.Drawing.Point(792, 126);
             this.lblStaffID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStaffID.Name = "lblStaffID";
             this.lblStaffID.Size = new System.Drawing.Size(15, 20);
@@ -173,18 +177,66 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(684, 275);
+            this.lblPassword.Location = new System.Drawing.Point(792, 275);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(15, 20);
             this.lblPassword.TabIndex = 24;
             this.lblPassword.Text = "-";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(651, 126);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 20);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Mã Nhân Viên";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(681, 201);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 20);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Tài Khoản";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(685, 273);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 20);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Mật Khẩu";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(331, 396);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(100, 28);
+            this.btnClear.TabIndex = 28;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // Form_Forget_Password
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblStaffID);
             this.Controls.Add(this.lblUserName);
@@ -222,5 +274,9 @@
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblStaffID;
         private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnClear;
     }
 }

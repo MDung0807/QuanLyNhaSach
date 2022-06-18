@@ -46,13 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BS layer\BLBill.cs" />
     <Compile Include="BS layer\BLBorrow.cs" />
+    <Compile Include="BS layer\BLBuy.cs" />
     <Compile Include="BS layer\BLCustomer.cs" />
+    <Compile Include="BS layer\BLFindBook.cs" />
     <Compile Include="BS layer\BLForgetPassword.cs" />
     <Compile Include="BS layer\BLLogin.cs" />
+    <Compile Include="BS layer\BLPay.cs" />
     <Compile Include="BS layer\BLQLNV.cs" />
     <Compile Include="BS layer\BLSignUp.cs" />
     <Compile Include="DB layer\DBMain.cs" />
+    <Compile Include="Form_Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Bill.Designer.cs">
+      <DependentUpon>Form_Bill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Borrow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +80,12 @@
     </Compile>
     <Compile Include="Form_Customer.Designer.cs">
       <DependentUpon>Form_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Pay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Pay.Designer.cs">
+      <DependentUpon>Form_Pay.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_SignUp.cs">
       <SubType>Form</SubType>
@@ -107,12 +123,6 @@
     <Compile Include="Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Leader.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Leader.Designer.cs">
-      <DependentUpon>Form_Leader.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_Manager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +137,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_Bill.resx">
+      <DependentUpon>Form_Bill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Borrow.resx">
       <DependentUpon>Form_Borrow.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Customer.resx">
       <DependentUpon>Form_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Pay.resx">
+      <DependentUpon>Form_Pay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_SignUp.resx">
       <DependentUpon>Form_SignUp.cs</DependentUpon>
@@ -153,9 +169,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_Leader.resx">
-      <DependentUpon>Form_Leader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Manager.resx">
       <DependentUpon>Form_Manager.cs</DependentUpon>

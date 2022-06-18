@@ -42,7 +42,6 @@ D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSa
 D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Find_Book.resources
 D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Forget_Password.resources
 D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Home.resources
-D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Leader.resources
 D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Manager.resources
 D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_QLNV.resources
 D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Properties.Resources.resources
@@ -53,3 +52,5 @@ D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSa
 D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Staff.resources
 D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Login.resources
 D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_SignUp.resources
+D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Bill.resources
+D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Pay.resources

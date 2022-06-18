@@ -19,7 +19,47 @@ namespace QuanLyNhaSach.BS_layer
         }
         public DataSet LayDuLieu()
         {
-            return db.ExecuteQueryDataSet("SELECT * FROM Borrow", CommandType.Text);
+            return db.ExecuteQueryDataSet("SELECT * FROM Muon", CommandType.Text);
+        }
+        public DataSet LayMaKhachHang()
+        {
+            return db.ExecuteQueryDataSet("Select MaKH From KhachHang", CommandType.Text);
+        }
+        public DataSet LayMaCuon()
+        {
+            return db.ExecuteQueryDataSet("Select MaCuon From CuonSach", CommandType.Text);
+        }
+        public bool MuonSach(string MaCuon, string MaKhachHang, string NgayMuon, string HanTra, string DangMuon, ref string err)
+        {
+            string sqlString = "Insert Into Muon Values('" +
+                MaCuon + "','" +
+                MaKhachHang + "','" +
+                NgayMuon + "',NULL,'" +
+                HanTra + "','0','" +
+                DangMuon + "')";
+            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+        public bool CapNhatTraSach(string MaCuon, string MaKhachHang, string NgayTra, string TienPhat, string DangMuon, ref string err)
+        {
+            string sqlString = "Update Muon Set NgayTra='" +
+                NgayTra + "',TienPhat='" + 
+                TienPhat + "',DangMuon='" +
+                DangMuon +
+                "'Where MaCuon='" +
+                MaCuon + "' and MaKH='" +
+                MaKhachHang + "'";
+            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+        public bool CapNhatMuonSach(string MaCuon, string MaKhachHang, string NgayMuon, string HanTra, string DangMuon, ref string err)
+        {
+            string sqlString = "Update Muon Set NgayMuon='" +
+                NgayMuon + "',NgayTra=NULL,HanTra='" +
+                HanTra + "',TienPhat=0,DangMuon='" +
+                DangMuon +
+                "'Where MaCuon='" +
+                MaCuon + "' and MaKH='" +
+                MaKhachHang + "'";
+            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }
 }

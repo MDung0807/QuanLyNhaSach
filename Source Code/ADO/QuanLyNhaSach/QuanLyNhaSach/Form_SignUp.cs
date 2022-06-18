@@ -117,5 +117,15 @@ namespace QuanLyNhaSach
                 this.txtConfirmPass.PasswordChar = '✽';
             }
         }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.txtPassword.PasswordChar = '✽';
+        }
+
+        private void txtConfirmPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.txtConfirmPass.PasswordChar = '✽';
+        }
     }
 }

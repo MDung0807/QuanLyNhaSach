@@ -84,5 +84,42 @@ namespace QuanLyNhaSach
         {
 
         }
+
+        private void Passinvisible1_Click(object sender, EventArgs e)
+        {
+            if (this.Passinvisible1.Visible == false)
+            {
+                this.Passvisible1.Visible = false;
+                this.Passinvisible1.Visible = true;
+                this.txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                this.Passvisible1.Visible = true;
+                this.Passinvisible1.Visible = false;
+                txtPassword.PasswordChar = '✽';
+            }
+        }
+
+        private void Passvisible1_Click(object sender, EventArgs e)
+        {
+            if (this.Passvisible1.Visible == true)
+            {
+                this.Passvisible1.Visible = false;
+                this.Passinvisible1.Visible = true;
+                this.txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                this.Passvisible1.Visible = true;
+                this.Passinvisible1.Visible = false;
+                txtPassword.PasswordChar = '✽';
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.txtPassword.PasswordChar = '✽';
+        }
     }
 }

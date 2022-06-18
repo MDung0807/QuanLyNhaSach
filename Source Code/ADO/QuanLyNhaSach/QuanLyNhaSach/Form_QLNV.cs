@@ -170,7 +170,8 @@ namespace QuanLyNhaSach
                 try
                 {
                     BLQLNV blQLNV = new BLQLNV();
-                    blQLNV.ThemNhanVien(this.txtStaffID.Text, this.txtFullName.Text, this.txtJob.Text, this.txtIncome.Text, this.txtAddress.Text, this.dtpDayOfBirth.Value.ToString(), this.cbSex.Checked.ToString(), this.txtPhone.Text, ref err);
+                    bool flag = false;
+                    blQLNV.ThemNhanVien(this.txtStaffID.Text, this.txtFullName.Text, this.txtJob.Text, this.txtIncome.Text, this.txtAddress.Text, this.dtpDayOfBirth.Value.ToString(), this.cbSex.Checked.ToString(), this.txtPhone.Text, flag.ToString(), ref err);
                     LoadData();
                     MessageBox.Show("Đã thêm xong!");
                 }
@@ -195,13 +196,14 @@ namespace QuanLyNhaSach
                 int r = dgvQLNV.CurrentCell.RowIndex;
 
                 string strQLNV = dgvQLNV.Rows[r].Cells[0].Value.ToString();
-
+                bool flag = true;
                 DialogResult traloi;
                 traloi = MessageBox.Show("Chắc xóa mẫu tin này không?", "Trả lời",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (traloi == DialogResult.Yes)
                 {
-                    dbQLNV.XoaNhanVien(ref err, strQLNV);
+                    dbQLNV.XoaNhanVien(ref err, strQLNV, flag.ToString());
+                    dbQLNV.XoaTaiKhoan(ref err, strQLNV, flag.ToString());
                     LoadData();
                     MessageBox.Show("Đã xóa xong!");
                 }
@@ -214,6 +216,42 @@ namespace QuanLyNhaSach
             {
                 MessageBox.Show("Không xóa được. Lỗi rồi!");
             }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BLQLNV blQLNV = new BLQLNV();
+                dtQLNV = new DataTable();
+                dtQLNV.Clear();
+
+                DataSet ds = blQLNV.TimKiemNhanVien(this.txtStaffID.Text, this.txtFullName.Text);
+                dtQLNV = ds.Tables[0];
+
+                dgvQLNV.DataSource = dtQLNV;
+                dgvQLNV.AutoResizeColumns();
+
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Không tìm thấy thông tin!");
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtStaffID.ResetText();
+            txtFullName.ResetText();
+            txtJob.ResetText();
+            txtIncome.ResetText();
+            txtAddress.ResetText();
+            txtPhone.ResetText();
         }
     }
 }

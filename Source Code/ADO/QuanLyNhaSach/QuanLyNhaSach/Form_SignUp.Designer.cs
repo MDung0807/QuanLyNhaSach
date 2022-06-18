@@ -140,6 +140,7 @@ namespace QuanLyNhaSach
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(343, 22);
             this.txtPassword.TabIndex = 64;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // txtUsername
             // 
@@ -156,6 +157,7 @@ namespace QuanLyNhaSach
             this.txtConfirmPass.Name = "txtConfirmPass";
             this.txtConfirmPass.Size = new System.Drawing.Size(343, 22);
             this.txtConfirmPass.TabIndex = 72;
+            this.txtConfirmPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfirmPass_KeyPress);
             // 
             // label4
             // 
@@ -324,7 +326,7 @@ namespace QuanLyNhaSach
             // Passvisible1
             // 
             this.Passvisible1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Passvisible1.Location = new System.Drawing.Point(866, 382);
+            this.Passvisible1.Location = new System.Drawing.Point(806, 382);
             this.Passvisible1.Name = "Passvisible1";
             this.Passvisible1.Size = new System.Drawing.Size(24, 20);
             this.Passvisible1.TabIndex = 90;
@@ -334,7 +336,7 @@ namespace QuanLyNhaSach
             // Passvisible2
             // 
             this.Passvisible2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Passvisible2.Location = new System.Drawing.Point(866, 425);
+            this.Passvisible2.Location = new System.Drawing.Point(806, 425);
             this.Passvisible2.Name = "Passvisible2";
             this.Passvisible2.Size = new System.Drawing.Size(24, 20);
             this.Passvisible2.TabIndex = 91;

@@ -19,21 +19,24 @@ namespace QuanLyNhaSach.BS_layer
         }
         public DataSet LayKhachHang()
         {
-            return db.ExecuteQueryDataSet("SELECT * FROM KhachHang", CommandType.Text);
+            return db.ExecuteQueryDataSet("SELECT MaKh, TenKH, DiaChi, NgaySinh, soDT FROM KhachHang Where FlagXoa='False'", CommandType.Text);
         }
-        public bool ThemKhachHang(string MaKhachHang, string HoTen, string DiaChi, string NgaySinh, string SoDienThoai, ref string err)
+        public bool ThemKhachHang(string MaKhachHang, string HoTen, string DiaChi, string NgaySinh, string SoDienThoai, string flag, ref string err)
         {
             string sqlString = "Insert Into KhachHang Values('" +
                             MaKhachHang + "',N'" +
                             HoTen + "',N'" +
                             DiaChi + "','" +
                             NgaySinh + "','" +
-                            SoDienThoai + "')";
+                            SoDienThoai + "','" +
+                            flag + "')";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
-        public bool XoaKhachHang(ref string err, string MaKhachHang)
+        public bool XoaKhachHang(ref string err, string MaKhachHang, string flag)
         {
-            string sqlString = "Delete From KhachHang Where MaKH='" +
+            string sqlString = "Update KhachHang Set FlagXoa='" +
+                        flag +
+                        "'Where MaKH='" +
                         MaKhachHang + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
@@ -47,6 +50,10 @@ namespace QuanLyNhaSach.BS_layer
                             "'Where MaKH='" +
                             MaKhachHang + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+        public DataSet TimKiemKhachHang(string MaKhachHang, string TenKhachHang)
+        {
+            return db.ExecuteQueryDataSet("SELECT * FROM KhachHang Where MaKH LIKE '%" + MaKhachHang + "%' and TenKH LIKE N'%" + TenKhachHang + "%'", CommandType.Text);
         }
     }
 }

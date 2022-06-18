@@ -45,7 +45,7 @@
             this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.soDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQLNV)).BeginInit();
             this.SuspendLayout();
@@ -160,6 +161,7 @@
             this.btnReload.TabIndex = 2;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // btnBack
             // 
@@ -247,11 +249,12 @@
             // GioiTinh
             // 
             this.GioiTinh.DataPropertyName = "GioiTinh";
-            this.GioiTinh.HeaderText = "Giới Tính";
+            this.GioiTinh.HeaderText = "Giới Tính(Nam)";
             this.GioiTinh.MinimumWidth = 6;
             this.GioiTinh.Name = "GioiTinh";
             this.GioiTinh.ReadOnly = true;
             this.GioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GioiTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // soDT
             // 
@@ -263,13 +266,14 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(661, 332);
+            this.btnSearch.Location = new System.Drawing.Point(795, 332);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 28);
             this.btnSearch.TabIndex = 33;
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label3
             // 
@@ -311,7 +315,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(795, 332);
+            this.btnDelete.Location = new System.Drawing.Point(931, 332);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 28);
@@ -354,6 +358,7 @@
             // 
             // dtpDayOfBirth
             // 
+            this.dtpDayOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDayOfBirth.Location = new System.Drawing.Point(687, 184);
             this.dtpDayOfBirth.Name = "dtpDayOfBirth";
             this.dtpDayOfBirth.Size = new System.Drawing.Size(200, 22);
@@ -419,11 +424,23 @@
             this.txtAddress.Size = new System.Drawing.Size(208, 22);
             this.txtAddress.TabIndex = 58;
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(646, 332);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(100, 28);
+            this.btnClear.TabIndex = 59;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // Form_QLNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -485,17 +502,18 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button btnCancle;
+        private System.Windows.Forms.TextBox txtJob;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn CongViec;
         private System.Windows.Forms.DataGridViewTextBoxColumn Luong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn soDT;
-        private System.Windows.Forms.TextBox txtJob;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Button btnClear;
     }
 }

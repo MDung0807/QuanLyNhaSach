@@ -40,7 +40,11 @@
             this.rbStaff = new System.Windows.Forms.RadioButton();
             this.rbManager = new System.Windows.Forms.RadioButton();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.Passinvisible1 = new System.Windows.Forms.PictureBox();
+            this.Passvisible1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Passinvisible1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Passvisible1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,6 +97,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(343, 22);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // label2
             // 
@@ -172,11 +177,33 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // Passinvisible1
+            // 
+            this.Passinvisible1.BackColor = System.Drawing.Color.Red;
+            this.Passinvisible1.Location = new System.Drawing.Point(823, 246);
+            this.Passinvisible1.Name = "Passinvisible1";
+            this.Passinvisible1.Size = new System.Drawing.Size(24, 20);
+            this.Passinvisible1.TabIndex = 93;
+            this.Passinvisible1.TabStop = false;
+            this.Passinvisible1.Click += new System.EventHandler(this.Passinvisible1_Click);
+            // 
+            // Passvisible1
+            // 
+            this.Passvisible1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Passvisible1.Location = new System.Drawing.Point(823, 246);
+            this.Passvisible1.Name = "Passvisible1";
+            this.Passvisible1.Size = new System.Drawing.Size(24, 20);
+            this.Passvisible1.TabIndex = 94;
+            this.Passvisible1.TabStop = false;
+            this.Passvisible1.Click += new System.EventHandler(this.Passvisible1_Click);
+            // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1085, 554);
+            this.Controls.Add(this.Passvisible1);
+            this.Controls.Add(this.Passinvisible1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.rbManager);
             this.Controls.Add(this.rbStaff);
@@ -193,6 +220,8 @@
             this.Load += new System.EventHandler(this.Form_Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Passinvisible1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Passvisible1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +241,7 @@
         private System.Windows.Forms.RadioButton rbStaff;
         private System.Windows.Forms.RadioButton rbManager;
         private System.Windows.Forms.Button btnLogin;
+        public System.Windows.Forms.PictureBox Passinvisible1;
+        public System.Windows.Forms.PictureBox Passvisible1;
     }
 }
