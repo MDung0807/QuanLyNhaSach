@@ -5,14 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="QLNhaSachModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Bill">
-          <Key>
-            <PropertyRef Name="MaKH" />
-            <PropertyRef Name="MaCuon" />
-          </Key>
-          <Property Name="MaKH" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="MaCuon" Type="char" MaxLength="10" Nullable="false" />
-        </EntityType>
         <EntityType Name="CuonSach">
           <Key>
             <PropertyRef Name="MaCuon" />
@@ -20,14 +12,14 @@
           <Property Name="Masach" Type="char" MaxLength="10" />
           <Property Name="MaCuon" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="ViTri" Type="char" MaxLength="10" />
-          <Property Name="Flag" Type="bit" Nullable="false" />
+          <Property Name="FlagXoa" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="DauSach">
           <Key>
             <PropertyRef Name="MaSach" />
           </Key>
           <Property Name="MaSach" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="TuaSach" Type="char" MaxLength="50" />
+          <Property Name="TuaSach" Type="nchar" MaxLength="50" />
           <Property Name="MaNXB" Type="char" MaxLength="10" />
           <Property Name="MaTG" Type="char" MaxLength="10" />
           <Property Name="GiaMua" Type="char" MaxLength="20" />
@@ -96,7 +88,7 @@
             <PropertyRef Name="MaTG" />
           </Key>
           <Property Name="MaTG" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="TenTacGia" Type="char" MaxLength="30" />
+          <Property Name="TenTacGia" Type="nchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="TaiKhoan">
           <Key>
@@ -108,30 +100,6 @@
           <Property Name="MatKhau" Type="char" MaxLength="20" />
           <Property Name="FlagXoa" Type="bit" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Bill__MaCuon__4222D4EF">
-          <End Role="CuonSach" Type="Self.CuonSach" Multiplicity="1" />
-          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CuonSach">
-              <PropertyRef Name="MaCuon" />
-            </Principal>
-            <Dependent Role="Bill">
-              <PropertyRef Name="MaCuon" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Bill__MaKH__412EB0B6">
-          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
-          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KhachHang">
-              <PropertyRef Name="MaKH" />
-            </Principal>
-            <Dependent Role="Bill">
-              <PropertyRef Name="MaKH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__CuonSach__Masach__2C3393D0">
           <End Role="DauSach" Type="Self.DauSach" Multiplicity="0..1" />
           <End Role="CuonSach" Type="Self.CuonSach" Multiplicity="*" />
@@ -192,7 +160,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Muon__MaCuon__3D5E1FD2">
+        <Association Name="FK__Muon__MaCuon__30F848ED">
           <End Role="CuonSach" Type="Self.CuonSach" Multiplicity="1" />
           <End Role="Muon" Type="Self.Muon" Multiplicity="*" />
           <ReferentialConstraint>
@@ -204,7 +172,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Muon__MaKH__3E52440B">
+        <Association Name="FK__Muon__MaKH__31EC6D26">
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
           <End Role="Muon" Type="Self.Muon" Multiplicity="*" />
           <ReferentialConstraint>
@@ -229,7 +197,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="QLNhaSachModelStoreContainer">
-          <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CuonSach" EntityType="Self.CuonSach" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DauSach" EntityType="Self.DauSach" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
@@ -239,14 +206,6 @@
           <EntitySet Name="NXB" EntityType="Self.NXB" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TacGia" EntityType="Self.TacGia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Bill__MaCuon__4222D4EF" Association="Self.FK__Bill__MaCuon__4222D4EF">
-            <End Role="CuonSach" EntitySet="CuonSach" />
-            <End Role="Bill" EntitySet="Bill" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Bill__MaKH__412EB0B6" Association="Self.FK__Bill__MaKH__412EB0B6">
-            <End Role="KhachHang" EntitySet="KhachHang" />
-            <End Role="Bill" EntitySet="Bill" />
-          </AssociationSet>
           <AssociationSet Name="FK__CuonSach__Masach__2C3393D0" Association="Self.FK__CuonSach__Masach__2C3393D0">
             <End Role="DauSach" EntitySet="DauSach" />
             <End Role="CuonSach" EntitySet="CuonSach" />
@@ -267,11 +226,11 @@
             <End Role="KhachHang" EntitySet="KhachHang" />
             <End Role="Mua" EntitySet="Mua" />
           </AssociationSet>
-          <AssociationSet Name="FK__Muon__MaCuon__3D5E1FD2" Association="Self.FK__Muon__MaCuon__3D5E1FD2">
+          <AssociationSet Name="FK__Muon__MaCuon__30F848ED" Association="Self.FK__Muon__MaCuon__30F848ED">
             <End Role="CuonSach" EntitySet="CuonSach" />
             <End Role="Muon" EntitySet="Muon" />
           </AssociationSet>
-          <AssociationSet Name="FK__Muon__MaKH__3E52440B" Association="Self.FK__Muon__MaKH__3E52440B">
+          <AssociationSet Name="FK__Muon__MaKH__31EC6D26" Association="Self.FK__Muon__MaKH__31EC6D26">
             <End Role="KhachHang" EntitySet="KhachHang" />
             <End Role="Muon" EntitySet="Muon" />
           </AssociationSet>
@@ -292,18 +251,17 @@
           <Property Name="Masach" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="MaCuon" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="ViTri" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="Flag" Type="Boolean" Nullable="false" />
+          <Property Name="FlagXoa" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="DauSach" Relationship="Self.FK__CuonSach__Masach__2C3393D0" FromRole="CuonSach" ToRole="DauSach" />
           <NavigationProperty Name="Muas" Relationship="Self.FK__Mua__MaCuon__34C8D9D1" FromRole="CuonSach" ToRole="Mua" />
-          <NavigationProperty Name="Muons" Relationship="Self.FK__Muon__MaCuon__3D5E1FD2" FromRole="CuonSach" ToRole="Muon" />
-          <NavigationProperty Name="KhachHangs" Relationship="Self.Bill" FromRole="CuonSach" ToRole="KhachHang" />
+          <NavigationProperty Name="Muons" Relationship="Self.FK__Muon__MaCuon__30F848ED" FromRole="CuonSach" ToRole="Muon" />
         </EntityType>
         <EntityType Name="DauSach">
           <Key>
             <PropertyRef Name="MaSach" />
           </Key>
           <Property Name="MaSach" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="TuaSach" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="TuaSach" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="MaNXB" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="MaTG" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="GiaMua" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
@@ -323,8 +281,7 @@
           <Property Name="soDT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="FlagXoa" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Muas" Relationship="Self.FK__Mua__MaKH__35BCFE0A" FromRole="KhachHang" ToRole="Mua" />
-          <NavigationProperty Name="Muons" Relationship="Self.FK__Muon__MaKH__3E52440B" FromRole="KhachHang" ToRole="Muon" />
-          <NavigationProperty Name="CuonSaches" Relationship="Self.Bill" FromRole="KhachHang" ToRole="CuonSach" />
+          <NavigationProperty Name="Muons" Relationship="Self.FK__Muon__MaKH__31EC6D26" FromRole="KhachHang" ToRole="Muon" />
         </EntityType>
         <EntityType Name="Mua">
           <Key>
@@ -351,8 +308,8 @@
           <Property Name="TienPhat" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="DangMuon" Type="Boolean" Nullable="false" />
           <Property Name="DaThanhToan" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="CuonSach" Relationship="Self.FK__Muon__MaCuon__3D5E1FD2" FromRole="Muon" ToRole="CuonSach" />
-          <NavigationProperty Name="KhachHang" Relationship="Self.FK__Muon__MaKH__3E52440B" FromRole="Muon" ToRole="KhachHang" />
+          <NavigationProperty Name="CuonSach" Relationship="Self.FK__Muon__MaCuon__30F848ED" FromRole="Muon" ToRole="CuonSach" />
+          <NavigationProperty Name="KhachHang" Relationship="Self.FK__Muon__MaKH__31EC6D26" FromRole="Muon" ToRole="KhachHang" />
         </EntityType>
         <EntityType Name="NhanVien">
           <Key>
@@ -384,7 +341,7 @@
             <PropertyRef Name="MaTG" />
           </Key>
           <Property Name="MaTG" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="TenTacGia" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="TenTacGia" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="DauSaches" Relationship="Self.FK__DauSach__MaTG__29572725" FromRole="TacGia" ToRole="DauSach" />
         </EntityType>
         <EntityType Name="TaiKhoan">
@@ -422,7 +379,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Muon__MaCuon__3D5E1FD2">
+        <Association Name="FK__Muon__MaCuon__30F848ED">
           <End Role="CuonSach" Type="Self.CuonSach" Multiplicity="1" />
           <End Role="Muon" Type="Self.Muon" Multiplicity="*" />
           <ReferentialConstraint>
@@ -470,7 +427,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Muon__MaKH__3E52440B">
+        <Association Name="FK__Muon__MaKH__31EC6D26">
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
           <End Role="Muon" Type="Self.Muon" Multiplicity="*" />
           <ReferentialConstraint>
@@ -494,10 +451,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Bill">
-          <End Role="CuonSach" Type="Self.CuonSach" Multiplicity="*" />
-          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
-        </Association>
         <EntityContainer Name="QLNhaSachEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CuonSaches" EntityType="Self.CuonSach" />
           <EntitySet Name="DauSaches" EntityType="Self.DauSach" />
@@ -516,7 +469,7 @@
             <End Role="CuonSach" EntitySet="CuonSaches" />
             <End Role="Mua" EntitySet="Muas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Muon__MaCuon__3D5E1FD2" Association="Self.FK__Muon__MaCuon__3D5E1FD2">
+          <AssociationSet Name="FK__Muon__MaCuon__30F848ED" Association="Self.FK__Muon__MaCuon__30F848ED">
             <End Role="CuonSach" EntitySet="CuonSaches" />
             <End Role="Muon" EntitySet="Muons" />
           </AssociationSet>
@@ -532,17 +485,13 @@
             <End Role="KhachHang" EntitySet="KhachHangs" />
             <End Role="Mua" EntitySet="Muas" />
           </AssociationSet>
-          <AssociationSet Name="FK__Muon__MaKH__3E52440B" Association="Self.FK__Muon__MaKH__3E52440B">
+          <AssociationSet Name="FK__Muon__MaKH__31EC6D26" Association="Self.FK__Muon__MaKH__31EC6D26">
             <End Role="KhachHang" EntitySet="KhachHangs" />
             <End Role="Muon" EntitySet="Muons" />
           </AssociationSet>
           <AssociationSet Name="FK__TaiKhoan__FlagXo__3A81B327" Association="Self.FK__TaiKhoan__FlagXo__3A81B327">
             <End Role="NhanVien" EntitySet="NhanViens" />
             <End Role="TaiKhoan" EntitySet="TaiKhoans" />
-          </AssociationSet>
-          <AssociationSet Name="Bill" Association="Self.Bill">
-            <End Role="CuonSach" EntitySet="CuonSaches" />
-            <End Role="KhachHang" EntitySet="KhachHangs" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -557,7 +506,7 @@
                 <ScalarProperty Name="Masach" ColumnName="Masach" />
                 <ScalarProperty Name="MaCuon" ColumnName="MaCuon" />
                 <ScalarProperty Name="ViTri" ColumnName="ViTri" />
-                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="FlagXoa" ColumnName="FlagXoa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -653,14 +602,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="Bill" TypeName="QLNhaSachModel.Bill" StoreEntitySet="Bill">
-            <EndProperty Name="CuonSach">
-              <ScalarProperty Name="MaCuon" ColumnName="MaCuon" />
-            </EndProperty>
-            <EndProperty Name="KhachHang">
-              <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

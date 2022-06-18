@@ -22,7 +22,7 @@ namespace QuanLyNhaSach.BS_Layer
                              Tua = p.DauSach.TuaSach,
                              TenNXB = p.DauSach.NXB.TenNXB,
                              ViTri = p.ViTri,
-                             Flag = p.Flag
+                             FlagXoa = p.FlagXoa
                          };
 
             DataTable dataTable = new DataTable();
@@ -34,7 +34,7 @@ namespace QuanLyNhaSach.BS_Layer
 
             foreach (var p in result)
             {
-                if (p.Flag == true)
+                if (p.FlagXoa == false)
                     dataTable.Rows.Add(p.MaSach, p.MaCuon, p.Tua, p.TenNXB, p.ViTri);
             }    
 
@@ -46,7 +46,7 @@ namespace QuanLyNhaSach.BS_Layer
             QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
 
             var result = from p in qlnsentity.CuonSaches
-                         where p.DauSach.TuaSach == TenSach
+                         where p.DauSach.TuaSach.Contains (TenSach)
                          select new
                          {
                              MaSach = p.Masach,
@@ -54,7 +54,7 @@ namespace QuanLyNhaSach.BS_Layer
                              Tua = p.DauSach.TuaSach,
                              TenNXB = p.DauSach.NXB.TenNXB,
                              ViTri = p.ViTri,
-                             Flag = p.Flag
+                             FlagXoa = p.FlagXoa
                          };
 
             DataTable dataTable = new DataTable();
@@ -66,7 +66,7 @@ namespace QuanLyNhaSach.BS_Layer
 
             foreach (var p in result)
             {
-                if (p.Flag == true)
+                if (p.FlagXoa == false)
                     dataTable.Rows.Add(p.MaSach, p.MaCuon, p.Tua, p.TenNXB, p.ViTri);
             }
 

@@ -84,7 +84,7 @@ namespace QuanLyNhaSach.BS_Layer
                            select p).SingleOrDefault();
 
 
-            result1.CuonSach.Flag = false;
+            result1.CuonSach.FlagXoa= true;
             
             qlnsentity.SaveChanges();
 
@@ -109,7 +109,7 @@ namespace QuanLyNhaSach.BS_Layer
             var result = (from p in qlnsentity.CuonSaches
                           where p.MaCuon == MaCuon
                           select p).SingleOrDefault();
-            if (result.Flag == false)
+            if (result.FlagXoa == true)
                 return true;
             return false;
         }

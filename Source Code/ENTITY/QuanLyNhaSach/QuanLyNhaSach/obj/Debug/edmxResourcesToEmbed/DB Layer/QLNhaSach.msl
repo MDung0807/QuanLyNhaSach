@@ -7,7 +7,7 @@
           <ScalarProperty Name="Masach" ColumnName="Masach" />
           <ScalarProperty Name="MaCuon" ColumnName="MaCuon" />
           <ScalarProperty Name="ViTri" ColumnName="ViTri" />
-          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="FlagXoa" ColumnName="FlagXoa" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -103,13 +103,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="Bill" TypeName="QLNhaSachModel.Bill" StoreEntitySet="Bill">
-      <EndProperty Name="CuonSach">
-        <ScalarProperty Name="MaCuon" ColumnName="MaCuon" />
-      </EndProperty>
-      <EndProperty Name="KhachHang">
-        <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

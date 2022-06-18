@@ -78,7 +78,7 @@ namespace QuanLyNhaSach.BS_Layer
             QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
 
             var result_dau_sach = from p in qlnsentity.CuonSaches
-                                  where p.Flag == true
+                                  where p.FlagXoa == false
                                   group p by p.DauSach into s
                                   select new
                                   {

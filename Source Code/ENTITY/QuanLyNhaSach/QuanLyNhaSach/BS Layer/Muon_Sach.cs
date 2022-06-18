@@ -118,12 +118,12 @@ namespace QuanLyNhaSach.BS_Layer
 
             if (option == "Muon")
             { 
-                result.CuonSach.Flag = false; 
+                result.CuonSach.FlagXoa = true; 
             }
 
             else if (option == "Tra")
             {
-                result.CuonSach.Flag = true;
+                result.CuonSach.FlagXoa = false;
             }
 
             qlnsentity.SaveChanges();
@@ -148,7 +148,7 @@ namespace QuanLyNhaSach.BS_Layer
             var result = (from p in qlnsentity.CuonSaches
                           where p.MaCuon == MaCuon
                           select p).SingleOrDefault();
-            if (result.Flag == false)
+            if (result.FlagXoa == true)
                 return true;
             return false;
         }

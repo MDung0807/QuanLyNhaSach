@@ -19,20 +19,17 @@ namespace QuanLyNhaSach.DB_Layer
         {
             this.Muas = new HashSet<Mua>();
             this.Muons = new HashSet<Muon>();
-            this.KhachHangs = new HashSet<KhachHang>();
         }
     
         public string Masach { get; set; }
         public string MaCuon { get; set; }
         public string ViTri { get; set; }
-        public bool Flag { get; set; }
+        public bool FlagXoa { get; set; }
     
         public virtual DauSach DauSach { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Mua> Muas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Muon> Muons { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KhachHang> KhachHangs { get; set; }
     }
 }

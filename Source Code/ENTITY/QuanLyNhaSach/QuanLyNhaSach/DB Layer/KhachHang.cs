@@ -19,7 +19,6 @@ namespace QuanLyNhaSach.DB_Layer
         {
             this.Muas = new HashSet<Mua>();
             this.Muons = new HashSet<Muon>();
-            this.CuonSaches = new HashSet<CuonSach>();
         }
     
         public string MaKH { get; set; }
@@ -33,7 +32,5 @@ namespace QuanLyNhaSach.DB_Layer
         public virtual ICollection<Mua> Muas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Muon> Muons { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CuonSach> CuonSaches { get; set; }
     }
 }
