@@ -51,11 +51,11 @@
             this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(407, 16);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(564, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(266, 29);
+            this.label1.Size = new System.Drawing.Size(356, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tìm kiếm thông tin sách";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -78,16 +78,17 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1297, 73);
+            this.panel1.Size = new System.Drawing.Size(1523, 83);
             this.panel1.TabIndex = 2;
             // 
             // btn_Back
             // 
             this.btn_Back.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Back.Location = new System.Drawing.Point(951, 20);
+            this.btn_Back.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Back.Location = new System.Drawing.Point(170, 23);
             this.btn_Back.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(100, 28);
+            this.btn_Back.Size = new System.Drawing.Size(119, 40);
             this.btn_Back.TabIndex = 1;
             this.btn_Back.Text = "Back";
             this.btn_Back.UseVisualStyleBackColor = false;
@@ -104,14 +105,14 @@
             this.MaTG,
             this.GiaMua,
             this.GiaMuon});
-            this.dgvFINDBOOK.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvFINDBOOK.Location = new System.Drawing.Point(0, 361);
+            this.dgvFINDBOOK.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dgvFINDBOOK.Location = new System.Drawing.Point(361, 83);
             this.dgvFINDBOOK.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFINDBOOK.Name = "dgvFINDBOOK";
             this.dgvFINDBOOK.ReadOnly = true;
             this.dgvFINDBOOK.RowHeadersWidth = 51;
             this.dgvFINDBOOK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFINDBOOK.Size = new System.Drawing.Size(1297, 249);
+            this.dgvFINDBOOK.Size = new System.Drawing.Size(1162, 659);
             this.dgvFINDBOOK.TabIndex = 3;
             // 
             // MaSach
@@ -164,10 +165,10 @@
             // 
             // txtBookName
             // 
-            this.txtBookName.Location = new System.Drawing.Point(554, 146);
+            this.txtBookName.Location = new System.Drawing.Point(31, 291);
             this.txtBookName.Margin = new System.Windows.Forms.Padding(4);
             this.txtBookName.Name = "txtBookName";
-            this.txtBookName.Size = new System.Drawing.Size(290, 22);
+            this.txtBookName.Size = new System.Drawing.Size(291, 22);
             this.txtBookName.TabIndex = 4;
             // 
             // label3
@@ -175,11 +176,11 @@
             this.label3.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(347, 146);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(114, 239);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 29);
+            this.label3.Size = new System.Drawing.Size(126, 32);
             this.label3.TabIndex = 1;
             this.label3.Text = "Tên Sách";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -187,10 +188,11 @@
             // btnFind
             // 
             this.btnFind.BackColor = System.Drawing.Color.Transparent;
-            this.btnFind.Location = new System.Drawing.Point(554, 253);
+            this.btnFind.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.Location = new System.Drawing.Point(120, 468);
             this.btnFind.Margin = new System.Windows.Forms.Padding(4);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(100, 28);
+            this.btnFind.Size = new System.Drawing.Size(119, 40);
             this.btnFind.TabIndex = 2;
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = false;
@@ -200,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1297, 610);
+            this.ClientSize = new System.Drawing.Size(1523, 742);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtBookName);
@@ -209,6 +211,7 @@
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Find_Book";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Guest";
             this.Load += new System.EventHandler(this.Form_Find_Book_Load);
             this.panel1.ResumeLayout(false);

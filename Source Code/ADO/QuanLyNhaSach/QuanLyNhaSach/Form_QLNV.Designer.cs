@@ -143,7 +143,7 @@
             this.label1.Location = new System.Drawing.Point(564, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 38);
+            this.label1.Size = new System.Drawing.Size(323, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Danh Sách Nhân Viên";
             // 
@@ -552,6 +552,7 @@
             this.Controls.Add(this.txtFullName);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_QLNV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Nhân Viên";
             this.Load += new System.EventHandler(this.Form_QLNV_Load);
             this.panel1.ResumeLayout(false);

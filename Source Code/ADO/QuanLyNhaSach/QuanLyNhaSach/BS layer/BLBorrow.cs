@@ -23,11 +23,11 @@ namespace QuanLyNhaSach.BS_layer
         }
         public DataSet LayMaKhachHang()
         {
-            return db.ExecuteQueryDataSet("Select MaKH From KhachHang", CommandType.Text);
+            return db.ExecuteQueryDataSet("Select MaKH From KhachHang where FlagXoa='False'", CommandType.Text);
         }
         public DataSet LayMaCuon()
         {
-            return db.ExecuteQueryDataSet("Select MaCuon From CuonSach", CommandType.Text);
+            return db.ExecuteQueryDataSet("Select MaCuon From CuonSach where FlagXoa='False'", CommandType.Text);
         }
         public bool MuonSach(string MaCuon, string MaKhachHang, string NgayMuon, string HanTra, string DangMuon, ref string err)
         {
@@ -36,7 +36,7 @@ namespace QuanLyNhaSach.BS_layer
                 MaKhachHang + "','" +
                 NgayMuon + "',NULL,'" +
                 HanTra + "','0','" +
-                DangMuon + "')";
+                DangMuon + "', 'False')";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public bool CapNhatTraSach(string MaCuon, string MaKhachHang, string NgayTra, string TienPhat, string DangMuon, ref string err)
@@ -45,7 +45,7 @@ namespace QuanLyNhaSach.BS_layer
                 NgayTra + "',TienPhat='" + 
                 TienPhat + "',DangMuon='" +
                 DangMuon +
-                "'Where MaCuon='" +
+                "', DaThanhToan='True' Where MaCuon='" +
                 MaCuon + "' and MaKH='" +
                 MaKhachHang + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
@@ -56,9 +56,17 @@ namespace QuanLyNhaSach.BS_layer
                 NgayMuon + "',NgayTra=NULL,HanTra='" +
                 HanTra + "',TienPhat=0,DangMuon='" +
                 DangMuon +
-                "'Where MaCuon='" +
+                "', DaThanhToan='False' Where MaCuon='" +
                 MaCuon + "' and MaKH='" +
                 MaKhachHang + "'";
+            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+        public bool CapNhatCuonSach(string MaCuon, string flag, ref string err)
+        {
+            string sqlString = "Update CuonSach Set FlagXoa='" +
+                flag +
+                "'Where MaCuon='" +
+                MaCuon + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }

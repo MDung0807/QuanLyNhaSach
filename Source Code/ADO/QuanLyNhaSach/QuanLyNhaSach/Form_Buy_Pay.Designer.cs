@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyNhaSach
 {
-    partial class Form_Pay
+    partial class Form_Buy_Pay
     {
         /// <summary>
         /// Required designer variable.
@@ -50,10 +50,11 @@ namespace QuanLyNhaSach
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(919, 77);
+            this.btnReload.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReload.Location = new System.Drawing.Point(1187, 19);
             this.btnReload.Margin = new System.Windows.Forms.Padding(4);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(100, 28);
+            this.btnReload.Size = new System.Drawing.Size(119, 40);
             this.btnReload.TabIndex = 18;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
@@ -61,10 +62,11 @@ namespace QuanLyNhaSach
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(366, 278);
+            this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(169, 448);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 28);
+            this.btnSearch.Size = new System.Drawing.Size(119, 40);
             this.btnSearch.TabIndex = 24;
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -72,10 +74,11 @@ namespace QuanLyNhaSach
             // 
             // btnOutputBill
             // 
-            this.btnOutputBill.Location = new System.Drawing.Point(581, 278);
+            this.btnOutputBill.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOutputBill.Location = new System.Drawing.Point(134, 543);
             this.btnOutputBill.Margin = new System.Windows.Forms.Padding(4);
             this.btnOutputBill.Name = "btnOutputBill";
-            this.btnOutputBill.Size = new System.Drawing.Size(160, 28);
+            this.btnOutputBill.Size = new System.Drawing.Size(154, 40);
             this.btnOutputBill.TabIndex = 23;
             this.btnOutputBill.Text = "Xuất Hóa Đơn";
             this.btnOutputBill.UseVisualStyleBackColor = true;
@@ -83,10 +86,11 @@ namespace QuanLyNhaSach
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(919, 15);
+            this.btnBack.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(169, 19);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 28);
+            this.btnBack.Size = new System.Drawing.Size(119, 40);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -95,30 +99,30 @@ namespace QuanLyNhaSach
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(401, 41);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(603, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 39);
+            this.label1.Size = new System.Drawing.Size(260, 37);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Thanh Toán";
+            this.label1.Text = "Thanh Toán Mua";
             // 
             // cmbCustomerID
             // 
             this.cmbCustomerID.FormattingEnabled = true;
-            this.cmbCustomerID.Location = new System.Drawing.Point(366, 144);
+            this.cmbCustomerID.Location = new System.Drawing.Point(169, 147);
             this.cmbCustomerID.Name = "cmbCustomerID";
-            this.cmbCustomerID.Size = new System.Drawing.Size(200, 24);
+            this.cmbCustomerID.Size = new System.Drawing.Size(174, 24);
             this.cmbCustomerID.TabIndex = 26;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(199, 144);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 148);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 20);
+            this.label2.Size = new System.Drawing.Size(146, 23);
             this.label2.TabIndex = 21;
             this.label2.Text = "Mã Khách Hàng";
             // 
@@ -131,14 +135,14 @@ namespace QuanLyNhaSach
             this.NgayMua,
             this.SoLuong,
             this.ThanhTien});
-            this.dgvPAY.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvPAY.Location = new System.Drawing.Point(0, 344);
+            this.dgvPAY.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dgvPAY.Location = new System.Drawing.Point(377, 83);
             this.dgvPAY.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPAY.Name = "dgvPAY";
             this.dgvPAY.ReadOnly = true;
             this.dgvPAY.RowHeadersWidth = 51;
             this.dgvPAY.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPAY.Size = new System.Drawing.Size(1067, 210);
+            this.dgvPAY.Size = new System.Drawing.Size(1146, 659);
             this.dgvPAY.TabIndex = 20;
             this.dgvPAY.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPAY_CellClick);
             // 
@@ -184,34 +188,34 @@ namespace QuanLyNhaSach
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1067, 123);
+            this.panel1.Size = new System.Drawing.Size(1523, 83);
             this.panel1.TabIndex = 19;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(244, 198);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(58, 244);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 20);
+            this.label4.Size = new System.Drawing.Size(97, 23);
             this.label4.TabIndex = 27;
             this.label4.Text = "Ngày Mua";
             // 
             // dtpDayOfBuy
             // 
             this.dtpDayOfBuy.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDayOfBuy.Location = new System.Drawing.Point(366, 196);
+            this.dtpDayOfBuy.Location = new System.Drawing.Point(169, 245);
             this.dtpDayOfBuy.Name = "dtpDayOfBuy";
-            this.dtpDayOfBuy.Size = new System.Drawing.Size(200, 22);
+            this.dtpDayOfBuy.Size = new System.Drawing.Size(174, 22);
             this.dtpDayOfBuy.TabIndex = 28;
             this.dtpDayOfBuy.Value = new System.DateTime(2022, 6, 18, 0, 0, 0, 0);
             // 
-            // Form_Pay
+            // Form_Buy_Pay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1523, 742);
             this.Controls.Add(this.dtpDayOfBuy);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSearch);
@@ -220,7 +224,8 @@ namespace QuanLyNhaSach
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvPAY);
             this.Controls.Add(this.panel1);
-            this.Name = "Form_Pay";
+            this.Name = "Form_Buy_Pay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Pay";
             this.Load += new System.EventHandler(this.Form_Pay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPAY)).EndInit();

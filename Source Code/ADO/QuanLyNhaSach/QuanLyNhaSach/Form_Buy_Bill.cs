@@ -13,19 +13,19 @@ using QuanLyNhaSach.BS_layer;
 
 namespace QuanLyNhaSach
 {
-    public partial class Form_Bill : Form
+    public partial class Form_Buy_Bill : Form
     {
-        public Form_Bill()
+        public Form_Buy_Bill()
         {
             InitializeComponent();
         }
 
         private void Form_Bill_Load(object sender, EventArgs e)
         {
-            this.txtCustomerID.Text = Form_Pay.maKH;
-            this.txtDayOfBuy.Text = Form_Pay.ngaymua;
-            this.txtQuantity.Text = Form_Pay.soluong;
-            this.txtTotalPrice.Text = Form_Pay.thanhtien;
+            this.txtCustomerID.Text = Form_Buy_Pay.maKH;
+            this.txtDayOfBuy.Text = Form_Buy_Pay.ngaymua;
+            this.txtQuantity.Text = Form_Buy_Pay.soluong;
+            this.txtTotalPrice.Text = Form_Buy_Pay.thanhtien;
         }
 
         private void btnBack_Click(object sender, EventArgs e)

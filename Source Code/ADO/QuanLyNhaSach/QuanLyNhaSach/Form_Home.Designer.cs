@@ -39,13 +39,13 @@
             // 
             this.Home_title.AutoSize = true;
             this.Home_title.BackColor = System.Drawing.Color.Transparent;
-            this.Home_title.Font = new System.Drawing.Font("Maiandra GD", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Home_title.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Home_title.ForeColor = System.Drawing.Color.White;
             this.Home_title.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Home_title.Location = new System.Drawing.Point(396, 11);
+            this.Home_title.Location = new System.Drawing.Point(429, 10);
             this.Home_title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Home_title.Name = "Home_title";
-            this.Home_title.Size = new System.Drawing.Size(533, 60);
+            this.Home_title.Size = new System.Drawing.Size(485, 55);
             this.Home_title.TabIndex = 1;
             this.Home_title.Text = "Nhà Sách Thành Công";
             this.Home_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -54,24 +54,24 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1100, 574);
+            this.label1.Location = new System.Drawing.Point(1107, 573);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 20);
+            this.label1.Size = new System.Drawing.Size(188, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "Địa chỉ: 01 Võ Văn Ngân";
             // 
             // btn_close
             // 
             this.btn_close.BackColor = System.Drawing.Color.Transparent;
-            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_close.ForeColor = System.Drawing.Color.DarkRed;
-            this.btn_close.Location = new System.Drawing.Point(1191, 25);
+            this.btn_close.Location = new System.Drawing.Point(1111, 25);
             this.btn_close.Margin = new System.Windows.Forms.Padding(4);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(100, 46);
+            this.btn_close.Size = new System.Drawing.Size(119, 40);
             this.btn_close.TabIndex = 3;
             this.btn_close.Text = "Close";
             this.btn_close.UseVisualStyleBackColor = false;
@@ -80,12 +80,12 @@
             // btn_Guest
             // 
             this.btn_Guest.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Guest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Guest.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Guest.ForeColor = System.Drawing.Color.DarkRed;
-            this.btn_Guest.Location = new System.Drawing.Point(384, 464);
+            this.btn_Guest.Location = new System.Drawing.Point(439, 515);
             this.btn_Guest.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Guest.Name = "btn_Guest";
-            this.btn_Guest.Size = new System.Drawing.Size(100, 46);
+            this.btn_Guest.Size = new System.Drawing.Size(119, 40);
             this.btn_Guest.TabIndex = 4;
             this.btn_Guest.Text = "Khách";
             this.btn_Guest.UseVisualStyleBackColor = false;
@@ -94,12 +94,12 @@
             // btn_Internal
             // 
             this.btn_Internal.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Internal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Internal.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Internal.ForeColor = System.Drawing.Color.DarkRed;
-            this.btn_Internal.Location = new System.Drawing.Point(757, 464);
+            this.btn_Internal.Location = new System.Drawing.Point(778, 515);
             this.btn_Internal.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Internal.Name = "btn_Internal";
-            this.btn_Internal.Size = new System.Drawing.Size(172, 46);
+            this.btn_Internal.Size = new System.Drawing.Size(119, 40);
             this.btn_Internal.TabIndex = 5;
             this.btn_Internal.Text = "Đăng Nhập";
             this.btn_Internal.UseVisualStyleBackColor = false;
@@ -119,7 +119,7 @@
             this.Controls.Add(this.Home_title);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Home";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Form_Home_Load);
             this.ResumeLayout(false);

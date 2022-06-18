@@ -13,7 +13,7 @@ using QuanLyNhaSach.BS_layer;
 
 namespace QuanLyNhaSach
 {
-    public partial class Form_Pay : Form
+    public partial class Form_Buy_Pay : Form
     {
         DataTable dtPay = null;
 
@@ -22,8 +22,8 @@ namespace QuanLyNhaSach
         public static string soluong { get; set; }
         public static string thanhtien { get; set; }
 
-        BLPay dbPay = new BLPay();
-        public Form_Pay()
+        BLBuyPay dbPay = new BLBuyPay();
+        public Form_Buy_Pay()
         {
             InitializeComponent();
         }
@@ -82,7 +82,7 @@ namespace QuanLyNhaSach
         {
             try
             {
-                BLPay blPay = new BLPay();
+                BLBuyPay blPay = new BLBuyPay();
                 dtPay = new DataTable();
                 dtPay.Clear();
 
@@ -109,7 +109,7 @@ namespace QuanLyNhaSach
             soluong = dgvPAY.Rows[r].Cells[2].Value.ToString();
             thanhtien = dgvPAY.Rows[r].Cells[3].Value.ToString();
 
-            Form form = new Form_Bill();
+            Form form = new Form_Buy_Bill();
             form.ShowDialog();
         }
 

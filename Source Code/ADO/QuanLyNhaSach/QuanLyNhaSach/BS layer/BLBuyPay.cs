@@ -10,10 +10,10 @@ using QuanLyNhaSach.DB_layer;
 
 namespace QuanLyNhaSach.BS_layer
 {
-    class BLPay
+    class BLBuyPay
     {
         DBMain db = null;
-        public BLPay()
+        public BLBuyPay()
         {
             db = new DBMain();
         }

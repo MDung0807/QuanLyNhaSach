@@ -79,13 +79,6 @@ namespace QuanLyNhaSach
                 txtUsername.Focus();
             }
         }
-
-        private void btnSignUp_Click(object sender, EventArgs e)
-        {
-            Form form = new Form_SignUp();
-            form.ShowDialog();
-        }
-
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             this.txtPassword.PasswordChar = '✽';

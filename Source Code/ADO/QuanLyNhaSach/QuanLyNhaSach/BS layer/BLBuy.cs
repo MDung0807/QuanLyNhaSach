@@ -23,7 +23,7 @@ namespace QuanLyNhaSach.BS_layer
         }
         public DataSet LayMaCuon()
         {
-            return db.ExecuteQueryDataSet("Select MaCuon From CuonSach Where Flag='False'", CommandType.Text);
+            return db.ExecuteQueryDataSet("Select MaCuon From CuonSach Where FlagXoa='False'", CommandType.Text);
         }
         public DataSet LayMaKhachHang()
         {
@@ -40,7 +40,7 @@ namespace QuanLyNhaSach.BS_layer
         }
         public bool CapNhatCuonSach(string MaCuon, string flag, ref string err)
         {
-            string sqlString = "Update CuonSach Set Flag='" +
+            string sqlString = "Update CuonSach Set FlagXoa='" +
                 flag +
                 "'Where MaCuon='" +
                 MaCuon + "'";

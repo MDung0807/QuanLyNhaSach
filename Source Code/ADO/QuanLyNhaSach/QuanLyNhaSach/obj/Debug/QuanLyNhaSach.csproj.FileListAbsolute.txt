@@ -51,6 +51,7 @@ D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSa
 D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
 D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Staff.resources
 D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Login.resources
-D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_SignUp.resources
-D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Bill.resources
-D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Pay.resources
+D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Borrow_Pay.resources
+D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Buy_Pay.resources
+D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Buy_Bill.resources
+D:\ChuongTrinhHoc\LapTrinhTrenWindow\Final\QuanLyNhaSach\Source Code\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form_Borrow_Bill.resources

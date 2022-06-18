@@ -54,7 +54,18 @@ namespace QuanLyNhaSach
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            Form form = new Form_Pay();
+            Form form = new Form_Buy_Pay();
+            form.ShowDialog();
+        }
+
+        private void Form_Staff_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBorrowPay_Click(object sender, EventArgs e)
+        {
+            Form form = new Form_Borrow_Pay();
             form.ShowDialog();
         }
     }

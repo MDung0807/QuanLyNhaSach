@@ -38,6 +38,7 @@
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnReload = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancle = new System.Windows.Forms.Button();
             this.btnCLear = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -160,6 +160,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1523, 83);
             this.panel1.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(564, 15);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(354, 37);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Danh Sách Khách Hàng";
             // 
             // btnReload
             // 
@@ -281,17 +292,6 @@
             this.btnCLear.UseVisualStyleBackColor = true;
             this.btnCLear.Click += new System.EventHandler(this.btnCLear_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(564, 15);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(369, 38);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Danh Sách Khách Hàng";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -373,6 +373,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Customer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Khách Hàng";
             this.Load += new System.EventHandler(this.Form_Customer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCUSTOMER)).EndInit();

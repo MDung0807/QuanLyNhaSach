@@ -46,28 +46,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BS layer\BLBill.cs" />
+    <Compile Include="BS layer\BLBuyBill.cs" />
     <Compile Include="BS layer\BLBorrow.cs" />
+    <Compile Include="BS layer\BLBorrowPay.cs" />
     <Compile Include="BS layer\BLBuy.cs" />
     <Compile Include="BS layer\BLCustomer.cs" />
     <Compile Include="BS layer\BLFindBook.cs" />
     <Compile Include="BS layer\BLForgetPassword.cs" />
     <Compile Include="BS layer\BLLogin.cs" />
-    <Compile Include="BS layer\BLPay.cs" />
+    <Compile Include="BS layer\BLBuyPay.cs" />
     <Compile Include="BS layer\BLQLNV.cs" />
-    <Compile Include="BS layer\BLSignUp.cs" />
     <Compile Include="DB layer\DBMain.cs" />
-    <Compile Include="Form_Bill.cs">
+    <Compile Include="Form_Borrow_Bill.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Bill.Designer.cs">
-      <DependentUpon>Form_Bill.cs</DependentUpon>
+    <Compile Include="Form_Borrow_Bill.Designer.cs">
+      <DependentUpon>Form_Borrow_Bill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Buy_Bill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Buy_Bill.Designer.cs">
+      <DependentUpon>Form_Buy_Bill.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Borrow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Borrow.Designer.cs">
       <DependentUpon>Form_Borrow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Borrow_Pay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Borrow_Pay.Designer.cs">
+      <DependentUpon>Form_Borrow_Pay.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Buy.cs">
       <SubType>Form</SubType>
@@ -81,17 +93,11 @@
     <Compile Include="Form_Customer.Designer.cs">
       <DependentUpon>Form_Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Pay.cs">
+    <Compile Include="Form_Buy_Pay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Pay.Designer.cs">
-      <DependentUpon>Form_Pay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_SignUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_SignUp.Designer.cs">
-      <DependentUpon>Form_SignUp.cs</DependentUpon>
+    <Compile Include="Form_Buy_Pay.Designer.cs">
+      <DependentUpon>Form_Buy_Pay.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Staff.cs">
       <SubType>Form</SubType>
@@ -137,11 +143,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_Bill.resx">
-      <DependentUpon>Form_Bill.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Borrow_Bill.resx">
+      <DependentUpon>Form_Borrow_Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Buy_Bill.resx">
+      <DependentUpon>Form_Buy_Bill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Borrow.resx">
       <DependentUpon>Form_Borrow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Borrow_Pay.resx">
+      <DependentUpon>Form_Borrow_Pay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Buy.resx">
       <DependentUpon>Form_Buy.cs</DependentUpon>
@@ -149,11 +161,8 @@
     <EmbeddedResource Include="Form_Customer.resx">
       <DependentUpon>Form_Customer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Pay.resx">
-      <DependentUpon>Form_Pay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_SignUp.resx">
-      <DependentUpon>Form_SignUp.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Buy_Pay.resx">
+      <DependentUpon>Form_Buy_Pay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Staff.resx">
       <DependentUpon>Form_Staff.cs</DependentUpon>

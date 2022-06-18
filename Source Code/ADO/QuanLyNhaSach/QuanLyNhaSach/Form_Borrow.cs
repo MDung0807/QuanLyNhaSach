@@ -89,6 +89,11 @@ namespace QuanLyNhaSach
 
         private void btnBorrow_Click(object sender, EventArgs e)
         {
+            if (this.cmbBookID.SelectedValue == null)
+            {
+                MessageBox.Show("Đang có người mượn!");
+                return;
+            }    
             try
             {
                 BLBorrow blBr = new BLBorrow();
@@ -102,6 +107,7 @@ namespace QuanLyNhaSach
                     (bool)dgvBORROW.Rows[r].Cells[6].Value == false)
                 {
                     blBr.CapNhatMuonSach(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString(), ngaymuon.ToString(), hantra.ToString(), DangMuon.ToString(), ref err);
+                    blBr.CapNhatCuonSach(this.cmbBookID.SelectedValue.ToString(), DangMuon.ToString(), ref err);
                     LoadData();
                     MessageBox.Show("Đã mượn xong!");
                 }
@@ -115,6 +121,7 @@ namespace QuanLyNhaSach
                 else
                 {
                     blBr.MuonSach(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString(), ngaymuon.ToString(), hantra.ToString(), DangMuon.ToString(), ref err);
+                    blBr.CapNhatCuonSach(this.cmbBookID.SelectedValue.ToString(), DangMuon.ToString(), ref err);
                     LoadData();
                     MessageBox.Show("Đã mượn xong!");
                 }
@@ -137,14 +144,18 @@ namespace QuanLyNhaSach
                 int tienphat = 0;
                 DateTime hantra = (DateTime)dgvBORROW.Rows[r].Cells[4].Value;
                 double day = ngaytra.Subtract(hantra).TotalDays;
+                if (this.cmbBookID.SelectedValue == null && (bool)dgvBORROW.Rows[r].Cells[6].Value == true)
+                {
+                    MessageBox.Show("Không thực hiện được!");
+                    return;
+                }    
                 if (day > 0)
                 {
                     tienphat = (int)day*5000;
                 }    
-
-                //dgvBORROW.Rows.Remove(dgvBORROW.Rows[r]);
                 
                 blBr.CapNhatTraSach(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString(), ngaytra.ToString(), tienphat.ToString(), DangMuon.ToString(), ref err);
+                blBr.CapNhatCuonSach(this.cmbBookID.SelectedValue.ToString(), DangMuon.ToString(), ref err);
                 LoadData();
                 MessageBox.Show("Đã trả xong!");
             }

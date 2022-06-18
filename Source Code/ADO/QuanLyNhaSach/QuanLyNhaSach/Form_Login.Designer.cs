@@ -30,7 +30,6 @@
         {
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnSignUp = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.ptbPassvisible1 = new System.Windows.Forms.PictureBox();
             this.ptbPassinvisible1 = new System.Windows.Forms.PictureBox();
@@ -76,22 +75,6 @@
             this.txtPassword.Text = "Password";
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
-            // btnSignUp
-            // 
-            this.btnSignUp.BackgroundImage = global::QuanLyNhaSach.Properties.Resources.backcolorlogin;
-            this.btnSignUp.FlatAppearance.BorderSize = 0;
-            this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignUp.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignUp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSignUp.Location = new System.Drawing.Point(380, 516);
-            this.btnSignUp.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(177, 48);
-            this.btnSignUp.TabIndex = 9;
-            this.btnSignUp.Text = "Đăng Ký";
-            this.btnSignUp.UseVisualStyleBackColor = true;
-            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
-            // 
             // pictureBox6
             // 
             this.pictureBox6.BackgroundImage = global::QuanLyNhaSach.Properties.Resources.backcolorlogin;
@@ -107,9 +90,9 @@
             // 
             this.ptbPassvisible1.BackgroundImage = global::QuanLyNhaSach.Properties.Resources.backcolorlogin;
             this.ptbPassvisible1.Image = global::QuanLyNhaSach.Properties.Resources.icons8_eye_64;
-            this.ptbPassvisible1.Location = new System.Drawing.Point(646, 305);
+            this.ptbPassvisible1.Location = new System.Drawing.Point(576, 289);
             this.ptbPassvisible1.Name = "ptbPassvisible1";
-            this.ptbPassvisible1.Size = new System.Drawing.Size(43, 30);
+            this.ptbPassvisible1.Size = new System.Drawing.Size(43, 45);
             this.ptbPassvisible1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbPassvisible1.TabIndex = 100;
             this.ptbPassvisible1.TabStop = false;
@@ -119,9 +102,9 @@
             // 
             this.ptbPassinvisible1.BackgroundImage = global::QuanLyNhaSach.Properties.Resources.backcolorlogin;
             this.ptbPassinvisible1.Image = global::QuanLyNhaSach.Properties.Resources.icons8_invisible_64;
-            this.ptbPassinvisible1.Location = new System.Drawing.Point(646, 304);
+            this.ptbPassinvisible1.Location = new System.Drawing.Point(576, 289);
             this.ptbPassinvisible1.Name = "ptbPassinvisible1";
-            this.ptbPassinvisible1.Size = new System.Drawing.Size(43, 30);
+            this.ptbPassinvisible1.Size = new System.Drawing.Size(43, 46);
             this.ptbPassinvisible1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbPassinvisible1.TabIndex = 99;
             this.ptbPassinvisible1.TabStop = false;
@@ -216,7 +199,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(380, 420);
+            this.btnLogin.Location = new System.Drawing.Point(380, 446);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(177, 48);
@@ -232,7 +215,7 @@
             this.btnForgetPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnForgetPass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgetPass.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnForgetPass.Location = new System.Drawing.Point(380, 573);
+            this.btnForgetPass.Location = new System.Drawing.Point(380, 545);
             this.btnForgetPass.Margin = new System.Windows.Forms.Padding(4);
             this.btnForgetPass.Name = "btnForgetPass";
             this.btnForgetPass.Size = new System.Drawing.Size(177, 48);
@@ -256,7 +239,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 653);
-            this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.ptbPassvisible1);
             this.Controls.Add(this.ptbPassinvisible1);
@@ -273,6 +255,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
             this.Load += new System.EventHandler(this.Form_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -290,7 +273,6 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnForgetPass;
-        private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.RadioButton rbStaff;
         private System.Windows.Forms.RadioButton rbManager;
         private System.Windows.Forms.Button btnLogin;
