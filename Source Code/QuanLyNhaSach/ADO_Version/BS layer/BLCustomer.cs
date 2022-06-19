@@ -48,12 +48,32 @@ namespace ADO_Version.BS_layer
                             NgaySinh + "', soDT='" +
                             SoDienThoai +
                             "'Where MaKH='" +
-                            MaKhachHang + "'";
+                            MaKhachHang + "' and FlagXoa='False'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
         public DataSet TimKiemKhachHang(string MaKhachHang, string TenKhachHang)
         {
-            return db.ExecuteQueryDataSet("SELECT * FROM KhachHang Where MaKH LIKE '%" + MaKhachHang + "%' and TenKH LIKE N'%" + TenKhachHang + "%'", CommandType.Text);
+            return db.ExecuteQueryDataSet("SELECT * FROM KhachHang Where MaKH LIKE '%" + MaKhachHang + "%' and TenKH LIKE N'%" + TenKhachHang + "%' and FlagXoa='False'", CommandType.Text);
+        }
+        public DataSet KiemTraKHTonTai(string MaKhachHang)
+        {
+            return db.ExecuteQueryDataSet("Select Count(*) From KhachHang Where MaKH='" + MaKhachHang + "' and FlagXoa='False'", CommandType.Text);
+        }
+        public DataSet KiemTraKHDaXoa(string MaKhachHang)
+        {
+            return db.ExecuteQueryDataSet("Select Count(*) From KhachHang Where MaKH='" + MaKhachHang + "' and FlagXoa='True'", CommandType.Text);
+        }
+        public bool CapNhatKhachHangDaXoa(string MaKhachHang, string HoTen, string DiaChi, string NgaySinh, string SoDienThoai, string flag, ref string err)
+        {
+            string sqlString = "Update KhachHang Set TenKH=N'" +
+                            HoTen + "', DiaChi=N'" +
+                            DiaChi + "', NgaySinh='" +
+                            NgaySinh + "', soDT='" +
+                            SoDienThoai + "', FlagXoa='" +
+                            flag +
+                            "'Where MaKH='" +
+                            MaKhachHang + "'";
+            return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
     }
 }

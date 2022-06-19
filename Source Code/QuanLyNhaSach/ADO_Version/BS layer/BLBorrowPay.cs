@@ -23,15 +23,15 @@ namespace ADO_Version.BS_layer
         }
         public DataSet LayMaCuon()
         {
-            return db.ExecuteQueryDataSet("Select MaCuon From CuonSach Where FlagXoa='False'", CommandType.Text);
+            return db.ExecuteQueryDataSet("Select MaCuon From CuonSach", CommandType.Text);
         }
         public DataSet LayMaKhachHang()
         {
-            return db.ExecuteQueryDataSet("Select MaKH From KhachHang Where FlagXoa='False'", CommandType.Text);
+            return db.ExecuteQueryDataSet("Select MaKH From KhachHang", CommandType.Text);
         }
-        public DataSet TimKiemThanhToan(string MaCuon, string MaKhachHang, string NgayMuon)
+        public DataSet TimKiemThanhToan(string MaKhachHang, string NgayMuon)
         {
-            return db.ExecuteQueryDataSet("select * from (select M.MaCuon, M.MaKH, M.NgayMuon, M.HanTra, DS.GiaMuon from Muon as M, DauSach as DS, CuonSach as CS where M.MaCuon = CS.MaCuon and CS.Masach = DS.MaSach) as B where MaCuon LIKE '%" + MaCuon + "%' and MaKH LIKE '%" + MaKhachHang + "%' and NgayMuon LIKE '%" + NgayMuon + "%'", CommandType.Text);
+            return db.ExecuteQueryDataSet("select * from (select M.MaCuon, M.MaKH, M.NgayMuon, M.HanTra, DS.GiaMuon from Muon as M, DauSach as DS, CuonSach as CS where M.MaCuon = CS.MaCuon and CS.Masach = DS.MaSach) as B where MaKH LIKE '%" + MaKhachHang + "%' and NgayMuon LIKE '%" + NgayMuon + "%'", CommandType.Text);
         }
     }
 }

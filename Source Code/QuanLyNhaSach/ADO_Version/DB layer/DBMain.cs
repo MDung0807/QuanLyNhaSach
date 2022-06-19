@@ -10,7 +10,7 @@ namespace ADO_Version.DB_layer
 {
     class DBMain
     {
-        string ConnStr = @"Data Source=(local);Initial Catalog=QLNhaSach;Integrated Security=True";
+        string ConnStr = @"Data Source=THANG\SQLEXPRESS;Initial Catalog=QLNhaSach;Integrated Security=True";
         SqlConnection conn = null;
         SqlCommand comm = null;
         SqlDataAdapter da = null;

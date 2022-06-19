@@ -90,7 +90,7 @@
             // btnBorrow
             // 
             this.btnBorrow.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrow.Location = new System.Drawing.Point(813, 372);
+            this.btnBorrow.Location = new System.Drawing.Point(436, 372);
             this.btnBorrow.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(182, 92);
@@ -114,7 +114,7 @@
             // btnQLKH
             // 
             this.btnQLKH.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQLKH.Location = new System.Drawing.Point(813, 199);
+            this.btnQLKH.Location = new System.Drawing.Point(436, 199);
             this.btnQLKH.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLKH.Name = "btnQLKH";
             this.btnQLKH.Size = new System.Drawing.Size(182, 92);
@@ -126,7 +126,7 @@
             // btnPay
             // 
             this.btnPay.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPay.Location = new System.Drawing.Point(436, 372);
+            this.btnPay.Location = new System.Drawing.Point(813, 372);
             this.btnPay.Margin = new System.Windows.Forms.Padding(4);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(182, 92);
@@ -138,7 +138,7 @@
             // btnBorrowPay
             // 
             this.btnBorrowPay.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrowPay.Location = new System.Drawing.Point(436, 199);
+            this.btnBorrowPay.Location = new System.Drawing.Point(813, 199);
             this.btnBorrowPay.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrowPay.Name = "btnBorrowPay";
             this.btnBorrowPay.Size = new System.Drawing.Size(182, 92);

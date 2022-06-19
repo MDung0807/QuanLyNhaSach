@@ -19,8 +19,6 @@ namespace ADO_Version.View_layer
 
         public static string maKH { get; set; }
         public static string ngaymua { get; set; }
-        public static string soluong { get; set; }
-        public static string thanhtien { get; set; }
 
         BLBuyPay dbPay = new BLBuyPay();
         public Form_Buy_Pay()
@@ -70,7 +68,7 @@ namespace ADO_Version.View_layer
             int r = dgvPAY.CurrentCell.RowIndex;
 
             cmbCustomerID.SelectedValue = dgvPAY.Rows[r].Cells[0].Value.ToString();
-            dtpDayOfBuy.Value = (DateTime)dgvPAY.Rows[r].Cells[1].Value;
+            dtpDayOfBuy.Value = (DateTime)dgvPAY.Rows[r].Cells[2].Value;
         }
 
         private void btnReload_Click(object sender, EventArgs e)
@@ -103,11 +101,6 @@ namespace ADO_Version.View_layer
         {
             maKH = cmbCustomerID.SelectedValue.ToString();
             ngaymua = dtpDayOfBuy.Value.ToShortDateString();
-
-            int r = dgvPAY.CurrentCell.RowIndex;
-
-            soluong = dgvPAY.Rows[r].Cells[2].Value.ToString();
-            thanhtien = dgvPAY.Rows[r].Cells[3].Value.ToString();
 
             Form form = new Form_Buy_Bill();
             form.ShowDialog();

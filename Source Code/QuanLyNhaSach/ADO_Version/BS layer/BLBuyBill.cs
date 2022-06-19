@@ -17,9 +17,13 @@ namespace ADO_Version.BS_layer
         {
             db = new DBMain();
         }
-        public DataSet LayDuLieu()
+        public DataSet LayDuLieu(string MaKhachHang, string NgayMua)
         {
-            return db.ExecuteQueryDataSet("select MaKH, NgayMua, Count(MaCuon) as SoLuong, Sum(cast(GiaMua as int)) as ThanhTien from (Select M.MaCuon, DS.TuaSach, M.MaKH, KH.TenKH, DS.GiaMua, M.NgayMua From CuonSach as CS, DauSach as DS, KhachHang as KH, Mua as M Where CS.MaCuon = M.MaCuon and KH.MaKH = M.MaKH and CS.Masach = DS.MaSach and M.DaThanhToan = 'True') as Q group by MaKH, NgayMua order by MaKH", CommandType.Text);
+            return db.ExecuteQueryDataSet("select * from (select M.MaKH, M.MaCuon, M.NgayMua, DS.GiaMua from Mua as M, DauSach as DS, CuonSach as CS where M.MaCuon = CS.MaCuon and CS.Masach = DS.MaSach) as M where MaKH LIKE '%" + MaKhachHang + "%' and NgayMua LIKE '%" + NgayMua + "%'", CommandType.Text);
+        }
+        public DataSet TinhTong(string MaKhachHang, string NgayMua)
+        {
+            return db.ExecuteQueryDataSet("select count(MaCuon), Sum(cast(GiaMua as int)) from (select M.MaKH, M.MaCuon, M.NgayMua, DS.GiaMua from Mua as M, DauSach as DS, CuonSach as CS where M.MaCuon = CS.MaCuon and CS.Masach = DS.MaSach) as M where MaKH LIKE '%" + MaKhachHang + "%' and NgayMua LIKE '%" + NgayMua + "%'", CommandType.Text);
         }
     }
 }

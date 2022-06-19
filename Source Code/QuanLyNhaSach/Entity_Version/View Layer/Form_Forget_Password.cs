@@ -53,5 +53,10 @@ namespace EntityFramework_Version.View_Layer
         {
 
         }
+
+        private void Form_Forget_Password_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

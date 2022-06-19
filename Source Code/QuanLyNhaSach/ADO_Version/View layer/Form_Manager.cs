@@ -38,5 +38,11 @@ namespace ADO_Version.View_layer
         {
 
         }
+
+        private void btnRevenue_Click(object sender, EventArgs e)
+        {
+            Form form = new Form_Thong_Ke_Doanh_Thu();
+            form.ShowDialog();
+        }
     }
 }

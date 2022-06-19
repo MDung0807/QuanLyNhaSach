@@ -19,7 +19,7 @@ namespace ADO_Version.BS_layer
         }
         public DataSet LayDuLieu()
         {
-            return db.ExecuteQueryDataSet("SELECT * FROM Muon", CommandType.Text);
+            return db.ExecuteQueryDataSet("select M.MaCuon, M.MaKH, KH.TenKH, DS.GiaMuon, M.NgayMuon, M.HanTra, M.NgayTra, M.TienPhat, M.DangMuon, M.DaThanhToan from Muon as M, KhachHang as KH, DauSach as DS, CuonSach as CS where M.MaKH = KH.MaKH and M.MaCuon = CS.MaCuon and CS.Masach = DS.MaSach", CommandType.Text);
         }
         public DataSet LayMaKhachHang()
         {
@@ -68,6 +68,10 @@ namespace ADO_Version.BS_layer
                 "'Where MaCuon='" +
                 MaCuon + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
+        }
+        public DataSet KiemTraCSDangMuon(string MaCuon)
+        {
+            return db.ExecuteQueryDataSet("Select Count(*) From CuonSach Where MaCuon='" + MaCuon + "' and FlagXoa='True'", CommandType.Text);
         }
     }
 }

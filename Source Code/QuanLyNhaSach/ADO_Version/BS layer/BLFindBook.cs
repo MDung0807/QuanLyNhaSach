@@ -17,9 +17,13 @@ namespace ADO_Version.BS_layer
         {
             db = new DBMain();
         }
+        public DataSet LayDuLieu()
+        {
+            return db.ExecuteQueryDataSet("select DS.MaSach, DS.TuaSach, NXB.TenNXB, TG.TenTacGia, DS.GiaMua, DS.GiaMuon, CS.ViTri from DauSach as DS, NXB, TacGia as TG, CuonSach as CS where DS.MaNXB = NXB.MaNXB and DS.MaTG = TG.MaTG and DS.MaSach = CS.Masach", CommandType.Text);
+        }
         public DataSet TimKiemSach(string TenSach)
         {
-            return db.ExecuteQueryDataSet("SELECT * FROM DauSach Where TuaSach LIKE N'%" + TenSach + "%'", CommandType.Text);
+            return db.ExecuteQueryDataSet("select * from (select DS.MaSach, DS.TuaSach, NXB.TenNXB, TG.TenTacGia, DS.GiaMua, DS.GiaMuon, CS.ViTri from DauSach as DS, NXB, TacGia as TG, CuonSach as CS where DS.MaNXB = NXB.MaNXB and DS.MaTG = TG.MaTG and DS.MaSach = CS.Masach) as F where TuaSach LIKE N'%" + TenSach + "%'", CommandType.Text);
         }
     }
 }

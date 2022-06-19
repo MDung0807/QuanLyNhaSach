@@ -95,13 +95,7 @@ namespace ADO_Version.View_layer
 
         private void btnOutputBill_Click(object sender, EventArgs e)
         {
-            if (cmbBookID.SelectedValue == null)
-            {
-                MessageBox.Show("Đang có người mượn!");
-                return;
-            }
-            else
-                maCuon = cmbBookID.SelectedValue.ToString();
+            maCuon = cmbBookID.SelectedValue.ToString();
             maKH = cmbCustomerID.SelectedValue.ToString();
             ngaymuon = dtpDayOfBorrow.Value.ToShortDateString();
 
@@ -123,7 +117,7 @@ namespace ADO_Version.View_layer
                 dtPay = new DataTable();
                 dtPay.Clear();
 
-                DataSet ds = blPay.TimKiemThanhToan(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString(), this.dtpDayOfBorrow.Value.ToShortDateString().ToString());
+                DataSet ds = blPay.TimKiemThanhToan(this.cmbCustomerID.SelectedValue.ToString(), this.dtpDayOfBorrow.Value.ToShortDateString().ToString());
                 dtPay = ds.Tables[0];
 
                 dgvPAY.DataSource = dtPay;

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BS layer\BLBorrow.cs" />
+    <Compile Include="BS layer\BLBorrowBill.cs" />
     <Compile Include="BS layer\BLBorrowPay.cs" />
     <Compile Include="BS layer\BLBuy.cs" />
     <Compile Include="BS layer\BLBuyBill.cs" />
@@ -57,7 +58,14 @@
     <Compile Include="BS layer\BLForgetPassword.cs" />
     <Compile Include="BS layer\BLLogin.cs" />
     <Compile Include="BS layer\BLQLNV.cs" />
+    <Compile Include="BS layer\BLThongKe.cs" />
     <Compile Include="DB layer\DBMain.cs" />
+    <Compile Include="Form_Thong_Ke_Doanh_Thu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Thong_Ke_Doanh_Thu.Designer.cs">
+      <DependentUpon>Form_Thong_Ke_Doanh_Thu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View layer\Form_Borrow.cs">
@@ -144,6 +152,9 @@
     <Compile Include="View layer\Form_Staff.designer.cs">
       <DependentUpon>Form_Staff.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form_Thong_Ke_Doanh_Thu.resx">
+      <DependentUpon>Form_Thong_Ke_Doanh_Thu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

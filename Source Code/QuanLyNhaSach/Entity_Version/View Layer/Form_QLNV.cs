@@ -239,5 +239,10 @@ namespace EntityFramework_Version.View_Layer
         {
             Clear();
         }
+
+        private void Form_QLNV_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

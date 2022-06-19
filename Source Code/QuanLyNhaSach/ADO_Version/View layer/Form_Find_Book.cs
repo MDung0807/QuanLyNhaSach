@@ -16,11 +16,29 @@ namespace ADO_Version.View_layer
     public partial class Form_Find_Book : Form
     {
         DataTable dtFindBook = null;
+        BLFindBook dbFB = new BLFindBook();
         public Form_Find_Book()
         {
             InitializeComponent();
         }
+        void LoadData()
+        {
+            try
+            {
+                dtFindBook = new DataTable();
+                dtFindBook.Clear();
 
+                DataSet ds = dbFB.LayDuLieu();
+                dtFindBook = ds.Tables[0];
+
+                dgvFINDBOOK.DataSource = dtFindBook;
+                dgvFINDBOOK.AutoResizeColumns();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Không lấy được nội dung . Lỗi!!!");
+            }
+        }
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -49,7 +67,12 @@ namespace ADO_Version.View_layer
 
         private void Form_Find_Book_Load(object sender, EventArgs e)
         {
+            LoadData();
+        }
 
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

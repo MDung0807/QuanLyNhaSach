@@ -45,6 +45,29 @@ namespace ADO_Version.View_layer
                 MessageBox.Show("Không lấy được nội dung trong table BORROW. Lỗi!!!");
             }
         }
+        int KiemTra(string MaCuon)
+        {
+            dtBorrow = new DataTable();
+            dtBorrow.Clear();
+
+            DataSet ds;
+            ds = dbBr.KiemTraCSDangMuon(MaCuon);
+            dtBorrow = ds.Tables[0];
+
+            int soLuong = 0;
+
+            for (int i = 0; i < dtBorrow.Rows.Count; i++)
+            {
+                for (int j = 0; j < dtBorrow.Columns.Count; j++)
+                {
+                    object o = dtBorrow.Rows[i].ItemArray[j];
+                    //if you want to get the string
+                    string s = (string)(o = dtBorrow.Rows[i].ItemArray[j].ToString());
+                    soLuong = Int32.Parse(s);
+                }
+            }
+            return soLuong;
+        }
         void LoadcmbCustomerID()
         {
             dtBorrow = new DataTable();
@@ -105,7 +128,7 @@ namespace ADO_Version.View_layer
 
                 if (dgvBORROW.Rows[r].Cells[0].Value.ToString().Equals(cmbBookID.SelectedValue) &&
                     dgvBORROW.Rows[r].Cells[1].Value.ToString().Equals(cmbCustomerID.SelectedValue) &&
-                    (bool)dgvBORROW.Rows[r].Cells[6].Value == false)
+                    (bool)dgvBORROW.Rows[r].Cells[8].Value == false)
                 {
                     blBr.CapNhatMuonSach(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString(), ngaymuon.ToString(), hantra.ToString(), DangMuon.ToString(), ref err);
                     blBr.CapNhatCuonSach(this.cmbBookID.SelectedValue.ToString(), DangMuon.ToString(), ref err);
@@ -114,17 +137,26 @@ namespace ADO_Version.View_layer
                 }
                 else if (dgvBORROW.Rows[r].Cells[0].Value.ToString().Equals(cmbBookID.SelectedValue) &&
                     dgvBORROW.Rows[r].Cells[1].Value.ToString().Equals(cmbCustomerID.SelectedValue) &&
-                    (bool)dgvBORROW.Rows[r].Cells[6].Value == true)
+                    (bool)dgvBORROW.Rows[r].Cells[8].Value == true)
                 {
                     LoadData();
                     MessageBox.Show("Đang có người mượn!");
                 }
                 else
                 {
-                    blBr.MuonSach(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString(), ngaymuon.ToString(), hantra.ToString(), DangMuon.ToString(), ref err);
-                    blBr.CapNhatCuonSach(this.cmbBookID.SelectedValue.ToString(), DangMuon.ToString(), ref err);
-                    LoadData();
-                    MessageBox.Show("Đã mượn xong!");
+                    int kiemtradangmuon = KiemTra(this.cmbBookID.SelectedValue.ToString());
+                    if(kiemtradangmuon > 0)
+                    {
+                        LoadData();
+                        MessageBox.Show("Đã hết sách!");
+                    }
+                    else
+                    {
+                        blBr.MuonSach(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString(), ngaymuon.ToString(), hantra.ToString(), DangMuon.ToString(), ref err);
+                        blBr.CapNhatCuonSach(this.cmbBookID.SelectedValue.ToString(), DangMuon.ToString(), ref err);
+                        LoadData();
+                        MessageBox.Show("Đã mượn xong!");
+                    }    
                 }
 
             }
@@ -143,9 +175,9 @@ namespace ADO_Version.View_layer
                 int r = dgvBORROW.CurrentCell.RowIndex;
                 DateTime ngaytra = DateTime.Today;
                 int tienphat = 0;
-                DateTime hantra = (DateTime)dgvBORROW.Rows[r].Cells[4].Value;
+                DateTime hantra = (DateTime)dgvBORROW.Rows[r].Cells[5].Value;
                 double day = ngaytra.Subtract(hantra).TotalDays;
-                if (this.cmbBookID.SelectedValue == null && (bool)dgvBORROW.Rows[r].Cells[6].Value == true)
+                if (this.cmbBookID.SelectedValue == null && (bool)dgvBORROW.Rows[r].Cells[8].Value == true)
                 {
                     MessageBox.Show("Không thực hiện được!");
                     return;

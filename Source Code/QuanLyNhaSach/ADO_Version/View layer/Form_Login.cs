@@ -115,5 +115,27 @@ namespace ADO_Version.View_layer
                 txtPassword.PasswordChar = '✽';
             }
         }
+
+        private void txtUsername_Click(object sender, EventArgs e)
+        {
+            this.txtUsername.ResetText();
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            this.txtPassword.ResetText();
+        }
+
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "")
+                this.txtUsername.Text = "User Name";
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "")
+                this.txtPassword.Text = "Password";
+        }
     }
 }

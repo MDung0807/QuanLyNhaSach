@@ -58,7 +58,32 @@ namespace ADO_Version.View_layer
                 MessageBox.Show("Không lấy được nội dung trong table KhachHang. Lỗi!!!");
             }
         }
+        int KiemTra(string MaKhachHang, string type)
+        {
+            dtCustomer = new DataTable();
+            dtCustomer.Clear();
 
+            DataSet ds;
+            if (type == "tontai")
+                ds = dbCustomer.KiemTraKHTonTai(MaKhachHang);
+            else
+                ds = dbCustomer.KiemTraKHDaXoa(MaKhachHang);
+            dtCustomer = ds.Tables[0];
+
+            int soLuong = 0;
+
+            for (int i = 0; i < dtCustomer.Rows.Count; i++)
+            {
+                for (int j = 0; j < dtCustomer.Columns.Count; j++)
+                {
+                    object o = dtCustomer.Rows[i].ItemArray[j];
+                    //if you want to get the string
+                    string s = (string)(o = dtCustomer.Rows[i].ItemArray[j].ToString());
+                    soLuong = Int32.Parse(s);
+                }
+            }
+            return soLuong;
+        }
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -155,9 +180,26 @@ namespace ADO_Version.View_layer
                 {
                     BLCustomer blCustomer = new BLCustomer();
                     bool flag = false;
-                    blCustomer.ThemKhachHang(this.txtCustomerID.Text, this.txtFullName.Text, this.txtAddress.Text, this.dtpDayOfBirth.Value.ToString(), this.txtPhone.Text, flag.ToString(), ref err);
-                    LoadData();
-                    MessageBox.Show("Đã thêm xong!");
+                    int kiemtratontai = KiemTra(this.txtCustomerID.Text, "tontai");
+                    int kiemtradaxoa = KiemTra(this.txtCustomerID.Text, "daxoa");
+
+                    if (kiemtratontai > 0)
+                    {
+                        MessageBox.Show("Khách Hàng đã tồn tại!");
+                        LoadData();
+                    }
+                    else if (kiemtradaxoa > 0)
+                    {
+                        blCustomer.CapNhatKhachHangDaXoa(this.txtCustomerID.Text, this.txtFullName.Text, this.txtAddress.Text, this.dtpDayOfBirth.Value.ToString(), this.txtPhone.Text, flag.ToString(), ref err);
+                        LoadData();
+                        MessageBox.Show("Đã thêm xong!");
+                    }
+                    else
+                    {
+                        blCustomer.ThemKhachHang(this.txtCustomerID.Text, this.txtFullName.Text, this.txtAddress.Text, this.dtpDayOfBirth.Value.ToString(), this.txtPhone.Text, flag.ToString(), ref err);
+                        LoadData();
+                        MessageBox.Show("Đã thêm xong!");
+                    }
                 }
                 catch (SqlException)
                 {

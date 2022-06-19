@@ -37,13 +37,13 @@ namespace ADO_Version.View_layer
             this.cmbCustomerID = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPAY = new System.Windows.Forms.DataGridView();
-            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayMua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpDayOfBuy = new System.Windows.Forms.DateTimePicker();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaCuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayMua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaMua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPAY)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -132,9 +132,9 @@ namespace ADO_Version.View_layer
             this.dgvPAY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPAY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaKH,
+            this.MaCuon,
             this.NgayMua,
-            this.SoLuong,
-            this.ThanhTien});
+            this.GiaMua});
             this.dgvPAY.Dock = System.Windows.Forms.DockStyle.Right;
             this.dgvPAY.Location = new System.Drawing.Point(377, 83);
             this.dgvPAY.Margin = new System.Windows.Forms.Padding(4);
@@ -145,38 +145,6 @@ namespace ADO_Version.View_layer
             this.dgvPAY.Size = new System.Drawing.Size(1146, 659);
             this.dgvPAY.TabIndex = 20;
             this.dgvPAY.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPAY_CellClick);
-            // 
-            // MaKH
-            // 
-            this.MaKH.DataPropertyName = "MaKH";
-            this.MaKH.HeaderText = "Mã Khách Hàng";
-            this.MaKH.MinimumWidth = 6;
-            this.MaKH.Name = "MaKH";
-            this.MaKH.ReadOnly = true;
-            // 
-            // NgayMua
-            // 
-            this.NgayMua.DataPropertyName = "NgayMua";
-            this.NgayMua.HeaderText = "Ngày Mua";
-            this.NgayMua.MinimumWidth = 6;
-            this.NgayMua.Name = "NgayMua";
-            this.NgayMua.ReadOnly = true;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.MinimumWidth = 6;
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.DataPropertyName = "ThanhTien";
-            this.ThanhTien.HeaderText = "Thành Tiền";
-            this.ThanhTien.MinimumWidth = 6;
-            this.ThanhTien.Name = "ThanhTien";
-            this.ThanhTien.ReadOnly = true;
             // 
             // panel1
             // 
@@ -210,6 +178,38 @@ namespace ADO_Version.View_layer
             this.dtpDayOfBuy.Size = new System.Drawing.Size(174, 22);
             this.dtpDayOfBuy.TabIndex = 28;
             this.dtpDayOfBuy.Value = new System.DateTime(2022, 6, 18, 0, 0, 0, 0);
+            // 
+            // MaKH
+            // 
+            this.MaKH.DataPropertyName = "MaKH";
+            this.MaKH.HeaderText = "Mã Khách Hàng";
+            this.MaKH.MinimumWidth = 6;
+            this.MaKH.Name = "MaKH";
+            this.MaKH.ReadOnly = true;
+            // 
+            // MaCuon
+            // 
+            this.MaCuon.DataPropertyName = "MaCuon";
+            this.MaCuon.HeaderText = "Mã Cuốn";
+            this.MaCuon.MinimumWidth = 6;
+            this.MaCuon.Name = "MaCuon";
+            this.MaCuon.ReadOnly = true;
+            // 
+            // NgayMua
+            // 
+            this.NgayMua.DataPropertyName = "NgayMua";
+            this.NgayMua.HeaderText = "Ngày Mua";
+            this.NgayMua.MinimumWidth = 6;
+            this.NgayMua.Name = "NgayMua";
+            this.NgayMua.ReadOnly = true;
+            // 
+            // GiaMua
+            // 
+            this.GiaMua.DataPropertyName = "GiaMua";
+            this.GiaMua.HeaderText = "Giá Mua";
+            this.GiaMua.MinimumWidth = 6;
+            this.GiaMua.Name = "GiaMua";
+            this.GiaMua.ReadOnly = true;
             // 
             // Form_Buy_Pay
             // 
@@ -247,11 +247,11 @@ namespace ADO_Version.View_layer
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvPAY;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayMua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpDayOfBuy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaCuon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayMua;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaMua;
     }
 }

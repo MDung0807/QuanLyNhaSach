@@ -106,6 +106,7 @@
             this.btnRevenue.TabIndex = 12;
             this.btnRevenue.Text = "Thống kê doanh thu";
             this.btnRevenue.UseVisualStyleBackColor = true;
+            this.btnRevenue.Click += new System.EventHandler(this.btnRevenue_Click);
             // 
             // Form_Manager
             // 

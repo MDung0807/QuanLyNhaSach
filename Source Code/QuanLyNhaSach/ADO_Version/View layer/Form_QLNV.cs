@@ -64,7 +64,32 @@ namespace ADO_Version.View_layer
                 MessageBox.Show("Không lấy được nội dung trong table QLNV. Lỗi!!!");
             }
         }
+        int KiemTra(string MaNhanVien, string type)
+        {
+            dtQLNV = new DataTable();
+            dtQLNV.Clear();
 
+            DataSet ds;
+            if (type == "tontai")
+                ds = dbQLNV.KiemTraNVTonTai(MaNhanVien);
+            else
+                ds = dbQLNV.KiemTraNVDaXoa(MaNhanVien);
+            dtQLNV = ds.Tables[0];
+
+            int soLuong = 0;
+
+            for (int i = 0; i < dtQLNV.Rows.Count; i++)
+            {
+                for (int j = 0; j < dtQLNV.Columns.Count; j++)
+                {
+                    object o = dtQLNV.Rows[i].ItemArray[j];
+                    //if you want to get the string
+                    string s = (string)(o = dtQLNV.Rows[i].ItemArray[j].ToString());
+                    soLuong = Int32.Parse(s);
+                }
+            }
+            return soLuong;
+        }
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -183,11 +208,28 @@ namespace ADO_Version.View_layer
                 {
                     BLQLNV blQLNV = new BLQLNV();
                     bool flag = false;
-                    blQLNV.ThemNhanVien(this.txtStaffID.Text, this.txtFullName.Text, this.txtJob.Text, this.txtIncome.Text, this.txtAddress.Text, this.dtpDayOfBirth.Value.ToString(), this.cbSex.Checked.ToString(), this.txtPhone.Text, flag.ToString(), ref err);
                     string quyen = "Nhanvien";
-                    blQLNV.ThemTaiKhoan(this.txtStaffID.Text, quyen, this.txtUsername.Text, this.txtPassword.Text, ref err);
-                    LoadData();
-                    MessageBox.Show("Đã thêm xong!");
+                    int kiemtratontai = KiemTra(this.txtStaffID.Text, "tontai");
+                    int kiemtradaxoa = KiemTra(this.txtStaffID.Text, "daxoa");
+                    if (kiemtratontai > 0)
+                    {
+                        MessageBox.Show("Nhân viên đã tồn tại!");
+                        LoadData();
+                    }
+                    else if (kiemtradaxoa > 0)
+                    {
+                        blQLNV.CapNhatNhanVienDaXoa(this.txtStaffID.Text, this.txtFullName.Text, this.txtJob.Text, this.txtIncome.Text, this.txtAddress.Text, this.dtpDayOfBirth.Value.ToString(), this.cbSex.Checked.ToString(), this.txtPhone.Text, flag.ToString(), ref err);
+                        blQLNV.CapNhatTaiKhoanDaXoa(this.txtStaffID.Text, quyen, this.txtUsername.Text, this.txtPassword.Text, flag.ToString(), ref err);
+                        LoadData();
+                        MessageBox.Show("Đã thêm xong!");
+                    }
+                    else
+                    {
+                        blQLNV.ThemNhanVien(this.txtStaffID.Text, this.txtFullName.Text, this.txtJob.Text, this.txtIncome.Text, this.txtAddress.Text, this.dtpDayOfBirth.Value.ToString(), this.cbSex.Checked.ToString(), this.txtPhone.Text, flag.ToString(), ref err);
+                        blQLNV.ThemTaiKhoan(this.txtStaffID.Text, quyen, this.txtUsername.Text, this.txtPassword.Text, flag.ToString(), ref err);
+                        LoadData();
+                        MessageBox.Show("Đã thêm xong!");
+                    }
                 }
                 catch (SqlException)
                 {
