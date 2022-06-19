@@ -20,7 +20,7 @@ namespace EntityFramework_Version.BS_Layer
                              MaKH = p.MaKH,
                              TenKH = p.KhachHang.TenKH,
                              MaCuon = p.MaCuon,
-                             SoTien = p.CuonSach.DauSach.GiaMuon,
+                             GiaMuon = p.CuonSach.DauSach.GiaMuon,
                              NgayMuon = p.NgayMuon,
                              HanTra = p.HanTra,
                              NgayTra = p.NgayTra,
@@ -33,7 +33,7 @@ namespace EntityFramework_Version.BS_Layer
             dataTable.Columns.Add("MaCuon");
             dataTable.Columns.Add("MaKH");
             dataTable.Columns.Add("TenKH");
-            dataTable.Columns.Add("SoTien");
+            dataTable.Columns.Add("GiaMuon");
             dataTable.Columns.Add("NgayMuon");
             dataTable.Columns.Add("HanTra");
             dataTable.Columns.Add("NgayTra");
@@ -44,7 +44,7 @@ namespace EntityFramework_Version.BS_Layer
             foreach (var item in result)
             {   
                 if (item.DangMuon == true)
-                    dataTable.Rows.Add(item.MaCuon, item.MaKH, item.TenKH, item.SoTien, item.NgayMuon, item.HanTra, item.NgayTra, item.TienPhat, item.DangMuon, item.DaThanhToan);
+                    dataTable.Rows.Add(item.MaCuon, item.MaKH, item.TenKH, item.GiaMuon, item.NgayMuon, item.HanTra, item.NgayTra, item.TienPhat, item.DangMuon, item.DaThanhToan);
             }
 
             return dataTable;

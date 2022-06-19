@@ -50,12 +50,13 @@
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvCUSTOMER = new System.Windows.Forms.DataGridView();
+            this.btnHuy = new System.Windows.Forms.DataGridView();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCUSTOMER)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHuy)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -133,7 +134,7 @@
             // btnCLear
             // 
             this.btnCLear.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCLear.Location = new System.Drawing.Point(185, 381);
+            this.btnCLear.Location = new System.Drawing.Point(137, 304);
             this.btnCLear.Name = "btnCLear";
             this.btnCLear.Size = new System.Drawing.Size(89, 32);
             this.btnCLear.TabIndex = 78;
@@ -274,25 +275,25 @@
             this.MaKH.Name = "MaKH";
             this.MaKH.ReadOnly = true;
             // 
-            // dgvCUSTOMER
+            // btnHuy
             // 
-            this.dgvCUSTOMER.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCUSTOMER.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCUSTOMER.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnHuy.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.btnHuy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.btnHuy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaKH,
             this.TenKH,
             this.DiaChi,
             this.NgaySinh,
             this.soDT});
-            this.dgvCUSTOMER.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgvCUSTOMER.Location = new System.Drawing.Point(345, 67);
-            this.dgvCUSTOMER.Name = "dgvCUSTOMER";
-            this.dgvCUSTOMER.ReadOnly = true;
-            this.dgvCUSTOMER.RowHeadersWidth = 51;
-            this.dgvCUSTOMER.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCUSTOMER.Size = new System.Drawing.Size(808, 431);
-            this.dgvCUSTOMER.TabIndex = 66;
-            this.dgvCUSTOMER.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLKhachHang_CellClick);
+            this.btnHuy.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnHuy.Location = new System.Drawing.Point(345, 67);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.ReadOnly = true;
+            this.btnHuy.RowHeadersWidth = 51;
+            this.btnHuy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.btnHuy.Size = new System.Drawing.Size(808, 431);
+            this.btnHuy.TabIndex = 66;
+            this.btnHuy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLKhachHang_CellClick);
             // 
             // txtAddress
             // 
@@ -315,11 +316,23 @@
             this.txtFullName.Size = new System.Drawing.Size(157, 20);
             this.txtFullName.TabIndex = 68;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(185, 382);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 32);
+            this.button1.TabIndex = 84;
+            this.button1.Text = "Hủy";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form_Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1153, 498);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label11);
@@ -333,7 +346,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.dgvCUSTOMER);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.txtFullName);
@@ -341,7 +354,7 @@
             this.Name = "Form_Customer";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCUSTOMER)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHuy)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,9 +384,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
-        private System.Windows.Forms.DataGridView dgvCUSTOMER;
+        private System.Windows.Forms.DataGridView btnHuy;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.TextBox txtFullName;
+        private System.Windows.Forms.Button button1;
     }
 }

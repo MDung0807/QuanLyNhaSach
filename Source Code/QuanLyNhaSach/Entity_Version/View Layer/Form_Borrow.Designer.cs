@@ -42,14 +42,13 @@
             this.MaCuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HanTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TienPhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DangMuon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DaThanhToan = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btnFinish = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMuon)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +56,7 @@
             // btnReload
             // 
             this.btnReload.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(75, 450);
+            this.btnReload.Location = new System.Drawing.Point(78, 388);
             this.btnReload.Margin = new System.Windows.Forms.Padding(2);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(89, 32);
@@ -168,7 +167,7 @@
             this.MaCuon,
             this.MaKH,
             this.TenKH,
-            this.SoTien,
+            this.GiaMuon,
             this.NgayMuon,
             this.HanTra,
             this.NgayTra,
@@ -209,12 +208,12 @@
             this.TenKH.Name = "TenKH";
             this.TenKH.ReadOnly = true;
             // 
-            // SoTien
+            // GiaMuon
             // 
-            this.SoTien.DataPropertyName = "SoTien";
-            this.SoTien.HeaderText = "Số Tiền";
-            this.SoTien.Name = "SoTien";
-            this.SoTien.ReadOnly = true;
+            this.GiaMuon.DataPropertyName = "GiaMuon";
+            this.GiaMuon.HeaderText = "Giá Mượn";
+            this.GiaMuon.Name = "GiaMuon";
+            this.GiaMuon.ReadOnly = true;
             // 
             // NgayMuon
             // 
@@ -268,24 +267,11 @@
             this.DaThanhToan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.DaThanhToan.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // btnFinish
-            // 
-            this.btnFinish.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinish.Location = new System.Drawing.Point(75, 373);
-            this.btnFinish.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(89, 32);
-            this.btnFinish.TabIndex = 24;
-            this.btnFinish.Text = "Finish";
-            this.btnFinish.UseVisualStyleBackColor = true;
-            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
-            // 
             // Form_Borrow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1154, 525);
-            this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnBorrow);
             this.Controls.Add(this.cmbBookID);
@@ -321,13 +307,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCuon;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaMuon;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayMuon;
         private System.Windows.Forms.DataGridViewTextBoxColumn HanTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn TienPhat;
         private System.Windows.Forms.DataGridViewCheckBoxColumn DangMuon;
         private System.Windows.Forms.DataGridViewCheckBoxColumn DaThanhToan;
-        private System.Windows.Forms.Button btnFinish;
     }
 }

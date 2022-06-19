@@ -25,7 +25,7 @@ namespace EntityFramework_Version.View_Layer
         {
             try
             {
-                dgvCUSTOMER.DataSource = dpKhachHang.Lay_TT_Khach();
+                btnHuy.DataSource = dpKhachHang.Lay_TT_Khach();
             }
             catch
             {
@@ -169,7 +169,7 @@ namespace EntityFramework_Version.View_Layer
                     MaKH = txtCustomerID.Text.Trim();
                     TenKH = txtFullName.Text.Trim();
 
-                    dgvCUSTOMER.DataSource = dpKhachHang.Tim_Khach_Hang(MaKH, TenKH);
+                    btnHuy.DataSource = dpKhachHang.Tim_Khach_Hang(MaKH, TenKH);
                 }
                 catch
                 {
@@ -184,18 +184,27 @@ namespace EntityFramework_Version.View_Layer
         {
             try
             {
-                int r = dgvCUSTOMER.CurrentCell.RowIndex;
+                int r = btnHuy.CurrentCell.RowIndex;
 
-                txtCustomerID.Text = dgvCUSTOMER.Rows[r].Cells[0].Value.ToString().Trim();
-                txtFullName.Text = dgvCUSTOMER.Rows[r].Cells[1].Value.ToString().Trim();
-                txtAddress.Text = dgvCUSTOMER.Rows[r].Cells[2].Value.ToString().Trim();
-                dtpDayOfBirth.Value = Convert.ToDateTime(dgvCUSTOMER.Rows[r].Cells[3].Value.ToString());
-                txtPhone.Text = dgvCUSTOMER.Rows[r].Cells[4].Value.ToString().Trim();
+                txtCustomerID.Text = btnHuy.Rows[r].Cells[0].Value.ToString().Trim();
+                txtFullName.Text = btnHuy.Rows[r].Cells[1].Value.ToString().Trim();
+                txtAddress.Text = btnHuy.Rows[r].Cells[2].Value.ToString().Trim();
+                dtpDayOfBirth.Value = Convert.ToDateTime(btnHuy.Rows[r].Cells[3].Value.ToString());
+                txtPhone.Text = btnHuy.Rows[r].Cells[4].Value.ToString().Trim();
             }
             catch
             {
                 MessageBox.Show("Không có dữ liệu");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.option = null;
+            btnAdd.Enabled = true;
+            btnDelete.Enabled = true;
+            btnUpdate.Enabled =true;
+            btnSearch.Enabled = true;
         }
     }
 }

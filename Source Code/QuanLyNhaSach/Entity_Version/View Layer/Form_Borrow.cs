@@ -15,7 +15,6 @@ namespace EntityFramework_Version.View_Layer
     {
 
         Muon_Sach muon_sach = new Muon_Sach();
-        string option = null;
         string result;
 
         public Form_Borrow()
@@ -34,7 +33,6 @@ namespace EntityFramework_Version.View_Layer
                 
                 btnBorrow.Enabled = true;
                 btnReturn.Enabled = true;
-                this.option = null;
             }
             catch
             {
@@ -79,14 +77,35 @@ namespace EntityFramework_Version.View_Layer
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            this.option = "Tra Sach";
-            btnBorrow.Enabled = false;
+            try
+            {
+                string MaKH = cmbCustomerID.Text.Trim();
+                string MaCuon = cmbBookID.Text.Trim();
+                muon_sach.KH_Tra_Sach(MaKH, MaCuon);
+                MessageBox.Show("Đã trả thành công");
+                Load_Data();
+            }
+            catch
+            {
+                MessageBox.Show("Trả không thành công, vui lòng kiểm tra lại mã khách hàng và mã cuốn");
+            }
         }
 
         private void btnBorrow_Click(object sender, EventArgs e)
         {
-            this.option = "Muon Sach";
-            btnReturn.Enabled = false;
+            try
+            {
+                string MaKH = cmbCustomerID.Text.Trim();
+                string MaCuon = cmbBookID.Text.Trim();
+                DateTime NgMuon = DateTime.Now;
+                muon_sach.KH_Muon_Sach(MaKH, MaCuon, NgMuon, ref result);
+                MessageBox.Show(result);
+                Load_Data();
+            }
+            catch
+            {
+                MessageBox.Show("Thêm không thành công, vui lòng kiểm tra lại mã khách hàng và mã cuốn");
+            }
         }
 
         private void dgvMuon_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -102,46 +121,6 @@ namespace EntityFramework_Version.View_Layer
             {
                 MessageBox.Show("Không có dữ liệu");
             }
-        }
-
-        private void btnFinish_Click(object sender, EventArgs e)
-        {
-
-            if (option == "Tra Sach")
-            {
-                try
-                {
-                    string MaKH = cmbCustomerID.Text.Trim();
-                    string MaCuon = cmbBookID.Text.Trim();
-                    muon_sach.KH_Tra_Sach(MaKH, MaCuon);
-                    MessageBox.Show("Đã trả thành công");
-                    Load_Data();
-                    //Clear();
-                }
-                catch
-                {
-                    MessageBox.Show("Trả không thành công, vui lòng kiểm tra lại mã khách hàng và mã cuốn");
-                }
-            }
-            else if (option == "Muon Sach")
-            {
-                try
-                {
-                    string MaKH = cmbCustomerID.Text.Trim();
-                    string MaCuon = cmbBookID.Text.Trim();
-                    DateTime NgMuon = DateTime.Now;
-                    muon_sach.KH_Muon_Sach(MaKH, MaCuon, NgMuon, ref result);
-                    MessageBox.Show(result);
-                    Load_Data();
-                    //Clear();
-                }
-                catch
-                {
-                    MessageBox.Show("Thêm không thành công, vui lòng kiểm tra lại mã khách hàng và mã cuốn");
-                }
-            }
-            else
-                MessageBox.Show("Chưa chọn chức năng");
         }
     }
 }

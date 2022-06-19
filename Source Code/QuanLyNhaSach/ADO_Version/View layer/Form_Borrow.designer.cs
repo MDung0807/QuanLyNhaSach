@@ -59,7 +59,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1028, 67);
+            this.panel1.Size = new System.Drawing.Size(1136, 67);
             this.panel1.TabIndex = 0;
             // 
             // btnBack
@@ -97,12 +97,12 @@
             this.DangMuon,
             this.DaThanhToan});
             this.dgvBORROW.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgvBORROW.Location = new System.Drawing.Point(166, 67);
+            this.dgvBORROW.Location = new System.Drawing.Point(274, 67);
             this.dgvBORROW.Name = "dgvBORROW";
             this.dgvBORROW.ReadOnly = true;
             this.dgvBORROW.RowHeadersWidth = 51;
             this.dgvBORROW.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBORROW.Size = new System.Drawing.Size(862, 536);
+            this.dgvBORROW.Size = new System.Drawing.Size(862, 402);
             this.dgvBORROW.TabIndex = 1;
             this.dgvBORROW.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBORROW_CellClick);
             // 
@@ -199,7 +199,7 @@
             // 
             this.cmbCustomerID.FormattingEnabled = true;
             this.cmbCustomerID.Location = new System.Drawing.Point(136, 204);
-            this.cmbCustomerID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCustomerID.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCustomerID.Name = "cmbCustomerID";
             this.cmbCustomerID.Size = new System.Drawing.Size(122, 21);
             this.cmbCustomerID.TabIndex = 9;
@@ -208,7 +208,7 @@
             // 
             this.cmbBookID.FormattingEnabled = true;
             this.cmbBookID.Location = new System.Drawing.Point(136, 155);
-            this.cmbBookID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbBookID.Margin = new System.Windows.Forms.Padding(2);
             this.cmbBookID.Name = "cmbBookID";
             this.cmbBookID.Size = new System.Drawing.Size(122, 21);
             this.cmbBookID.TabIndex = 10;
@@ -216,8 +216,8 @@
             // btnBorrow
             // 
             this.btnBorrow.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrow.Location = new System.Drawing.Point(26, 422);
-            this.btnBorrow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBorrow.Location = new System.Drawing.Point(33, 279);
+            this.btnBorrow.Margin = new System.Windows.Forms.Padding(2);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(89, 32);
             this.btnBorrow.TabIndex = 11;
@@ -228,8 +228,8 @@
             // btnReturn
             // 
             this.btnReturn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.Location = new System.Drawing.Point(145, 422);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReturn.Location = new System.Drawing.Point(152, 279);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(89, 32);
             this.btnReturn.TabIndex = 13;
@@ -240,8 +240,8 @@
             // btnReload
             // 
             this.btnReload.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(86, 314);
-            this.btnReload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReload.Location = new System.Drawing.Point(83, 367);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(2);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(89, 32);
             this.btnReload.TabIndex = 14;
@@ -253,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 603);
+            this.ClientSize = new System.Drawing.Size(1136, 469);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnBorrow);

@@ -61,27 +61,24 @@
             // 
             // txtCustomerID
             // 
-            this.txtCustomerID.Location = new System.Drawing.Point(199, 106);
-            this.txtCustomerID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCustomerID.Location = new System.Drawing.Point(149, 86);
             this.txtCustomerID.Name = "txtCustomerID";
-            this.txtCustomerID.Size = new System.Drawing.Size(208, 22);
+            this.txtCustomerID.Size = new System.Drawing.Size(157, 20);
             this.txtCustomerID.TabIndex = 19;
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(199, 156);
-            this.txtFullName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFullName.Location = new System.Drawing.Point(149, 127);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(208, 22);
+            this.txtFullName.Size = new System.Drawing.Size(157, 20);
             this.txtFullName.TabIndex = 21;
             // 
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(169, 19);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Location = new System.Drawing.Point(127, 15);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(119, 40);
+            this.btnBack.Size = new System.Drawing.Size(89, 32);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -98,13 +95,12 @@
             this.NgaySinh,
             this.soDT});
             this.dgvCUSTOMER.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgvCUSTOMER.Location = new System.Drawing.Point(446, 83);
-            this.dgvCUSTOMER.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvCUSTOMER.Location = new System.Drawing.Point(338, 67);
             this.dgvCUSTOMER.Name = "dgvCUSTOMER";
             this.dgvCUSTOMER.ReadOnly = true;
             this.dgvCUSTOMER.RowHeadersWidth = 51;
             this.dgvCUSTOMER.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCUSTOMER.Size = new System.Drawing.Size(1077, 659);
+            this.dgvCUSTOMER.Size = new System.Drawing.Size(808, 441);
             this.dgvCUSTOMER.TabIndex = 16;
             this.dgvCUSTOMER.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCUSTOMER_CellClick);
             // 
@@ -156,29 +152,26 @@
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1523, 83);
+            this.panel1.Size = new System.Drawing.Size(1146, 67);
             this.panel1.TabIndex = 15;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(564, 15);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(423, 12);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(354, 37);
+            this.label6.Size = new System.Drawing.Size(295, 31);
             this.label6.TabIndex = 3;
             this.label6.Text = "Danh Sách Khách Hàng";
             // 
             // btnReload
             // 
             this.btnReload.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(1187, 19);
-            this.btnReload.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReload.Location = new System.Drawing.Point(890, 15);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(119, 40);
+            this.btnReload.Size = new System.Drawing.Size(89, 32);
             this.btnReload.TabIndex = 2;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
@@ -186,27 +179,24 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(199, 208);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAddress.Location = new System.Drawing.Point(149, 169);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(208, 22);
+            this.txtAddress.Size = new System.Drawing.Size(157, 20);
             this.txtAddress.TabIndex = 27;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(199, 316);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPhone.Location = new System.Drawing.Point(149, 257);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(208, 22);
+            this.txtPhone.Size = new System.Drawing.Size(157, 20);
             this.txtPhone.TabIndex = 30;
             // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(214, 561);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Location = new System.Drawing.Point(121, 384);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(119, 40);
+            this.btnUpdate.Size = new System.Drawing.Size(89, 32);
             this.btnUpdate.TabIndex = 54;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -215,10 +205,9 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(67, 561);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Location = new System.Drawing.Point(11, 384);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(119, 40);
+            this.btnAdd.Size = new System.Drawing.Size(89, 32);
             this.btnAdd.TabIndex = 53;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -227,10 +216,9 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(214, 657);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Location = new System.Drawing.Point(121, 462);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(119, 40);
+            this.btnDelete.Size = new System.Drawing.Size(89, 32);
             this.btnDelete.TabIndex = 52;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -239,10 +227,9 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(67, 657);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearch.Location = new System.Drawing.Point(11, 462);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(119, 40);
+            this.btnSearch.Size = new System.Drawing.Size(89, 32);
             this.btnSearch.TabIndex = 50;
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -251,18 +238,18 @@
             // dtpDayOfBirth
             // 
             this.dtpDayOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDayOfBirth.Location = new System.Drawing.Point(199, 262);
+            this.dtpDayOfBirth.Location = new System.Drawing.Point(149, 213);
+            this.dtpDayOfBirth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpDayOfBirth.Name = "dtpDayOfBirth";
-            this.dtpDayOfBirth.Size = new System.Drawing.Size(200, 22);
+            this.dtpDayOfBirth.Size = new System.Drawing.Size(151, 20);
             this.dtpDayOfBirth.TabIndex = 55;
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(67, 609);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(11, 423);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(119, 40);
+            this.btnSave.Size = new System.Drawing.Size(89, 32);
             this.btnSave.TabIndex = 57;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -271,10 +258,9 @@
             // btnCancle
             // 
             this.btnCancle.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancle.Location = new System.Drawing.Point(214, 609);
-            this.btnCancle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancle.Location = new System.Drawing.Point(121, 423);
             this.btnCancle.Name = "btnCancle";
-            this.btnCancle.Size = new System.Drawing.Size(119, 40);
+            this.btnCancle.Size = new System.Drawing.Size(89, 32);
             this.btnCancle.TabIndex = 58;
             this.btnCancle.Text = "Hủy";
             this.btnCancle.UseVisualStyleBackColor = true;
@@ -283,10 +269,9 @@
             // btnCLear
             // 
             this.btnCLear.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCLear.Location = new System.Drawing.Point(135, 501);
-            this.btnCLear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCLear.Location = new System.Drawing.Point(62, 335);
             this.btnCLear.Name = "btnCLear";
-            this.btnCLear.Size = new System.Drawing.Size(119, 40);
+            this.btnCLear.Size = new System.Drawing.Size(89, 32);
             this.btnCLear.TabIndex = 59;
             this.btnCLear.Text = "Clear";
             this.btnCLear.UseVisualStyleBackColor = true;
@@ -296,10 +281,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 314);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(33, 255);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 23);
+            this.label1.Size = new System.Drawing.Size(104, 19);
             this.label1.TabIndex = 60;
             this.label1.Text = "Số Điện Thoại";
             // 
@@ -307,10 +291,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(77, 262);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(58, 213);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 23);
+            this.label8.Size = new System.Drawing.Size(78, 19);
             this.label8.TabIndex = 61;
             this.label8.Text = "Ngày Sinh";
             // 
@@ -318,10 +301,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(99, 208);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(74, 169);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 23);
+            this.label9.Size = new System.Drawing.Size(60, 19);
             this.label9.TabIndex = 62;
             this.label9.Text = "Địa Chỉ";
             // 
@@ -329,10 +311,9 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(71, 156);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(53, 127);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 23);
+            this.label10.Size = new System.Drawing.Size(82, 19);
             this.label10.TabIndex = 63;
             this.label10.Text = "Họ Và Tên";
             // 
@@ -340,18 +321,17 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(26, 106);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(20, 86);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(146, 23);
+            this.label11.Size = new System.Drawing.Size(120, 19);
             this.label11.TabIndex = 64;
             this.label11.Text = "Mã Khách Hàng";
             // 
             // Form_Customer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1523, 742);
+            this.ClientSize = new System.Drawing.Size(1146, 508);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label11);
@@ -371,7 +351,6 @@
             this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.dgvCUSTOMER);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Customer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Khách Hàng";
