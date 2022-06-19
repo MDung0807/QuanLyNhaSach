@@ -23,6 +23,11 @@ namespace EntityFramework_Version.View_Layer
             InitializeComponent();
         }
 
+        void Clear()
+        {
+            txtUsername.ResetText();
+            txtPassword.ResetText();
+        }
         private void radioNhanVien_CheckedChanged(object sender, EventArgs e)
         {
             this.quyen = "Nhanvien";
@@ -56,7 +61,7 @@ namespace EntityFramework_Version.View_Layer
 
                     Form fmEmployee = new Form_Staff("Nhân Viên " + user);
                     fmEmployee.ShowDialog();
-
+                    Clear();
                 }
                 else
                 {
@@ -69,6 +74,8 @@ namespace EntityFramework_Version.View_Layer
                 {
                     Form fmManager = new Form_Manager();
                     fmManager.ShowDialog();
+                    Clear();
+
                 }
                 else
                 {

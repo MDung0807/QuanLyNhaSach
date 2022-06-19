@@ -51,10 +51,16 @@ namespace EntityFramework_Version.View_Layer
 
         }
 
-        private void btnThanhToan_Click(object sender, EventArgs e)
+        private void btnPay_Borrow_Click(object sender, EventArgs e)
         {
-            Form_Pay fmPay = new Form_Pay();
-            fmPay.ShowDialog();
+            Form_Borrow_Pay fmBorrowPay = new Form_Borrow_Pay();
+            fmBorrowPay.ShowDialog();
+        }
+
+        private void btnPay_Buy_Click(object sender, EventArgs e)
+        {
+            Form_Buy_Pay fmBuyPay = new Form_Buy_Pay();
+            fmBuyPay.ShowDialog();
         }
     }
 }

@@ -15,13 +15,8 @@ namespace EntityFramework_Version.View_Layer
 {
     public partial class Form_Borrow_Pay : Form
     {
-        DataTable dtPay = null;
-        BLBorrowPay dbPay = new BLBorrowPay();
-        public static string maCuon { get; set; }
-        public static string maKH { get; set; }
-        public static string ngaymuon { get; set; }
-        public static string hantra { get; set; }
-        public static string dongia { get; set; }
+        Pay_Borrow pay = new Pay_Borrow();
+        
         public Form_Borrow_Pay()
         {
             InitializeComponent();
@@ -30,16 +25,9 @@ namespace EntityFramework_Version.View_Layer
         {
             try
             {
-                dtPay = new DataTable();
-                dtPay.Clear();
-
-                DataSet ds = dbPay.LayDuLieu();
-                dtPay = ds.Tables[0];
-
-                dgvPAY.DataSource = dtPay;
-                dgvPAY.AutoResizeColumns();
-
-                dgvPAY_CellClick(null, null);
+                dgvPAY.DataSource = pay.Lay_TT_Pay_Borrow();
+                LoadcmbCustomerID();
+                LoadcmbBookID();
             }
             catch (SqlException)
             {
@@ -48,25 +36,19 @@ namespace EntityFramework_Version.View_Layer
         }
         void LoadcmbCustomerID()
         {
-            dtPay = new DataTable();
-            dtPay.Clear();
-
-            DataSet ds = dbPay.LayMaKhachHang();
-            dtPay = ds.Tables[0];
+            DataTable dataTable = new DataTable();
+            dataTable = pay.Lay_TT_Pay_Borrow();
 
             cmbCustomerID.ValueMember = "MaKH";
-            cmbCustomerID.DataSource = dtPay;
+            cmbCustomerID.DataSource = dataTable;
         }
         void LoadcmbBookID()
         {
-            dtPay = new DataTable();
-            dtPay.Clear();
-
-            DataSet ds = dbPay.LayMaCuon();
-            dtPay = ds.Tables[0];
+            DataTable dataTable = new DataTable();
+            dataTable = pay.Lay_TT_Pay_Borrow();
 
             cmbBookID.ValueMember = "MaCuon";
-            cmbBookID.DataSource = dtPay;
+            cmbBookID.DataSource = dataTable;
         }
 
         private void Form_Borrow_Pay_Load(object sender, EventArgs e)
@@ -78,11 +60,18 @@ namespace EntityFramework_Version.View_Layer
 
         private void dgvPAY_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int r = dgvPAY.CurrentCell.RowIndex;
+           try
+            {
+                int r = dgvPAY.CurrentCell.RowIndex;
 
-            cmbBookID.SelectedValue = dgvPAY.Rows[r].Cells[0].Value.ToString();
-            cmbCustomerID.SelectedValue = dgvPAY.Rows[r].Cells[1].Value.ToString();
-            dtpDayOfBorrow.Value = (DateTime)dgvPAY.Rows[r].Cells[2].Value;
+                cmbBookID.Text = dgvPAY.Rows[r].Cells[0].Value.ToString().Trim();
+                cmbCustomerID.Text = dgvPAY.Rows[r].Cells[1].Value.ToString().Trim();
+                dtpDayOfBorrow.Value = Convert.ToDateTime(dgvPAY.Rows[r].Cells[2].Value.ToString().Trim());
+            }
+            catch
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
         }
         private void btnReload_Click(object sender, EventArgs e)
         {
@@ -95,40 +84,20 @@ namespace EntityFramework_Version.View_Layer
 
         private void btnOutputBill_Click(object sender, EventArgs e)
         {
-            if (cmbBookID.SelectedValue == null)
-            {
-                MessageBox.Show("Đang có người mượn!");
-                return;
-            }
-            else
-                maCuon = cmbBookID.SelectedValue.ToString();
-            maKH = cmbCustomerID.SelectedValue.ToString();
-            ngaymuon = dtpDayOfBorrow.Value.ToShortDateString();
+            string MaKH = cmbCustomerID.Text.ToString().Trim();
 
-            int r = dgvPAY.CurrentCell.RowIndex;
-
-            DateTime tra = (DateTime)dgvPAY.Rows[r].Cells[3].Value;
-            hantra = tra.ToShortDateString();
-            dongia = dgvPAY.Rows[r].Cells[4].Value.ToString();
-
-            Form form = new Form_Borrow_Bill();
+            Form form = new Form_Borrow_Bill(MaKH);
             form.ShowDialog();
+           
+     
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             try
             {
-                BLBorrowPay blPay = new BLBorrowPay();
-                dtPay = new DataTable();
-                dtPay.Clear();
-
-                DataSet ds = blPay.TimKiemThanhToan(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString(), this.dtpDayOfBorrow.Value.ToShortDateString().ToString());
-                dtPay = ds.Tables[0];
-
-                dgvPAY.DataSource = dtPay;
-                dgvPAY.AutoResizeColumns();
-
+                string MaKH = cmbCustomerID.Text.ToString().Trim();
+                dgvPAY.DataSource = pay.Tim_KH_Chua_Thanh_Toan(MaKH);
             }
             catch (SqlException)
             {

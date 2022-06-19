@@ -215,6 +215,7 @@
             this.btnSave.TabIndex = 135;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // dtpDayOfBirth
             // 

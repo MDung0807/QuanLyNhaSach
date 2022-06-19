@@ -17,7 +17,7 @@ namespace Entity_Version
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Customer());
+            Application.Run(new Form_Home());
         }
     }
 }

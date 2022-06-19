@@ -31,11 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Button();
             this.lbNV = new System.Windows.Forms.Label();
-            this.btnPay = new System.Windows.Forms.Button();
+            this.btnPay_Borrow = new System.Windows.Forms.Button();
             this.btnQLKH = new System.Windows.Forms.Button();
             this.btnBuy = new System.Windows.Forms.Button();
             this.btnBorrow = new System.Windows.Forms.Button();
             this.btnFindBook = new System.Windows.Forms.Button();
+            this.btnPay_Buy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,16 +72,16 @@
             this.lbNV.TabIndex = 0;
             this.lbNV.Text = "Nhân Viên";
             // 
-            // btnPay
+            // btnPay_Borrow
             // 
-            this.btnPay.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPay.Location = new System.Drawing.Point(370, 339);
-            this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(136, 75);
-            this.btnPay.TabIndex = 13;
-            this.btnPay.Text = "Thanh Toán";
-            this.btnPay.UseVisualStyleBackColor = true;
-            this.btnPay.Click += new System.EventHandler(this.btnThanhToan_Click);
+            this.btnPay_Borrow.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay_Borrow.Location = new System.Drawing.Point(620, 199);
+            this.btnPay_Borrow.Name = "btnPay_Borrow";
+            this.btnPay_Borrow.Size = new System.Drawing.Size(136, 75);
+            this.btnPay_Borrow.TabIndex = 13;
+            this.btnPay_Borrow.Text = "Thanh Toán Mượn";
+            this.btnPay_Borrow.UseVisualStyleBackColor = true;
+            this.btnPay_Borrow.Click += new System.EventHandler(this.btnPay_Borrow_Click);
             // 
             // btnQLKH
             // 
@@ -107,7 +108,7 @@
             // btnBorrow
             // 
             this.btnBorrow.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrow.Location = new System.Drawing.Point(620, 199);
+            this.btnBorrow.Location = new System.Drawing.Point(370, 339);
             this.btnBorrow.Name = "btnBorrow";
             this.btnBorrow.Size = new System.Drawing.Size(136, 75);
             this.btnBorrow.TabIndex = 10;
@@ -126,13 +127,25 @@
             this.btnFindBook.UseVisualStyleBackColor = true;
             this.btnFindBook.Click += new System.EventHandler(this.btnFindBook_Click);
             // 
+            // btnPay_Buy
+            // 
+            this.btnPay_Buy.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay_Buy.Location = new System.Drawing.Point(620, 339);
+            this.btnPay_Buy.Name = "btnPay_Buy";
+            this.btnPay_Buy.Size = new System.Drawing.Size(136, 75);
+            this.btnPay_Buy.TabIndex = 14;
+            this.btnPay_Buy.Text = "Thanh Toán Mua";
+            this.btnPay_Buy.UseVisualStyleBackColor = true;
+            this.btnPay_Buy.Click += new System.EventHandler(this.btnPay_Buy_Click);
+            // 
             // Form_Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPay_Buy);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnPay);
+            this.Controls.Add(this.btnPay_Borrow);
             this.Controls.Add(this.btnQLKH);
             this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.btnBorrow);
@@ -150,10 +163,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lbNV;
-        private System.Windows.Forms.Button btnPay;
+        private System.Windows.Forms.Button btnPay_Borrow;
         private System.Windows.Forms.Button btnQLKH;
         private System.Windows.Forms.Button btnBuy;
         private System.Windows.Forms.Button btnBorrow;
         private System.Windows.Forms.Button btnFindBook;
+        private System.Windows.Forms.Button btnPay_Buy;
     }
 }

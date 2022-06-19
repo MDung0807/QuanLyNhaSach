@@ -1,5 +1,4 @@
-﻿
-namespace EntityFramework_Version.View_Layer
+﻿namespace EntityFramework_Version.View_Layer
 {
     partial class Form_Borrow_Bill
     {
@@ -29,163 +28,160 @@ namespace EntityFramework_Version.View_Layer
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBack = new System.Windows.Forms.Button();
-            this.txtCustomerID = new System.Windows.Forms.TextBox();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtReturnDeadline = new System.Windows.Forms.TextBox();
-            this.txtDayOfBorrow = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.dgvBill = new System.Windows.Forms.DataGridView();
+            this.MaCuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HanTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtBookID = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbSoLuong = new System.Windows.Forms.Label();
+            this.lbThanhTien = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnBack
-            // 
-            this.btnBack.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(602, 475);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(119, 40);
-            this.btnBack.TabIndex = 27;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // txtCustomerID
-            // 
-            this.txtCustomerID.Location = new System.Drawing.Point(329, 191);
-            this.txtCustomerID.Name = "txtCustomerID";
-            this.txtCustomerID.ReadOnly = true;
-            this.txtCustomerID.Size = new System.Drawing.Size(224, 22);
-            this.txtCustomerID.TabIndex = 26;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Location = new System.Drawing.Point(329, 383);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.ReadOnly = true;
-            this.txtPrice.Size = new System.Drawing.Size(224, 22);
-            this.txtPrice.TabIndex = 25;
-            // 
-            // txtReturnDeadline
-            // 
-            this.txtReturnDeadline.Location = new System.Drawing.Point(329, 318);
-            this.txtReturnDeadline.Name = "txtReturnDeadline";
-            this.txtReturnDeadline.ReadOnly = true;
-            this.txtReturnDeadline.Size = new System.Drawing.Size(224, 22);
-            this.txtReturnDeadline.TabIndex = 24;
-            // 
-            // txtDayOfBorrow
-            // 
-            this.txtDayOfBorrow.Location = new System.Drawing.Point(329, 249);
-            this.txtDayOfBorrow.Name = "txtDayOfBorrow";
-            this.txtDayOfBorrow.ReadOnly = true;
-            this.txtDayOfBorrow.Size = new System.Drawing.Size(224, 22);
-            this.txtDayOfBorrow.TabIndex = 23;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(314, 543);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(186, 23);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "Cảm Ơn Quý Khách!";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(183, 385);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 23);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Đơn Giá: ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(183, 320);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 23);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Hạn Trả: ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(160, 251);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 23);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Ngày Mượn: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(124, 191);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 23);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Mã Khách Hàng: ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(251, 37);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(263, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(349, 38);
-            this.label1.TabIndex = 17;
+            this.label1.Size = new System.Drawing.Size(211, 24);
+            this.label1.TabIndex = 0;
             this.label1.Text = "Nhà Sách Thành Công";
+            // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(690, 383);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 40);
+            this.btnBack.TabIndex = 1;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // dgvBill
+            // 
+            this.dgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaCuon,
+            this.MaK,
+            this.NgayMuon,
+            this.HanTra,
+            this.GiaMuon});
+            this.dgvBill.Location = new System.Drawing.Point(12, 101);
+            this.dgvBill.Name = "dgvBill";
+            this.dgvBill.ReadOnly = true;
+            this.dgvBill.Size = new System.Drawing.Size(551, 150);
+            this.dgvBill.TabIndex = 2;
+            // 
+            // MaCuon
+            // 
+            this.MaCuon.DataPropertyName = "MaCuon";
+            this.MaCuon.HeaderText = "Mã  Cuốn";
+            this.MaCuon.Name = "MaCuon";
+            this.MaCuon.ReadOnly = true;
+            // 
+            // MaK
+            // 
+            this.MaK.DataPropertyName = "MaKH";
+            this.MaK.HeaderText = "Mã Khách Hàng";
+            this.MaK.Name = "MaK";
+            this.MaK.ReadOnly = true;
+            // 
+            // NgayMuon
+            // 
+            this.NgayMuon.DataPropertyName = "NgayMuon";
+            this.NgayMuon.HeaderText = "Ngày Mượn";
+            this.NgayMuon.Name = "NgayMuon";
+            this.NgayMuon.ReadOnly = true;
+            // 
+            // HanTra
+            // 
+            this.HanTra.DataPropertyName = "HanTra";
+            this.HanTra.HeaderText = "Hạn Trả";
+            this.HanTra.Name = "HanTra";
+            this.HanTra.ReadOnly = true;
+            // 
+            // GiaMuon
+            // 
+            this.GiaMuon.DataPropertyName = "GiaMuon";
+            this.GiaMuon.HeaderText = "Giá Mượn";
+            this.GiaMuon.Name = "GiaMuon";
+            this.GiaMuon.ReadOnly = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(177, 125);
+            this.label2.Location = new System.Drawing.Point(22, 331);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 23);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Mã Cuốn: ";
+            this.label2.Size = new System.Drawing.Size(90, 19);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Thành Tiền:";
             // 
-            // txtBookID
+            // label3
             // 
-            this.txtBookID.Location = new System.Drawing.Point(329, 125);
-            this.txtBookID.Name = "txtBookID";
-            this.txtBookID.ReadOnly = true;
-            this.txtBookID.Size = new System.Drawing.Size(224, 22);
-            this.txtBookID.TabIndex = 29;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(32, 279);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 19);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Số Lượng:";
+            // 
+            // lbSoLuong
+            // 
+            this.lbSoLuong.AutoSize = true;
+            this.lbSoLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSoLuong.Location = new System.Drawing.Point(131, 279);
+            this.lbSoLuong.Name = "lbSoLuong";
+            this.lbSoLuong.Size = new System.Drawing.Size(14, 19);
+            this.lbSoLuong.TabIndex = 5;
+            this.lbSoLuong.Text = "-";
+            // 
+            // lbThanhTien
+            // 
+            this.lbThanhTien.AutoSize = true;
+            this.lbThanhTien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThanhTien.Location = new System.Drawing.Point(131, 331);
+            this.lbThanhTien.Name = "lbThanhTien";
+            this.lbThanhTien.Size = new System.Drawing.Size(14, 19);
+            this.lbThanhTien.TabIndex = 6;
+            this.lbThanhTien.Text = "-";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(291, 404);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(135, 19);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Cảm ơn quý khách";
             // 
             // Form_Borrow_Bill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 609);
-            this.Controls.Add(this.txtBookID);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.txtCustomerID);
-            this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.txtReturnDeadline);
-            this.Controls.Add(this.txtDayOfBorrow);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbThanhTien);
+            this.Controls.Add(this.lbSoLuong);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dgvBill);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
             this.Name = "Form_Borrow_Bill";
             this.Text = "Form_Borrow_Bill";
             this.Load += new System.EventHandler(this.Form_Borrow_Bill_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBill)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,18 +189,18 @@ namespace EntityFramework_Version.View_Layer
 
         #endregion
 
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.TextBox txtCustomerID;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox txtReturnDeadline;
-        private System.Windows.Forms.TextBox txtDayOfBorrow;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.DataGridView dgvBill;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBookID;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbSoLuong;
+        private System.Windows.Forms.Label lbThanhTien;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaCuon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayMuon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HanTra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaMuon;
     }
 }

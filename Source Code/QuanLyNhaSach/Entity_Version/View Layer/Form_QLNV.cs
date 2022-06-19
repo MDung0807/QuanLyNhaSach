@@ -125,18 +125,27 @@ namespace EntityFramework_Version.View_Layer
 
         private void dgvQLNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int r = dgvQLNV.CurrentCell.RowIndex;
+           
+            try
+            {
+                int r = dgvQLNV.CurrentCell.RowIndex;
 
-            txtAddress.Text = dgvQLNV.Rows[r].Cells[4].Value.ToString().Trim();
-            txtFullName.Text = dgvQLNV.Rows[r].Cells[1].Value.ToString().Trim();
-            txtIncome.Text = dgvQLNV.Rows[r].Cells[3].Value.ToString().Trim();
-            txtJob.Text = dgvQLNV.Rows[r].Cells[2].Value.ToString().Trim();
-            txtPhone.Text = dgvQLNV.Rows[r].Cells[7].Value.ToString().Trim();
-            txtStaffID.Text = dgvQLNV.Rows[r].Cells[0].Value.ToString().Trim();
-            dtpDayOfBirth.Value = Convert.ToDateTime(dgvQLNV.Rows[r].Cells[5].Value.ToString());
-            cbSex.Checked = Convert.ToBoolean(dgvQLNV.Rows[r].Cells[6].Value.ToString());
-            //txtUser.Text = dgvQLNV.Rows[r].Cells[8].Value.ToString().Trim();
-            //txtPass.Text = dgvQLNV.Rows[r].Cells[9].Value.ToString().Trim();
+                txtAddress.Text = dgvQLNV.Rows[r].Cells[4].Value.ToString().Trim();
+                txtFullName.Text = dgvQLNV.Rows[r].Cells[1].Value.ToString().Trim();
+                txtIncome.Text = dgvQLNV.Rows[r].Cells[3].Value.ToString().Trim();
+                txtJob.Text = dgvQLNV.Rows[r].Cells[2].Value.ToString().Trim();
+                txtPhone.Text = dgvQLNV.Rows[r].Cells[7].Value.ToString().Trim();
+                txtStaffID.Text = dgvQLNV.Rows[r].Cells[0].Value.ToString().Trim();
+                dtpDayOfBirth.Value = Convert.ToDateTime(dgvQLNV.Rows[r].Cells[5].Value.ToString());
+                cbSex.Checked = Convert.ToBoolean(dgvQLNV.Rows[r].Cells[6].Value.ToString());
+                //txtUser.Text = dgvQLNV.Rows[r].Cells[8].Value.ToString().Trim();
+                //txtPass.Text = dgvQLNV.Rows[r].Cells[9].Value.ToString().Trim();
+
+            }
+            catch
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
         }
 
         private void btnReload_Click(object sender, EventArgs e)

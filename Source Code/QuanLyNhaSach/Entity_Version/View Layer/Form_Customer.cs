@@ -182,13 +182,20 @@ namespace EntityFramework_Version.View_Layer
 
         private void dgvQLKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int r = dgvCUSTOMER.CurrentCell.RowIndex;
+            try
+            {
+                int r = dgvCUSTOMER.CurrentCell.RowIndex;
 
-            txtCustomerID.Text = dgvCUSTOMER.Rows[r].Cells[0].Value.ToString().Trim();
-            txtFullName.Text = dgvCUSTOMER.Rows[r].Cells[1].Value.ToString().Trim();
-            txtAddress.Text = dgvCUSTOMER.Rows[r].Cells[2].Value.ToString().Trim();
-            dtpDayOfBirth.Value = Convert.ToDateTime(dgvCUSTOMER.Rows[r].Cells[3].Value.ToString());
-            txtPhone.Text = dgvCUSTOMER.Rows[r].Cells[4].Value.ToString().Trim();
+                txtCustomerID.Text = dgvCUSTOMER.Rows[r].Cells[0].Value.ToString().Trim();
+                txtFullName.Text = dgvCUSTOMER.Rows[r].Cells[1].Value.ToString().Trim();
+                txtAddress.Text = dgvCUSTOMER.Rows[r].Cells[2].Value.ToString().Trim();
+                dtpDayOfBirth.Value = Convert.ToDateTime(dgvCUSTOMER.Rows[r].Cells[3].Value.ToString());
+                txtPhone.Text = dgvCUSTOMER.Rows[r].Cells[4].Value.ToString().Trim();
+            }
+            catch
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
         }
     }
 }

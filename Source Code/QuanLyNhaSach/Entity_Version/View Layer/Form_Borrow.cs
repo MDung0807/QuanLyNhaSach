@@ -91,10 +91,17 @@ namespace EntityFramework_Version.View_Layer
 
         private void dgvMuon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int r = dgvMuon.CurrentCell.RowIndex;
+            try
+            {
+                int r = dgvMuon.CurrentCell.RowIndex;
 
-            cmbCustomerID.Text = dgvMuon.Rows[r].Cells[1].Value.ToString().Trim(); 
-            cmbBookID.Text = dgvMuon.Rows[r].Cells[0].Value.ToString().Trim();
+                cmbCustomerID.Text = dgvMuon.Rows[r].Cells[1].Value.ToString().Trim();
+                cmbBookID.Text = dgvMuon.Rows[r].Cells[0].Value.ToString().Trim();
+            }
+            catch
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
         }
 
         private void btnFinish_Click(object sender, EventArgs e)

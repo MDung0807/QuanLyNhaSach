@@ -61,7 +61,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(68, 497);
+            this.btnSave.Location = new System.Drawing.Point(75, 381);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(89, 32);
             this.btnSave.TabIndex = 76;
@@ -72,7 +72,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(178, 458);
+            this.btnUpdate.Location = new System.Drawing.Point(185, 342);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(89, 32);
             this.btnUpdate.TabIndex = 74;
@@ -133,7 +133,7 @@
             // btnCLear
             // 
             this.btnCLear.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCLear.Location = new System.Drawing.Point(178, 497);
+            this.btnCLear.Location = new System.Drawing.Point(185, 381);
             this.btnCLear.Name = "btnCLear";
             this.btnCLear.Size = new System.Drawing.Size(89, 32);
             this.btnCLear.TabIndex = 78;
@@ -153,7 +153,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(68, 458);
+            this.btnAdd.Location = new System.Drawing.Point(75, 342);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(89, 32);
             this.btnAdd.TabIndex = 73;
@@ -164,7 +164,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(178, 536);
+            this.btnDelete.Location = new System.Drawing.Point(185, 420);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(89, 32);
             this.btnDelete.TabIndex = 72;
@@ -175,7 +175,7 @@
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(68, 536);
+            this.btnSearch.Location = new System.Drawing.Point(75, 420);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(89, 32);
             this.btnSearch.TabIndex = 71;
@@ -220,7 +220,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1149, 67);
+            this.panel1.Size = new System.Drawing.Size(1153, 67);
             this.panel1.TabIndex = 65;
             // 
             // btnBack
@@ -285,12 +285,12 @@
             this.NgaySinh,
             this.soDT});
             this.dgvCUSTOMER.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgvCUSTOMER.Location = new System.Drawing.Point(341, 67);
+            this.dgvCUSTOMER.Location = new System.Drawing.Point(345, 67);
             this.dgvCUSTOMER.Name = "dgvCUSTOMER";
             this.dgvCUSTOMER.ReadOnly = true;
             this.dgvCUSTOMER.RowHeadersWidth = 51;
             this.dgvCUSTOMER.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCUSTOMER.Size = new System.Drawing.Size(808, 517);
+            this.dgvCUSTOMER.Size = new System.Drawing.Size(808, 431);
             this.dgvCUSTOMER.TabIndex = 66;
             this.dgvCUSTOMER.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvQLKhachHang_CellClick);
             // 
@@ -319,7 +319,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1149, 584);
+            this.ClientSize = new System.Drawing.Size(1153, 498);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label11);

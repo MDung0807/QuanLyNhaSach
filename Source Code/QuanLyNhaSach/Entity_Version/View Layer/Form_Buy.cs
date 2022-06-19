@@ -95,10 +95,19 @@ namespace EntityFramework_Version.View_Layer
 
         private void dgvBuy_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int r = dgvBuy.CurrentCell.RowIndex;
 
-            cmbCustomerID.Text = dgvBuy.Rows[r].Cells[0].Value.ToString().Trim();
-            cmbCustomerID.Text = dgvBuy.Rows[r].Cells[2].Value.ToString().Trim();
+            try
+            {
+                int r = dgvBuy.CurrentCell.RowIndex;
+
+                cmbCustomerID.Text = dgvBuy.Rows[r].Cells[0].Value.ToString().Trim();
+                cmbCustomerID.Text = dgvBuy.Rows[r].Cells[2].Value.ToString().Trim();
+            }
+            catch
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
+           
         }
     }
 }

@@ -36,7 +36,6 @@ D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.csproj.AssemblyReference.cache
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.csproj.SuggestedBindingRedirects.cache
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.Properties.Resources.resources
-D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Bill.resources
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Borrow.resources
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Buy.resources
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Customer.resources
@@ -44,7 +43,6 @@ D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Forget_Password.resources
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Home.resources
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Manager.resources
-D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Pay.resources
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_QLNV.resources
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Thong_Ke_Doanh_Thu.resources
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.csproj.GenerateResource.cache
@@ -54,3 +52,7 @@ D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.pdb
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Login.resources
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Staff.resources
+D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Borrow_Bill.resources
+D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Borrow_Pay.resources
+D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Buy_Bill.resources
+D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Buy_Pay.resources

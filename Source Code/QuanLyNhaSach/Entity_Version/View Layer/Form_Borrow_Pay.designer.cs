@@ -54,10 +54,9 @@ namespace EntityFramework_Version.View_Layer
             // btnReload
             // 
             this.btnReload.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(1187, 19);
-            this.btnReload.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReload.Location = new System.Drawing.Point(902, 12);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(119, 40);
+            this.btnReload.Size = new System.Drawing.Size(89, 32);
             this.btnReload.TabIndex = 18;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
@@ -66,10 +65,9 @@ namespace EntityFramework_Version.View_Layer
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(169, 441);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearch.Location = new System.Drawing.Point(127, 358);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(119, 40);
+            this.btnSearch.Size = new System.Drawing.Size(89, 32);
             this.btnSearch.TabIndex = 33;
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -78,10 +76,9 @@ namespace EntityFramework_Version.View_Layer
             // btnOutputBill
             // 
             this.btnOutputBill.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOutputBill.Location = new System.Drawing.Point(138, 536);
-            this.btnOutputBill.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOutputBill.Location = new System.Drawing.Point(104, 436);
             this.btnOutputBill.Name = "btnOutputBill";
-            this.btnOutputBill.Size = new System.Drawing.Size(150, 40);
+            this.btnOutputBill.Size = new System.Drawing.Size(112, 32);
             this.btnOutputBill.TabIndex = 32;
             this.btnOutputBill.Text = "Xuất Hóa Đơn";
             this.btnOutputBill.UseVisualStyleBackColor = true;
@@ -90,10 +87,9 @@ namespace EntityFramework_Version.View_Layer
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(169, 19);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Location = new System.Drawing.Point(127, 15);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(119, 40);
+            this.btnBack.Size = new System.Drawing.Size(89, 32);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -103,29 +99,28 @@ namespace EntityFramework_Version.View_Layer
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(619, 30);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(464, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 37);
+            this.label1.Size = new System.Drawing.Size(235, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thanh Toán Mượn";
             // 
             // cmbCustomerID
             // 
             this.cmbCustomerID.FormattingEnabled = true;
-            this.cmbCustomerID.Location = new System.Drawing.Point(169, 230);
+            this.cmbCustomerID.Location = new System.Drawing.Point(127, 187);
+            this.cmbCustomerID.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCustomerID.Name = "cmbCustomerID";
-            this.cmbCustomerID.Size = new System.Drawing.Size(165, 24);
+            this.cmbCustomerID.Size = new System.Drawing.Size(125, 21);
             this.cmbCustomerID.TabIndex = 34;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 231);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(5, 188);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 23);
+            this.label2.Size = new System.Drawing.Size(120, 19);
             this.label2.TabIndex = 31;
             this.label2.Text = "Mã Khách Hàng";
             // 
@@ -140,13 +135,12 @@ namespace EntityFramework_Version.View_Layer
             this.HanTra,
             this.GiaMuon});
             this.dgvPAY.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgvPAY.Location = new System.Drawing.Point(388, 83);
-            this.dgvPAY.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvPAY.Location = new System.Drawing.Point(257, 67);
             this.dgvPAY.Name = "dgvPAY";
             this.dgvPAY.ReadOnly = true;
             this.dgvPAY.RowHeadersWidth = 51;
             this.dgvPAY.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPAY.Size = new System.Drawing.Size(1135, 659);
+            this.dgvPAY.Size = new System.Drawing.Size(851, 429);
             this.dgvPAY.TabIndex = 30;
             this.dgvPAY.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPAY_CellClick);
             // 
@@ -193,9 +187,10 @@ namespace EntityFramework_Version.View_Layer
             // dtpDayOfBorrow
             // 
             this.dtpDayOfBorrow.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDayOfBorrow.Location = new System.Drawing.Point(169, 290);
+            this.dtpDayOfBorrow.Location = new System.Drawing.Point(127, 236);
+            this.dtpDayOfBorrow.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDayOfBorrow.Name = "dtpDayOfBorrow";
-            this.dtpDayOfBorrow.Size = new System.Drawing.Size(165, 22);
+            this.dtpDayOfBorrow.Size = new System.Drawing.Size(125, 20);
             this.dtpDayOfBorrow.TabIndex = 36;
             this.dtpDayOfBorrow.Value = new System.DateTime(2022, 6, 18, 0, 0, 0, 0);
             // 
@@ -203,10 +198,9 @@ namespace EntityFramework_Version.View_Layer
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(43, 290);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(32, 236);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 23);
+            this.label4.Size = new System.Drawing.Size(92, 19);
             this.label4.TabIndex = 35;
             this.label4.Text = "Ngày Mượn";
             // 
@@ -218,45 +212,45 @@ namespace EntityFramework_Version.View_Layer
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1523, 83);
+            this.panel1.Size = new System.Drawing.Size(1108, 67);
             this.panel1.TabIndex = 29;
             // 
             // cmbBookID
             // 
             this.cmbBookID.FormattingEnabled = true;
-            this.cmbBookID.Location = new System.Drawing.Point(169, 164);
+            this.cmbBookID.Location = new System.Drawing.Point(127, 133);
+            this.cmbBookID.Margin = new System.Windows.Forms.Padding(2);
             this.cmbBookID.Name = "cmbBookID";
-            this.cmbBookID.Size = new System.Drawing.Size(165, 24);
+            this.cmbBookID.Size = new System.Drawing.Size(125, 21);
             this.cmbBookID.TabIndex = 37;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(66, 165);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(50, 134);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 23);
+            this.label3.Size = new System.Drawing.Size(72, 19);
             this.label3.TabIndex = 38;
             this.label3.Text = "Mã Cuốn";
             // 
             // Form_Borrow_Pay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1523, 742);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cmbBookID);
-            this.Controls.Add(this.btnSearch);
+            this.ClientSize = new System.Drawing.Size(1108, 496);
             this.Controls.Add(this.btnOutputBill);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.cmbBookID);
             this.Controls.Add(this.cmbCustomerID);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvPAY);
             this.Controls.Add(this.dtpDayOfBorrow);
+            this.Controls.Add(this.dgvPAY);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Borrow_Pay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Borrow_Pay";

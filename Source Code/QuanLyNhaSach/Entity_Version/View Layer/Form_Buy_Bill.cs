@@ -15,17 +15,40 @@ namespace EntityFramework_Version.View_Layer
 {
     public partial class Form_Buy_Bill : Form
     {
+        Pay_Buy pay = new Pay_Buy();
+        string MaKH;
         public Form_Buy_Bill()
         {
             InitializeComponent();
         }
 
+        void Thanh_Toan ()
+        {
+            try
+            {
+                pay.DaThanhToan(MaKH);
+                MessageBox.Show("Đã thanh toán thành công");
+            }
+            catch
+            {
+                MessageBox.Show("Thanh toán không thành công");
+            }
+        }
+        public Form_Buy_Bill(string MaKH)
+        {
+            InitializeComponent();
+            this.MaKH = MaKH;
+        }
+
         private void Form_Bill_Load(object sender, EventArgs e)
         {
-            this.txtCustomerID.Text = Form_Buy_Pay.maKH;
-            this.txtDayOfBuy.Text = Form_Buy_Pay.ngaymua;
-            this.txtQuantity.Text = Form_Buy_Pay.soluong;
-            this.txtTotalPrice.Text = Form_Buy_Pay.thanhtien;
+            
+            var result = pay.Pay_Bill_Buy(MaKH);
+            dgvBill.DataSource = result.Item1;
+            lbSoLuong.Text = result.Item2.ToString().Trim();
+            lbThanhTien.Text = result.Item3.ToString().Trim();
+
+            Thanh_Toan();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

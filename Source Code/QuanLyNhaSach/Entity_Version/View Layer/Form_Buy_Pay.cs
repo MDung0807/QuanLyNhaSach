@@ -15,9 +15,7 @@ namespace EntityFramework_Version.View_Layer
 {
     public partial class Form_Buy_Pay : Form
     {
-        DataTable dtPay = null;
-
-
+        Pay_Buy pay = new Pay_Buy();
         public Form_Buy_Pay()
         {
             InitializeComponent();
@@ -26,7 +24,8 @@ namespace EntityFramework_Version.View_Layer
         {
             try
             {
-     
+                dgvPAY.DataSource = pay.Lay_TT_Pay_Buy();
+                LoadcmbCustomerID();
             }
             catch (SqlException)
             {
@@ -37,19 +36,31 @@ namespace EntityFramework_Version.View_Layer
         private void Form_Pay_Load(object sender, EventArgs e)
         {
             LoadData();
-            LoadcmbCustomerID();
+            
         }
         void LoadcmbCustomerID()
         {
-          
+
+            DataTable dataTable = new DataTable();
+            dataTable = pay.Lay_TT_Pay_Buy();
+
+            cmbCustomerID.ValueMember = "MaKH";
+            cmbCustomerID.DataSource = dataTable;
         }
 
         private void dgvPAY_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int r = dgvPAY.CurrentCell.RowIndex;
+           try
+            {
+                int r = dgvPAY.CurrentCell.RowIndex;
 
-            cmbCustomerID.SelectedValue = dgvPAY.Rows[r].Cells[0].Value.ToString();
-            dtpDayOfBuy.Value = (DateTime)dgvPAY.Rows[r].Cells[1].Value;
+                cmbCustomerID.Text = dgvPAY.Rows[r].Cells[0].Value.ToString();
+                dtpDayOfBuy.Value = Convert.ToDateTime(dgvPAY.Rows[r].Cells[2].Value.ToString().Trim());
+            }
+            catch
+            {
+                MessageBox.Show("Không Có dữ liệu");
+            }
         }
 
         private void btnReload_Click(object sender, EventArgs e)
@@ -61,7 +72,8 @@ namespace EntityFramework_Version.View_Layer
         {
             try
             {
-               
+                string MaKH = cmbCustomerID.Text.ToString().Trim();
+                dgvPAY.DataSource = pay.Tim_KH_Chua_Thanh_Toan(MaKH);
             }
             catch (SqlException)
             {
@@ -71,9 +83,11 @@ namespace EntityFramework_Version.View_Layer
 
         private void btnOutputBill_Click(object sender, EventArgs e)
         {
-
-            Form form = new Form_Buy_Bill();
+            string MaKH = cmbCustomerID.Text.ToString().Trim();
+            Form form = new Form_Buy_Bill(MaKH);
             form.ShowDialog();
+
+            LoadData();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
