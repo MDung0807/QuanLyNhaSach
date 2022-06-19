@@ -20,8 +20,8 @@ namespace EntityFramework_Version.BS_Layer
                              MaKH = p.MaKH,
                              TenKH = p.TenKH, 
                              DiaChi = p.DiaChi,
-                             NgSinh = p.NgaySinh, 
-                             SDT = p.soDT,
+                             NgaySinh = p.NgaySinh, 
+                             soDT = p.soDT,
                              Flag_Xoa = p.FlagXoa
                          };
 
@@ -29,13 +29,13 @@ namespace EntityFramework_Version.BS_Layer
             dataTable.Columns.Add("MaKH");
             dataTable.Columns.Add("TenKH");
             dataTable.Columns.Add("DiaChi");
-            dataTable.Columns.Add("NgSinh");
-            dataTable.Columns.Add("SDT");
+            dataTable.Columns.Add("NgaySinh");
+            dataTable.Columns.Add("soDT");
 
             foreach (var item in result)
             {
                 if (item.Flag_Xoa == false)
-                    dataTable.Rows.Add(item.MaKH, item.TenKH, item.DiaChi, item.NgSinh, item.SDT);
+                    dataTable.Rows.Add(item.MaKH, item.TenKH, item.DiaChi, item.NgaySinh, item.soDT);
             }
 
             return dataTable;
@@ -87,8 +87,8 @@ namespace EntityFramework_Version.BS_Layer
                              MaKH = p.MaKH,
                              TenKH = p.TenKH,
                              DiaChi = p.DiaChi,
-                             NgSinh = p.NgaySinh,
-                             SDT = p.soDT,
+                             NgaySinh = p.NgaySinh,
+                             soDT = p.soDT,
                              Flag_Xoa = p.FlagXoa
                          };
 
@@ -96,14 +96,15 @@ namespace EntityFramework_Version.BS_Layer
             dataTable.Columns.Add("MaKH");
             dataTable.Columns.Add("TenKH");
             dataTable.Columns.Add("DiaChi");
-            dataTable.Columns.Add("NgSinh");
-            dataTable.Columns.Add("SDT");
+            dataTable.Columns.Add("NgaySinh");
+            dataTable.Columns.Add("soDT");
 
             foreach (var item in result)
             {
                 if (item.Flag_Xoa == false)
-                    dataTable.Rows.Add(item.MaKH, item.TenKH, item.DiaChi, item.NgSinh, item.SDT);
+                    dataTable.Rows.Add(item.MaKH, item.TenKH, item.DiaChi, item.NgaySinh, item.soDT);
             }
+
             return dataTable;
         }
 

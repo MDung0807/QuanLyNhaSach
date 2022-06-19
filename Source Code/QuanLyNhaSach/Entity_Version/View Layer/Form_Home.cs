@@ -30,7 +30,7 @@ namespace EntityFramework_Version.View_Layer
 
         private void btn_Internal_Click(object sender, EventArgs e)
         {
-            Form fmInternal = new Form_Internal();
+            Form fmInternal = new Form_Login();
             fmInternal.ShowDialog();
         }
     }

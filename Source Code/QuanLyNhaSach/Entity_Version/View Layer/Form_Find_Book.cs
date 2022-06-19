@@ -21,7 +21,7 @@ namespace EntityFramework_Version.View_Layer
             {
                 dgvFindBook.DataSource = find_book.Lay_TT_Sach();
                 dgvFindBook.AutoResizeColumns();
-                this.txt_BookName.ResetText();
+                this.txtBookName.ResetText();
             }
             catch
             {
@@ -31,7 +31,7 @@ namespace EntityFramework_Version.View_Layer
 
         void Find_book()
         {
-            string tua_sach = txt_BookName.Text.Trim();
+            string tua_sach = txtBookName.Text.Trim();
             try
             {
                 dgvFindBook.DataSource = find_book.Tim_Sach(tua_sach);

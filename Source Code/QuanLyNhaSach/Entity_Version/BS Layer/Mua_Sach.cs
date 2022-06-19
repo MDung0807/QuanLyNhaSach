@@ -30,7 +30,7 @@ namespace EntityFramework_Version.BS_Layer
             dataTable.Columns.Add("TenKH");
             dataTable.Columns.Add("MaCuon");
             dataTable.Columns.Add("TuaSach");
-            dataTable.Columns.Add("SoTien");
+            dataTable.Columns.Add("GiaMua");
             dataTable.Columns.Add("NgMua");
             dataTable.Columns.Add("DaThanhToan");
 
@@ -73,6 +73,50 @@ namespace EntityFramework_Version.BS_Layer
             
             qlnsentity.SaveChanges();
             Set_Flag_Cuon_Sach(MaKH, MaCuon);
+
+        }
+
+        public DataTable Load_KH ()
+        {
+            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
+            var result = from p in qlnsentity.KhachHangs
+                         where p.FlagXoa == false
+                         select new
+                         {
+                             MaKH = p.MaKH,
+                         };
+
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("MaKH");
+
+            foreach (var item in result)
+            {
+                dataTable.Rows.Add(item.MaKH);
+            }
+
+            return dataTable;
+
+        }
+
+        public DataTable Load_CuonSach_Chua_Xoa()
+        {
+            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
+            var result = from p in qlnsentity.CuonSaches
+                         where p.FlagXoa == false
+                         select new
+                         {
+                             MaCuon = p.MaCuon
+                         };
+
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("MaCuon");
+
+            foreach (var item in result)
+            {
+                dataTable.Rows.Add(item.MaCuon);
+            }
+
+            return dataTable;
 
         }
 

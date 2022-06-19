@@ -15,7 +15,7 @@ namespace EntityFramework_Version.View_Layer
     {
 
         Pay pay = new Pay();
-        string option = null;
+        string option;
         public Form_Pay()
         {
             InitializeComponent();

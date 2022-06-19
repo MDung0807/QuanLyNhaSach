@@ -28,77 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Home_title = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_close = new System.Windows.Forms.Button();
-            this.btn_Guest = new System.Windows.Forms.Button();
             this.btn_Internal = new System.Windows.Forms.Button();
+            this.btn_Guest = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Home_title = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // Home_title
+            // btn_Internal
             // 
-            this.Home_title.AutoSize = true;
-            this.Home_title.BackColor = System.Drawing.Color.Transparent;
-            this.Home_title.Font = new System.Drawing.Font("Maiandra GD", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Home_title.ForeColor = System.Drawing.Color.DarkRed;
-            this.Home_title.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Home_title.Location = new System.Drawing.Point(328, 9);
-            this.Home_title.Name = "Home_title";
-            this.Home_title.Size = new System.Drawing.Size(427, 48);
-            this.Home_title.TabIndex = 1;
-            this.Home_title.Text = "Nhà Sách Thành Công";
-            this.Home_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_Internal.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Internal.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Internal.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_Internal.Location = new System.Drawing.Point(572, 419);
+            this.btn_Internal.Name = "btn_Internal";
+            this.btn_Internal.Size = new System.Drawing.Size(89, 32);
+            this.btn_Internal.TabIndex = 10;
+            this.btn_Internal.Text = "Đăng Nhập";
+            this.btn_Internal.UseVisualStyleBackColor = false;
+            this.btn_Internal.Click += new System.EventHandler(this.btn_Internal_Click);
+            // 
+            // btn_Guest
+            // 
+            this.btn_Guest.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Guest.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Guest.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_Guest.Location = new System.Drawing.Point(317, 419);
+            this.btn_Guest.Name = "btn_Guest";
+            this.btn_Guest.Size = new System.Drawing.Size(89, 32);
+            this.btn_Guest.TabIndex = 9;
+            this.btn_Guest.Text = "Khách";
+            this.btn_Guest.UseVisualStyleBackColor = false;
+            this.btn_Guest.Click += new System.EventHandler(this.btn_Guest_Click);
+            // 
+            // btn_close
+            // 
+            this.btn_close.BackColor = System.Drawing.Color.Transparent;
+            this.btn_close.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_close.Location = new System.Drawing.Point(821, 21);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(89, 32);
+            this.btn_close.TabIndex = 8;
+            this.btn_close.Text = "Close";
+            this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(825, 466);
+            this.label1.Location = new System.Drawing.Point(818, 467);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 16);
-            this.label1.TabIndex = 2;
+            this.label1.Size = new System.Drawing.Size(159, 17);
+            this.label1.TabIndex = 7;
             this.label1.Text = "Địa chỉ: 01 Võ Văn Ngân";
             // 
-            // btn_close
+            // Home_title
             // 
-            this.btn_close.BackColor = System.Drawing.Color.Transparent;
-            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_close.ForeColor = System.Drawing.Color.DarkRed;
-            this.btn_close.Location = new System.Drawing.Point(893, 20);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(75, 37);
-            this.btn_close.TabIndex = 3;
-            this.btn_close.Text = "Close";
-            this.btn_close.UseVisualStyleBackColor = false;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
-            // 
-            // btn_Guest
-            // 
-            this.btn_Guest.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Guest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Guest.ForeColor = System.Drawing.Color.DarkRed;
-            this.btn_Guest.Location = new System.Drawing.Point(319, 377);
-            this.btn_Guest.Name = "btn_Guest";
-            this.btn_Guest.Size = new System.Drawing.Size(75, 37);
-            this.btn_Guest.TabIndex = 4;
-            this.btn_Guest.Text = "Khách";
-            this.btn_Guest.UseVisualStyleBackColor = false;
-            this.btn_Guest.Click += new System.EventHandler(this.btn_Guest_Click);
-            // 
-            // btn_Internal
-            // 
-            this.btn_Internal.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Internal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Internal.ForeColor = System.Drawing.Color.DarkRed;
-            this.btn_Internal.Location = new System.Drawing.Point(608, 377);
-            this.btn_Internal.Name = "btn_Internal";
-            this.btn_Internal.Size = new System.Drawing.Size(129, 37);
-            this.btn_Internal.TabIndex = 5;
-            this.btn_Internal.Text = "Người nội bộ";
-            this.btn_Internal.UseVisualStyleBackColor = false;
-            this.btn_Internal.Click += new System.EventHandler(this.btn_Internal_Click);
+            this.Home_title.AutoSize = true;
+            this.Home_title.BackColor = System.Drawing.Color.Transparent;
+            this.Home_title.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Home_title.ForeColor = System.Drawing.Color.White;
+            this.Home_title.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Home_title.Location = new System.Drawing.Point(310, 9);
+            this.Home_title.Name = "Home_title";
+            this.Home_title.Size = new System.Drawing.Size(386, 43);
+            this.Home_title.TabIndex = 6;
+            this.Home_title.Text = "Nhà Sách Thành Công";
+            this.Home_title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Form_Home
             // 
@@ -121,11 +121,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label Home_title;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.Button btn_Guest;
+
         private System.Windows.Forms.Button btn_Internal;
+        private System.Windows.Forms.Button btn_Guest;
+        private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Home_title;
     }
 }
 

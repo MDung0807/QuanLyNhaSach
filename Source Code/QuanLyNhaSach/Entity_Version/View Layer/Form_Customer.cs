@@ -25,7 +25,7 @@ namespace EntityFramework_Version.View_Layer
         {
             try
             {
-                dgvQLKhachHang.DataSource = dpKhachHang.Lay_TT_Khach();
+                dgvCUSTOMER.DataSource = dpKhachHang.Lay_TT_Khach();
             }
             catch
             {
@@ -36,10 +36,10 @@ namespace EntityFramework_Version.View_Layer
         void Clear ()
         {
             txtAddress.ResetText();
-            DateOfBirth.ResetText();
-            txtHoTen.ResetText();
-            txtMaKH.ResetText();
-            txtSDT.ResetText();
+            dtpDayOfBirth.ResetText();
+            txtFullName.ResetText();
+            txtCustomerID.ResetText();
+            txtPhone.ResetText();
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -109,11 +109,11 @@ namespace EntityFramework_Version.View_Layer
                 try
                 {
                     string MaKH, TenKH, DiaChi, SDT;
-                    MaKH = txtMaKH.Text.Trim();
-                    TenKH = txtHoTen.Text.Trim();
+                    MaKH = txtCustomerID.Text.Trim();
+                    TenKH = txtFullName.Text.Trim();
                     DiaChi = txtAddress.Text.Trim();
-                    DateTime NgSinh = Convert.ToDateTime(DateOfBirth.Text);
-                    SDT = txtSDT.Text.Trim();
+                    DateTime NgSinh = Convert.ToDateTime(dtpDayOfBirth.Text);
+                    SDT = txtPhone.Text.Trim();
 
                     dpKhachHang.Them_Khach_Hang(MaKH, TenKH, NgSinh, DiaChi, SDT);
 
@@ -130,7 +130,7 @@ namespace EntityFramework_Version.View_Layer
                 try
                 {
                     string MaKH;
-                    MaKH = txtMaKH.Text.Trim();
+                    MaKH = txtCustomerID.Text.Trim();
                     dpKhachHang.Xoa_KH(MaKH);
 
                     MessageBox.Show("Bạn đã xóa thành công");
@@ -146,11 +146,11 @@ namespace EntityFramework_Version.View_Layer
                 try
                 {
                     string MaKH, TenKH, DiaChi, SDT;
-                    MaKH = txtMaKH.Text.Trim();
-                    TenKH = txtHoTen.Text.Trim();
+                    MaKH = txtCustomerID.Text.Trim();
+                    TenKH = txtFullName.Text.Trim();
                     DiaChi = txtAddress.Text.Trim();
-                    DateTime NgSinh = DateOfBirth.Value;
-                    SDT = txtSDT.Text.Trim();
+                    DateTime NgSinh = dtpDayOfBirth.Value;
+                    SDT = txtPhone.Text.Trim();
 
                     dpKhachHang.Cap_Nhat_TT_Khach_Hang(MaKH, TenKH, NgSinh, DiaChi, SDT);
                     MessageBox.Show("Cập nhật thành công");
@@ -166,10 +166,10 @@ namespace EntityFramework_Version.View_Layer
                 try
                 {
                     string MaKH, TenKH;
-                    MaKH = txtMaKH.Text.Trim();
-                    TenKH = txtHoTen.Text.Trim();
+                    MaKH = txtCustomerID.Text.Trim();
+                    TenKH = txtFullName.Text.Trim();
 
-                    dgvQLKhachHang.DataSource = dpKhachHang.Tim_Khach_Hang(MaKH, TenKH);
+                    dgvCUSTOMER.DataSource = dpKhachHang.Tim_Khach_Hang(MaKH, TenKH);
                 }
                 catch
                 {
@@ -182,13 +182,13 @@ namespace EntityFramework_Version.View_Layer
 
         private void dgvQLKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int r = dgvQLKhachHang.CurrentCell.RowIndex;
+            int r = dgvCUSTOMER.CurrentCell.RowIndex;
 
-            txtMaKH.Text = dgvQLKhachHang.Rows[r].Cells[0].Value.ToString().Trim();
-            txtHoTen.Text = dgvQLKhachHang.Rows[r].Cells[1].Value.ToString().Trim();
-            txtAddress.Text = dgvQLKhachHang.Rows[r].Cells[2].Value.ToString().Trim();
-            DateOfBirth.Value = Convert.ToDateTime(dgvQLKhachHang.Rows[r].Cells[3].Value.ToString());
-            txtSDT.Text = dgvQLKhachHang.Rows[r].Cells[4].Value.ToString().Trim();
+            txtCustomerID.Text = dgvCUSTOMER.Rows[r].Cells[0].Value.ToString().Trim();
+            txtFullName.Text = dgvCUSTOMER.Rows[r].Cells[1].Value.ToString().Trim();
+            txtAddress.Text = dgvCUSTOMER.Rows[r].Cells[2].Value.ToString().Trim();
+            dtpDayOfBirth.Value = Convert.ToDateTime(dgvCUSTOMER.Rows[r].Cells[3].Value.ToString());
+            txtPhone.Text = dgvCUSTOMER.Rows[r].Cells[4].Value.ToString().Trim();
         }
     }
 }

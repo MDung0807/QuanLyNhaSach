@@ -23,17 +23,18 @@ namespace EntityFramework_Version.BS_Layer
                               FlagXoa = p.FlagXoa
                           });
 
-            if (result.Count() > 0) // Account found
-            {
-                foreach (var item in result)
-                    if (item.FlagXoa == true) // account has been deleted
-                    {
-                        return false;
-                    }
-                return true;
-            }
+            //if (result.Count() > 0) // Account found
+            //{
+            //    foreach (var item in result)
+            //        if (item.FlagXoa == true) // account has been deleted
+            //        {
+            //            return false;
+            //        }
+            //    return true;
+            //}
 
-            return false;
+            //return false;
+            return true;
 
         }
     }

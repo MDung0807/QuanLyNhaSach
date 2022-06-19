@@ -11,14 +11,14 @@ using EntityFramework_Version.BS_Layer;
 
 namespace EntityFramework_Version.View_Layer
 {
-    public partial class Form_Internal : Form
+    public partial class Form_Login : Form
     {
         string quyen = null;
 
 
         Login Login = new Login();
 
-        public Form_Internal()
+        public Form_Login()
         {
             InitializeComponent();
         }
@@ -33,11 +33,6 @@ namespace EntityFramework_Version.View_Layer
             this.quyen = "Quanli";
         }
 
-        private void btnLeader_Click(object sender, EventArgs e)
-        {
-            //Form fmLeader = new Form_Leader();
-            //fmLeader.ShowDialog();
-        }
 
         private void btnForgetPass_Click(object sender, EventArgs e)
         {
@@ -59,7 +54,7 @@ namespace EntityFramework_Version.View_Layer
                 if (Login.Check_Login_IsTrue(user, pass, quyen))
                 {
 
-                    Form fmEmployee = new Form_Employee("Nhân Viên " + user);
+                    Form fmEmployee = new Form_Staff("Nhân Viên " + user);
                     fmEmployee.ShowDialog();
 
                 }
@@ -82,6 +77,41 @@ namespace EntityFramework_Version.View_Layer
             }
         }
 
-       
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.txtPassword.PasswordChar = '✽';
+        }
+
+        private void ptbPassinvisible1_Click(object sender, EventArgs e)
+        {
+            if (this.ptbPassinvisible1.Visible == false)
+            {
+                this.ptbPassvisible1.Visible = false;
+                this.ptbPassinvisible1.Visible = true;
+                this.txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                this.ptbPassvisible1.Visible = true;
+                this.ptbPassinvisible1.Visible = false;
+                txtPassword.PasswordChar = '✽';
+            }
+        }
+
+        private void ptbPassvisible1_Click(object sender, EventArgs e)
+        {
+            if (this.ptbPassvisible1.Visible == true)
+            {
+                this.ptbPassvisible1.Visible = false;
+                this.ptbPassinvisible1.Visible = true;
+                this.txtPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                this.ptbPassvisible1.Visible = true;
+                this.ptbPassinvisible1.Visible = false;
+                txtPassword.PasswordChar = '✽';
+            }
+        }
     }
 }

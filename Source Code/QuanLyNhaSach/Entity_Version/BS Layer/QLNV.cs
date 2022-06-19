@@ -22,9 +22,9 @@ namespace EntityFramework_Version.BS_Layer
                              CongViec = p.CongViec,
                              Luong = p.Luong,
                              DiaChi = p.DiaChi,
-                             NgSinh = p.NgaySinh,
+                             NgaySinh = p.NgaySinh,
                              GioiTinh = p.GioiTinh,
-                             SDT = p.soDT,
+                             soDT = p.soDT,
                              TenTK = p.TaiKhoan.TenTK,
                              MatKhau = p.TaiKhoan.MatKhau,
                              FlagXoa = p.FlagXoa
@@ -36,22 +36,21 @@ namespace EntityFramework_Version.BS_Layer
             dataTable.Columns.Add("CongViec");
             dataTable.Columns.Add("Luong");
             dataTable.Columns.Add("DiaChi");
-            dataTable.Columns.Add("NgSinh");
+            dataTable.Columns.Add("NgaySinh");
             dataTable.Columns.Add("GioiTinh");
-            dataTable.Columns.Add("SDT");
-            dataTable.Columns.Add("TenTK");
-            dataTable.Columns.Add("MatKhau");
-            dataTable.Columns.Add("FlagXoa");
-
+            dataTable.Columns.Add("soDT");
+            //dataTable.Columns.Add("TenTK");
+            //dataTable.Columns.Add("MatKhau");
+            //dataTable.Columns.Add("FlagXoa");
 
             foreach (var item in result)
             {
                 if (item.FlagXoa == false)
-                dataTable.Rows.Add(item.MaNV, item.TenTK, item.CongViec, item.Luong, item.DiaChi, item.NgSinh, item.GioiTinh, item.SDT, item.TenTK, item.MatKhau, item.FlagXoa);
+                    dataTable.Rows.Add(item.MaNV, item.TenTK, item.CongViec, item.Luong, item.DiaChi, item.NgaySinh, item.GioiTinh, item.soDT);
             }
 
             return dataTable;
-        }    
+    }    
 
         public void Sua_TT_NV(string MaNV, string HoTen, string CongViec, string Luong, string DiaChi, DateTime NgSinh, bool GioiTinh, string SDT )
         {
@@ -113,9 +112,9 @@ namespace EntityFramework_Version.BS_Layer
                              CongViec = p.CongViec,
                              Luong = p.Luong,
                              DiaChi = p.DiaChi,
-                             NgSinh = p.NgaySinh,
+                             NgaySinh = p.NgaySinh,
                              GioiTinh = p.GioiTinh,
-                             SDT = p.soDT,
+                             soDT = p.soDT,
                              TenTK = p.TaiKhoan.TenTK,
                              MatKhau = p.TaiKhoan.MatKhau,
                              FlagXoa = p.FlagXoa
@@ -127,17 +126,17 @@ namespace EntityFramework_Version.BS_Layer
             dataTable.Columns.Add("CongViec");
             dataTable.Columns.Add("Luong");
             dataTable.Columns.Add("DiaChi");
-            dataTable.Columns.Add("NgSinh");
+            dataTable.Columns.Add("NgaySinh");
             dataTable.Columns.Add("GioiTinh");
-            dataTable.Columns.Add("SDT");
-            dataTable.Columns.Add("TenTK");
-            dataTable.Columns.Add("MatKhau");
-            dataTable.Columns.Add("FlagXoa");
+            dataTable.Columns.Add("soDT");
+            //dataTable.Columns.Add("TenTK");
+            //dataTable.Columns.Add("MatKhau");
+            //dataTable.Columns.Add("FlagXoa");
 
             foreach (var item in result)
             {
                 if (item.FlagXoa == false)
-                    dataTable.Rows.Add(item.MaNV, item.TenTK, item.CongViec, item.Luong, item.DiaChi, item.NgSinh, item.GioiTinh, item.SDT, item.TenTK, item.MatKhau, item.FlagXoa);
+                    dataTable.Rows.Add(item.MaNV, item.TenTK, item.CongViec, item.Luong, item.DiaChi, item.NgaySinh, item.GioiTinh, item.soDT);
             }
 
             return dataTable;

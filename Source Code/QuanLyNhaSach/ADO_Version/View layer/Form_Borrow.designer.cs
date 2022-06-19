@@ -58,18 +58,16 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1523, 83);
+            this.panel1.Size = new System.Drawing.Size(1028, 67);
             this.panel1.TabIndex = 0;
             // 
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(169, 19);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Location = new System.Drawing.Point(127, 15);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(119, 40);
+            this.btnBack.Size = new System.Drawing.Size(89, 32);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -79,10 +77,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(731, 19);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(548, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 37);
+            this.label1.Size = new System.Drawing.Size(148, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mượn Sách";
             // 
@@ -100,13 +97,12 @@
             this.DangMuon,
             this.DaThanhToan});
             this.dgvBORROW.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgvBORROW.Location = new System.Drawing.Point(373, 83);
-            this.dgvBORROW.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvBORROW.Location = new System.Drawing.Point(166, 67);
             this.dgvBORROW.Name = "dgvBORROW";
             this.dgvBORROW.ReadOnly = true;
             this.dgvBORROW.RowHeadersWidth = 51;
             this.dgvBORROW.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBORROW.Size = new System.Drawing.Size(1150, 659);
+            this.dgvBORROW.Size = new System.Drawing.Size(862, 536);
             this.dgvBORROW.TabIndex = 1;
             this.dgvBORROW.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBORROW_CellClick);
             // 
@@ -183,10 +179,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 252);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(10, 205);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 23);
+            this.label2.Size = new System.Drawing.Size(120, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mã Khách Hàng";
             // 
@@ -194,35 +189,37 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(66, 181);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 23);
+            this.label3.Size = new System.Drawing.Size(72, 19);
             this.label3.TabIndex = 3;
             this.label3.Text = "Mã Cuốn";
             // 
             // cmbCustomerID
             // 
             this.cmbCustomerID.FormattingEnabled = true;
-            this.cmbCustomerID.Location = new System.Drawing.Point(182, 251);
+            this.cmbCustomerID.Location = new System.Drawing.Point(136, 204);
+            this.cmbCustomerID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbCustomerID.Name = "cmbCustomerID";
-            this.cmbCustomerID.Size = new System.Drawing.Size(161, 24);
+            this.cmbCustomerID.Size = new System.Drawing.Size(122, 21);
             this.cmbCustomerID.TabIndex = 9;
             // 
             // cmbBookID
             // 
             this.cmbBookID.FormattingEnabled = true;
-            this.cmbBookID.Location = new System.Drawing.Point(182, 183);
+            this.cmbBookID.Location = new System.Drawing.Point(136, 155);
+            this.cmbBookID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbBookID.Name = "cmbBookID";
-            this.cmbBookID.Size = new System.Drawing.Size(161, 24);
+            this.cmbBookID.Size = new System.Drawing.Size(122, 21);
             this.cmbBookID.TabIndex = 10;
             // 
             // btnBorrow
             // 
             this.btnBorrow.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrow.Location = new System.Drawing.Point(34, 519);
+            this.btnBorrow.Location = new System.Drawing.Point(26, 422);
+            this.btnBorrow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBorrow.Name = "btnBorrow";
-            this.btnBorrow.Size = new System.Drawing.Size(119, 40);
+            this.btnBorrow.Size = new System.Drawing.Size(89, 32);
             this.btnBorrow.TabIndex = 11;
             this.btnBorrow.Text = "Mượn Sách";
             this.btnBorrow.UseVisualStyleBackColor = true;
@@ -231,9 +228,10 @@
             // btnReturn
             // 
             this.btnReturn.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturn.Location = new System.Drawing.Point(193, 519);
+            this.btnReturn.Location = new System.Drawing.Point(145, 422);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(119, 40);
+            this.btnReturn.Size = new System.Drawing.Size(89, 32);
             this.btnReturn.TabIndex = 13;
             this.btnReturn.Text = "Trả Sách";
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -242,9 +240,10 @@
             // btnReload
             // 
             this.btnReload.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReload.Location = new System.Drawing.Point(115, 387);
+            this.btnReload.Location = new System.Drawing.Point(86, 314);
+            this.btnReload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(119, 40);
+            this.btnReload.Size = new System.Drawing.Size(89, 32);
             this.btnReload.TabIndex = 14;
             this.btnReload.Text = "Reload";
             this.btnReload.UseVisualStyleBackColor = true;
@@ -252,9 +251,9 @@
             // 
             // Form_Borrow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1523, 742);
+            this.ClientSize = new System.Drawing.Size(1028, 603);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnBorrow);
@@ -264,7 +263,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvBORROW);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Borrow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Buy_Borrow";

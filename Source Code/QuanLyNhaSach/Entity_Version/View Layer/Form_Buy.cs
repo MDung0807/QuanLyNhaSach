@@ -27,7 +27,8 @@ namespace EntityFramework_Version.View_Layer
             try
             {
                 dgvBuy.DataSource = buy.Lay_TT_Mua();
-                Clear();
+                LoadcmbCustomerID();
+                LoadcmbBookID();
             }
             catch
             {
@@ -35,11 +36,29 @@ namespace EntityFramework_Version.View_Layer
             }
         }
 
-        void Clear ()
+        void LoadcmbCustomerID()
         {
-            this.txtMaCuon.ResetText();
-            this.txtMaKH.ResetText();
+            DataTable dataTable = new DataTable();
+            dataTable = buy.Load_KH();
+
+            cmbCustomerID.ValueMember = "MaKH";
+            cmbCustomerID.DataSource = dataTable;
         }
+        void LoadcmbBookID()
+        {
+            DataTable dataTable = new DataTable();
+            dataTable = buy.Load_CuonSach_Chua_Xoa();
+
+            cmbBookID.ValueMember = "MaCuon";
+            cmbBookID.DataSource = dataTable;
+
+        }
+
+        //void Clear ()
+        //{
+        //    this.txtMaCuon.ResetText();
+        //    this.txtMaKH.ResetText();
+        //}
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -50,14 +69,13 @@ namespace EntityFramework_Version.View_Layer
         {
             try
             {
-                string MaKH = txtMaKH.Text.Trim();
-                string MaCuon = txtMaCuon.Text.Trim();
+                string MaKH = cmbCustomerID.Text.Trim();
+                string MaCuon = cmbBookID.Text.Trim();
                 DateTime NgMuon = DateTime.Now;
 
                 buy.Them_KH_Mua(MaKH, MaCuon, NgMuon, ref result);
                 MessageBox.Show(result);
                 Load_Data();
-                Clear();
             }
             catch
             {
@@ -70,17 +88,17 @@ namespace EntityFramework_Version.View_Layer
             Load_Data();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            Clear();
-        }
+        //private void btnClear_Click(object sender, EventArgs e)
+        //{
+        //    Clear();
+        //}
 
         private void dgvBuy_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int r = dgvBuy.CurrentCell.RowIndex;
 
-            txtMaKH.Text = dgvBuy.Rows[r].Cells[0].Value.ToString().Trim();
-            txtMaCuon.Text = dgvBuy.Rows[r].Cells[2].Value.ToString().Trim();
+            cmbCustomerID.Text = dgvBuy.Rows[r].Cells[0].Value.ToString().Trim();
+            cmbCustomerID.Text = dgvBuy.Rows[r].Cells[2].Value.ToString().Trim();
         }
     }
 }

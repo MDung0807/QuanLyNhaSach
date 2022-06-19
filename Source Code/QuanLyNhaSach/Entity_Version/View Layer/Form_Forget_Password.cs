@@ -28,12 +28,18 @@ namespace EntityFramework_Version.View_Layer
         {
             try
             {
-                string MaNV = txtMaNV.Text.Trim();
-                string TenNV = txtUsername.Text.Trim();
-                string SDT = txtSDT.Text.Trim();
+                string MaNV = txtStaffID.Text.Trim();
+                string TenNV = txtFullName.Text.Trim();
+                string SDT = txtPhone.Text.Trim();
 
-                dgvFindPass.DataSource = find_pass.Tim_MK(MaNV, TenNV, SDT);
-                dgvFindPass.AutoResizeColumns();
+                var result = find_pass.Tim_MK(MaNV, TenNV, SDT);
+                lblStaffID.Text = result.Item1.ToString().Trim();
+                lblUserName.Text = result.Item2.ToString().Trim();
+                lblPassword.Text = result.Item3.ToString().Trim();
+
+                //dgvFindPass.DataSource = find_pass.Tim_MK(MaNV, TenNV, SDT);
+                //dgvFindPass.AutoResizeColumns();
+
                 MessageBox.Show("Đã tìm được tên tài khoản và mật khẩu");
 
             }
@@ -41,6 +47,11 @@ namespace EntityFramework_Version.View_Layer
             {
                 MessageBox.Show("Không thể tìm tên tài khoản và mật khẩu");
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

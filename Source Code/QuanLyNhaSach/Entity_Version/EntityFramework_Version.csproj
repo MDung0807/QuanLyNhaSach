@@ -132,11 +132,11 @@
     <Compile Include="View Layer\Form_Customer.Designer.cs">
       <DependentUpon>Form_Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="View Layer\Form_Employee.cs">
+    <Compile Include="View Layer\Form_Staff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View Layer\Form_Employee.Designer.cs">
-      <DependentUpon>Form_Employee.cs</DependentUpon>
+    <Compile Include="View Layer\Form_Staff.Designer.cs">
+      <DependentUpon>Form_Staff.cs</DependentUpon>
     </Compile>
     <Compile Include="View Layer\Form_Find_Book.cs">
       <SubType>Form</SubType>
@@ -156,11 +156,11 @@
     <Compile Include="View Layer\Form_Home.Designer.cs">
       <DependentUpon>Form_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="View Layer\Form_Internal.cs">
+    <Compile Include="View Layer\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View Layer\Form_Internal.Designer.cs">
-      <DependentUpon>Form_Internal.cs</DependentUpon>
+    <Compile Include="View Layer\Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="View Layer\Form_Manager.cs">
       <SubType>Form</SubType>
@@ -208,8 +208,8 @@
     <EmbeddedResource Include="View Layer\Form_Customer.resx">
       <DependentUpon>Form_Customer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View Layer\Form_Employee.resx">
-      <DependentUpon>Form_Employee.cs</DependentUpon>
+    <EmbeddedResource Include="View Layer\Form_Staff.resx">
+      <DependentUpon>Form_Staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View Layer\Form_Find_Book.resx">
       <DependentUpon>Form_Find_Book.cs</DependentUpon>
@@ -220,8 +220,8 @@
     <EmbeddedResource Include="View Layer\Form_Home.resx">
       <DependentUpon>Form_Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View Layer\Form_Internal.resx">
-      <DependentUpon>Form_Internal.cs</DependentUpon>
+    <EmbeddedResource Include="View Layer\Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View Layer\Form_Manager.resx">
       <DependentUpon>Form_Manager.cs</DependentUpon>
@@ -270,6 +270,14 @@
       <DependentUpon>QLNhaSach.edmx</DependentUpon>
       <LastGenOutput>QLNhaSach.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\backcolorlogin.png" />
+    <None Include="Resources\icons8-invisible-64.png" />
+    <None Include="Resources\icons8-eye-64.png" />
+    <None Include="Resources\icons8-password-64.png" />
+    <None Include="Resources\icons8-user-64 %282%29.png" />
+    <None Include="Resources\icons8-user-64 %281%29.png" />
+    <None Include="Resources\icons8-user-64.png" />
+    <None Include="Resources\login-page.png" />
     <Content Include="Resources\store_book.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

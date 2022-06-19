@@ -22,6 +22,43 @@ namespace EntityFramework_Version.View_Layer
             Load_Data();
         }
 
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            this.txtPass.PasswordChar = '✽';
+        }
+
+        private void ptbPassinvisible1_Click(object sender, EventArgs e)
+        {
+            if (this.ptbPassinvisible1.Visible == false)
+            {
+                this.ptbPassvisible1.Visible = false;
+                this.ptbPassinvisible1.Visible = true;
+                this.txtPass.PasswordChar = '\0';
+            }
+            else
+            {
+                this.ptbPassvisible1.Visible = true;
+                this.ptbPassinvisible1.Visible = false;
+                txtPass.PasswordChar = '✽';
+            }
+        }
+
+        private void ptbPassvisible1_Click(object sender, EventArgs e)
+        {
+            if (this.ptbPassvisible1.Visible == true)
+            {
+                this.ptbPassvisible1.Visible = false;
+                this.ptbPassinvisible1.Visible = true;
+                this.txtPass.PasswordChar = '\0';
+            }
+            else
+            {
+                this.ptbPassvisible1.Visible = true;
+                this.ptbPassinvisible1.Visible = false;
+                txtPass.PasswordChar = '✽';
+            }
+        }
+
         void Load_Data()
         {
             try
@@ -98,8 +135,8 @@ namespace EntityFramework_Version.View_Layer
             txtStaffID.Text = dgvQLNV.Rows[r].Cells[0].Value.ToString().Trim();
             dtpDayOfBirth.Value = Convert.ToDateTime(dgvQLNV.Rows[r].Cells[5].Value.ToString());
             cbSex.Checked = Convert.ToBoolean(dgvQLNV.Rows[r].Cells[6].Value.ToString());
-            txtUser.Text = dgvQLNV.Rows[r].Cells[8].Value.ToString().Trim();
-            txtPass.Text = dgvQLNV.Rows[r].Cells[9].Value.ToString().Trim();
+            //txtUser.Text = dgvQLNV.Rows[r].Cells[8].Value.ToString().Trim();
+            //txtPass.Text = dgvQLNV.Rows[r].Cells[9].Value.ToString().Trim();
         }
 
         private void btnReload_Click(object sender, EventArgs e)

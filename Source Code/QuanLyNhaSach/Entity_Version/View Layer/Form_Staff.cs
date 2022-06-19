@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace EntityFramework_Version.View_Layer
 {
-    public partial class Form_Employee : Form
+    public partial class Form_Staff : Form
     {
-        public Form_Employee()
+        public Form_Staff()
         {
             InitializeComponent();
         }
-        public Form_Employee(string user)
+        public Form_Staff(string user)
         {
             InitializeComponent();
             lbNV.Text = user;

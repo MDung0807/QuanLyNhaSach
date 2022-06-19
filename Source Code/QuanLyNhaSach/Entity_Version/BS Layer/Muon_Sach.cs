@@ -30,9 +30,9 @@ namespace EntityFramework_Version.BS_Layer
                          };
             
             DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("MaCuon");
             dataTable.Columns.Add("MaKH");
             dataTable.Columns.Add("TenKH");
-            dataTable.Columns.Add("MaCuon");
             dataTable.Columns.Add("SoTien");
             dataTable.Columns.Add("NgayMuon");
             dataTable.Columns.Add("HanTra");
@@ -44,7 +44,7 @@ namespace EntityFramework_Version.BS_Layer
             foreach (var item in result)
             {   
                 if (item.DangMuon == true)
-                    dataTable.Rows.Add(item.MaKH, item.TenKH, item.MaCuon, item.SoTien, item.NgayMuon, item.HanTra, item.NgayTra, item.TienPhat, item.DangMuon, item.DaThanhToan);
+                    dataTable.Rows.Add(item.MaCuon, item.MaKH, item.TenKH, item.SoTien, item.NgayMuon, item.HanTra, item.NgayTra, item.TienPhat, item.DangMuon, item.DaThanhToan);
             }
 
             return dataTable;
@@ -106,6 +106,50 @@ namespace EntityFramework_Version.BS_Layer
 
             string option = "Tra";
             Set_Flag_Cuon_Sach(MaKH, MaCuon, option);
+        }
+
+        public DataTable Load_KH()
+        {
+            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
+            var result = from p in qlnsentity.KhachHangs
+                         where p.FlagXoa == false
+                         select new
+                         {
+                             MaKH = p.MaKH,
+                         };
+
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("MaKH");
+
+            foreach (var item in result)
+            {
+                dataTable.Rows.Add(item.MaKH);
+            }
+
+            return dataTable;
+
+        }
+
+        public DataTable Load_CuonSach_Chua_Xoa()
+        {
+            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
+            var result = from p in qlnsentity.CuonSaches
+                         where p.FlagXoa == false
+                         select new
+                         {
+                             MaCuon = p.MaCuon
+                         };
+
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("MaCuon");
+
+            foreach (var item in result)
+            {
+                dataTable.Rows.Add(item.MaCuon);
+            }
+
+            return dataTable;
+
         }
 
         void Set_Flag_Cuon_Sach (string MaKH, string MaCuon, string option)

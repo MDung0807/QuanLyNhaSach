@@ -17,24 +17,28 @@ namespace EntityFramework_Version.BS_Layer
                          select new
                          {
                              MaSach = p.Masach,
-                             MaCuon = p.MaCuon,
-                             Tua = p.DauSach.TuaSach,
+                             TuaSach = p.DauSach.TuaSach,
                              TenNXB = p.DauSach.NXB.TenNXB,
+                             TenTG = p.DauSach.TacGia.TenTacGia,
+                             GiaMua = p.DauSach.GiaMua,
+                             GiaMuon = p.DauSach.GiaMuon,
                              ViTri = p.ViTri,
                              FlagXoa = p.FlagXoa
                          };
 
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("MaSach");
-            dataTable.Columns.Add("MaCuon");
             dataTable.Columns.Add("TuaSach");
             dataTable.Columns.Add("TenNXB");
+            dataTable.Columns.Add("TenTG");
+            dataTable.Columns.Add("GiaMua");
+            dataTable.Columns.Add("GiaMuon");
             dataTable.Columns.Add("ViTri");
 
-            foreach (var p in result)
+            foreach (var item in result)
             {
-                if (p.FlagXoa == false)
-                    dataTable.Rows.Add(p.MaSach, p.MaCuon, p.Tua, p.TenNXB, p.ViTri);
+                if (item.FlagXoa == false)
+                    dataTable.Rows.Add(item.MaSach, item.TuaSach, item.TenNXB, item.TenTG, item.GiaMua, item.GiaMuon, item.ViTri);
             }    
 
             return dataTable;
@@ -49,24 +53,28 @@ namespace EntityFramework_Version.BS_Layer
                          select new
                          {
                              MaSach = p.Masach,
-                             MaCuon = p.MaCuon,
-                             Tua = p.DauSach.TuaSach,
+                             TuaSach = p.DauSach.TuaSach,
                              TenNXB = p.DauSach.NXB.TenNXB,
+                             TenTG = p.DauSach.TacGia.TenTacGia,
+                             GiaMua = p.DauSach.GiaMua,
+                             GiaMuon = p.DauSach.GiaMuon,
                              ViTri = p.ViTri,
                              FlagXoa = p.FlagXoa
                          };
 
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("MaSach");
-            dataTable.Columns.Add("MaCuon");
             dataTable.Columns.Add("TuaSach");
             dataTable.Columns.Add("TenNXB");
+            dataTable.Columns.Add("TenTG");
+            dataTable.Columns.Add("GiaMua");
+            dataTable.Columns.Add("GiaMuon");
             dataTable.Columns.Add("ViTri");
 
-            foreach (var p in result)
+            foreach (var item in result)
             {
-                if (p.FlagXoa == false)
-                    dataTable.Rows.Add(p.MaSach, p.MaCuon, p.Tua, p.TenNXB, p.ViTri);
+                if (item.FlagXoa == false)
+                    dataTable.Rows.Add(item.MaSach, item.TuaSach, item.TenNXB, item.TenTG, item.GiaMua, item.GiaMuon, item.ViTri);
             }
 
             return dataTable;

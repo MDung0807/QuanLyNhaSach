@@ -29,7 +29,12 @@ namespace EntityFramework_Version.View_Layer
             try
             {
                 dgvMuon.DataSource = muon_sach.Lay_TT();
-                Clear();
+                LoadcmbCustomerID();
+                LoadcmbBookID();
+                
+                btnBorrow.Enabled = true;
+                btnReturn.Enabled = true;
+                this.option = null;
             }
             catch
             {
@@ -37,10 +42,28 @@ namespace EntityFramework_Version.View_Layer
             }
         }
 
-        void Clear () // Delete data for txt
+        //void Clear () // Delete data for txt
+        //{
+        //    txtMaKH.ResetText();
+        //    txtMaSach.ResetText();
+        //}
+
+        void LoadcmbCustomerID()
         {
-            txtMaKH.ResetText();
-            txtMaSach.ResetText();
+            DataTable dataTable = new DataTable();
+            dataTable = muon_sach.Load_KH();
+
+            cmbCustomerID.ValueMember = "MaKH";
+            cmbCustomerID.DataSource = dataTable;
+        }
+        void LoadcmbBookID()
+        {
+            DataTable dataTable = new DataTable();
+            dataTable = muon_sach.Load_CuonSach_Chua_Xoa();
+
+            cmbBookID.ValueMember = "MaCuon";
+            cmbBookID.DataSource = dataTable;
+
         }
 
         private void btnBack_Click(object sender, EventArgs e) // back the form
@@ -51,9 +74,7 @@ namespace EntityFramework_Version.View_Layer
         private void btnReLoad_Click(object sender, EventArgs e)
         {
             Load_Data();
-            btnBorrow.Enabled = true;
-            btnReturn.Enabled = true;
-            this.option = null;
+            
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -72,8 +93,8 @@ namespace EntityFramework_Version.View_Layer
         {
             int r = dgvMuon.CurrentCell.RowIndex;
 
-            txtMaKH.Text = dgvMuon.Rows[r].Cells[0].Value.ToString().Trim(); 
-            txtMaSach.Text = dgvMuon.Rows[r].Cells[2].Value.ToString().Trim();
+            cmbCustomerID.Text = dgvMuon.Rows[r].Cells[1].Value.ToString().Trim(); 
+            cmbBookID.Text = dgvMuon.Rows[r].Cells[0].Value.ToString().Trim();
         }
 
         private void btnFinish_Click(object sender, EventArgs e)
@@ -83,12 +104,12 @@ namespace EntityFramework_Version.View_Layer
             {
                 try
                 {
-                    string MaKH = txtMaKH.Text.Trim();
-                    string MaCuon = txtMaSach.Text.Trim();
+                    string MaKH = cmbCustomerID.Text.Trim();
+                    string MaCuon = cmbBookID.Text.Trim();
                     muon_sach.KH_Tra_Sach(MaKH, MaCuon);
                     MessageBox.Show("Đã trả thành công");
                     Load_Data();
-                    Clear();
+                    //Clear();
                 }
                 catch
                 {
@@ -99,13 +120,13 @@ namespace EntityFramework_Version.View_Layer
             {
                 try
                 {
-                    string MaKH = txtMaKH.Text.Trim();
-                    string MaCuon = txtMaSach.Text.Trim();
+                    string MaKH = cmbCustomerID.Text.Trim();
+                    string MaCuon = cmbBookID.Text.Trim();
                     DateTime NgMuon = DateTime.Now;
                     muon_sach.KH_Muon_Sach(MaKH, MaCuon, NgMuon, ref result);
                     MessageBox.Show(result);
                     Load_Data();
-                    Clear();
+                    //Clear();
                 }
                 catch
                 {
