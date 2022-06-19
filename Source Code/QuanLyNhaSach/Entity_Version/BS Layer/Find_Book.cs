@@ -1,0 +1,76 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using EntityFramework_Version.DB_Layer;
+namespace EntityFramework_Version.BS_Layer
+{
+    internal class Find_Book
+    {
+        public DataTable Lay_TT_Sach () // Load Data
+        {
+            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
+
+            var result = from p in qlnsentity.CuonSaches
+                         select new
+                         {
+                             MaSach = p.Masach,
+                             MaCuon = p.MaCuon,
+                             Tua = p.DauSach.TuaSach,
+                             TenNXB = p.DauSach.NXB.TenNXB,
+                             ViTri = p.ViTri,
+                             FlagXoa = p.FlagXoa
+                         };
+
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("MaSach");
+            dataTable.Columns.Add("MaCuon");
+            dataTable.Columns.Add("TuaSach");
+            dataTable.Columns.Add("TenNXB");
+            dataTable.Columns.Add("ViTri");
+
+            foreach (var p in result)
+            {
+                if (p.FlagXoa == false)
+                    dataTable.Rows.Add(p.MaSach, p.MaCuon, p.Tua, p.TenNXB, p.ViTri);
+            }    
+
+            return dataTable;
+        }
+
+        public DataTable Tim_Sach(string TenSach)
+        {
+            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
+
+            var result = from p in qlnsentity.CuonSaches
+                         where p.DauSach.TuaSach.Contains (TenSach)
+                         select new
+                         {
+                             MaSach = p.Masach,
+                             MaCuon = p.MaCuon,
+                             Tua = p.DauSach.TuaSach,
+                             TenNXB = p.DauSach.NXB.TenNXB,
+                             ViTri = p.ViTri,
+                             FlagXoa = p.FlagXoa
+                         };
+
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("MaSach");
+            dataTable.Columns.Add("MaCuon");
+            dataTable.Columns.Add("TuaSach");
+            dataTable.Columns.Add("TenNXB");
+            dataTable.Columns.Add("ViTri");
+
+            foreach (var p in result)
+            {
+                if (p.FlagXoa == false)
+                    dataTable.Rows.Add(p.MaSach, p.MaCuon, p.Tua, p.TenNXB, p.ViTri);
+            }
+
+            return dataTable;
+        }
+
+    }
+}
