@@ -73,8 +73,8 @@ namespace EntityFramework_Version.BS_Layer
                                   };
                 dataTable.Columns.Add(Lua_Chon_Thong_Ke);
                 dataTable.Columns.Add("SoTienChoMuon");
-                dataTable.Columns.Add("SOTienPhat");
-                dataTable.Columns.Add("SOTIenBan");
+                dataTable.Columns.Add("SoTienPhat");
+                dataTable.Columns.Add("SoTIenBan");
 
 
                 foreach (var muon in result_muon)

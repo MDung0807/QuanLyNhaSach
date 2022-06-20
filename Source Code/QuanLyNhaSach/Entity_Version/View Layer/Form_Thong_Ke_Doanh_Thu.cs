@@ -48,11 +48,6 @@ namespace EntityFramework_Version.View_Layer
             this.Close();
         }
 
-        private void rbTuan_CheckedChanged(object sender, EventArgs e)
-        {
-            this.option = "Week";
-        }
-
         private void rbThang_CheckedChanged(object sender, EventArgs e)
         {
             this.option = "Moth";

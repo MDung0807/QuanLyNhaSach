@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.label7 = new System.Windows.Forms.Label();
-            this.rbTuan = new System.Windows.Forms.RadioButton();
             this.rbThang = new System.Windows.Forms.RadioButton();
             this.rbNam = new System.Windows.Forms.RadioButton();
             this.txtThongKe_Ban = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgv_ThongKeDauSach = new System.Windows.Forms.DataGridView();
+            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TuaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_ThongKeLoiNhuan = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,9 +52,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TuaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ThongKeDauSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ThongKeLoiNhuan)).BeginInit();
@@ -70,22 +69,10 @@
             this.label7.TabIndex = 35;
             this.label7.Text = "Thực hiện từ ngày";
             // 
-            // rbTuan
-            // 
-            this.rbTuan.AutoSize = true;
-            this.rbTuan.Location = new System.Drawing.Point(669, 124);
-            this.rbTuan.Name = "rbTuan";
-            this.rbTuan.Size = new System.Drawing.Size(119, 17);
-            this.rbTuan.TabIndex = 42;
-            this.rbTuan.TabStop = true;
-            this.rbTuan.Text = "Thống kê theo tuần";
-            this.rbTuan.UseVisualStyleBackColor = true;
-            this.rbTuan.CheckedChanged += new System.EventHandler(this.rbTuan_CheckedChanged);
-            // 
             // rbThang
             // 
             this.rbThang.AutoSize = true;
-            this.rbThang.Location = new System.Drawing.Point(669, 152);
+            this.rbThang.Location = new System.Drawing.Point(704, 169);
             this.rbThang.Name = "rbThang";
             this.rbThang.Size = new System.Drawing.Size(125, 17);
             this.rbThang.TabIndex = 41;
@@ -97,7 +84,7 @@
             // rbNam
             // 
             this.rbNam.AutoSize = true;
-            this.rbNam.Location = new System.Drawing.Point(669, 175);
+            this.rbNam.Location = new System.Drawing.Point(554, 169);
             this.rbNam.Name = "rbNam";
             this.rbNam.Size = new System.Drawing.Size(118, 17);
             this.rbNam.TabIndex = 40;
@@ -135,6 +122,27 @@
             this.dgv_ThongKeDauSach.ReadOnly = true;
             this.dgv_ThongKeDauSach.Size = new System.Drawing.Size(324, 225);
             this.dgv_ThongKeDauSach.TabIndex = 25;
+            // 
+            // MaSach
+            // 
+            this.MaSach.DataPropertyName = "MaSach";
+            this.MaSach.HeaderText = "Mã Sach";
+            this.MaSach.Name = "MaSach";
+            this.MaSach.ReadOnly = true;
+            // 
+            // TuaSach
+            // 
+            this.TuaSach.DataPropertyName = "TuaSach";
+            this.TuaSach.HeaderText = "Tựa Sách";
+            this.TuaSach.Name = "TuaSach";
+            this.TuaSach.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
             // 
             // label2
             // 
@@ -281,34 +289,12 @@
             this.panel1.Size = new System.Drawing.Size(1251, 100);
             this.panel1.TabIndex = 33;
             // 
-            // MaSach
-            // 
-            this.MaSach.DataPropertyName = "MaSach";
-            this.MaSach.HeaderText = "Mã Sach";
-            this.MaSach.Name = "MaSach";
-            this.MaSach.ReadOnly = true;
-            // 
-            // TuaSach
-            // 
-            this.TuaSach.DataPropertyName = "TuaSach";
-            this.TuaSach.HeaderText = "Tựa Sách";
-            this.TuaSach.Name = "TuaSach";
-            this.TuaSach.ReadOnly = true;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
-            // 
             // Form_Thong_Ke_Doanh_Thu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1251, 540);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.rbTuan);
             this.Controls.Add(this.rbThang);
             this.Controls.Add(this.rbNam);
             this.Controls.Add(this.panel3);
@@ -335,7 +321,6 @@
         #endregion
 
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton rbTuan;
         private System.Windows.Forms.RadioButton rbThang;
         private System.Windows.Forms.RadioButton rbNam;
         private System.Windows.Forms.TextBox txtThongKe_Ban;
