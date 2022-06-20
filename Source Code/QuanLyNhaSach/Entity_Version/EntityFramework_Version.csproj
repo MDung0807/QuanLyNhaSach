@@ -126,19 +126,8 @@
     <Compile Include="DB Layer\TaiKhoan.cs">
       <DependentUpon>QLNhaSach.tt</DependentUpon>
     </Compile>
-    <Compile Include="form_report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form_report.Designer.cs">
-      <DependentUpon>form_report.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLNhaSachDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLNhaSachDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="View Layer\Form_Borrow.cs">
       <SubType>Form</SubType>
@@ -230,9 +219,6 @@
     <Compile Include="View Layer\Form_Thong_Ke_Doanh_Thu.Designer.cs">
       <DependentUpon>Form_Thong_Ke_Doanh_Thu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="form_report.resx">
-      <DependentUpon>form_report.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -243,7 +229,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Report.rdlc" />
     <EmbeddedResource Include="View Layer\Form_Borrow.resx">
       <DependentUpon>Form_Borrow.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,17 +322,6 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="QLNhaSachDataSet.xsc">
-      <DependentUpon>QLNhaSachDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLNhaSachDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLNhaSachDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLNhaSachDataSet.xss">
-      <DependentUpon>QLNhaSachDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Resources\backcolorlogin.png" />
     <None Include="Resources\icons8-invisible-64.png" />
     <None Include="Resources\icons8-eye-64.png" />

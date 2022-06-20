@@ -10,8 +10,8 @@ namespace EntityFramework_Version.BS_Layer
 {
     internal class Thong_Ke
     {
-       
-        public DataTable Thong_Ke_SL_Sach_Tren_Moi_Dau_Sach ()
+
+        public DataTable Thong_Ke_SL_Sach_Tren_Moi_Dau_Sach()
         {
 
 
@@ -50,40 +50,52 @@ namespace EntityFramework_Version.BS_Layer
             int tong_tien_phat = 0;
 
 
-            if (Lua_Chon_Thong_Ke == "Moth")
+            if (Lua_Chon_Thong_Ke == "Month")
             {
-                var result_muon = from p in from m in qlnsentity.Muons
-                                            where m.DaThanhToan == true && m.NgayMuon > Thoi_Gian_Bat_Dau
-                                            from i in qlnsentity.Muas
-                                            where i.DaThanhToan == true && i.NgayMua > Thoi_Gian_Bat_Dau
-                                            select new
-                                            {
-                                                NgayMuon = m.NgayMuon,
-                                                GiaMuon = m.CuonSach.DauSach.GiaMuon,
-                                                TienPhat = m.TienPhat,
-                                                GiaMua = i.CuonSach.DauSach.GiaMua
-                                            }
-                                  group p by p.NgayMuon.Value.Month into a
+
+
+                var result_muon = from j in (from k in from p in qlnsentity.Muas
+                                                       where p.DaThanhToan == true && p.NgayMua > Thoi_Gian_Bat_Dau
+                                                       select p
+                                             group k by k.NgayMua.Value.Month into a
+                                             select new
+                                             {
+                                                 Thang = a.Key,
+                                                 GiaMua = a.Sum(x => x.CuonSach.DauSach.GiaMua)
+                                             })
+                                  join e in (from k in from p in qlnsentity.Muons
+                                                       where p.DaThanhToan == true && p.NgayMuon > Thoi_Gian_Bat_Dau
+                                                       select p
+                                             group k by k.NgayMuon.Value.Month into a
+                                             select new
+                                             {
+                                                 Thang = a.Key,
+                                                 GiaMuon = a.Sum(x => x.CuonSach.DauSach.GiaMuon),
+                                                 TienPhat = a.Sum(x => x.TienPhat)
+                                             }) on j.Thang equals e.Thang into temp
+                                  from e in temp.DefaultIfEmpty()
                                   select new
                                   {
-                                      m = a.Key,
-                                      g = a.Sum(x => x.GiaMuon),
-                                      z = a.Sum(x => x.TienPhat),
-                                      t = a.Sum(x => x.GiaMua)
+
+
+                                      Thang = e.Thang != null ? e.Thang : j.Thang,
+                                      GiaMuon = e.GiaMuon != null ? e.GiaMuon : 0,
+                                      TienPhat = e.TienPhat != null ? e.TienPhat : 0,
+                                      GiaMua = j.GiaMua != null ? j.GiaMua : 0
                                   };
                 dataTable.Columns.Add(Lua_Chon_Thong_Ke);
                 dataTable.Columns.Add("SoTienChoMuon");
                 dataTable.Columns.Add("SoTienPhat");
-                dataTable.Columns.Add("SoTIenBan");
+                dataTable.Columns.Add("SoTienBan");
 
 
                 foreach (var muon in result_muon)
                 {
-                    dataTable.Rows.Add(muon.m, muon.g, muon.z, muon.t);
+                    dataTable.Rows.Add(muon.Thang, muon.GiaMuon, muon.TienPhat, muon.GiaMua);
                 }
 
                 int r = dataTable.Rows.Count;
-               
+
                 for (int i = 0; i < r; i++)
                 {
                     tong_tien_ban_duoc += Convert.ToInt32(dataTable.Rows[i][3]);
@@ -94,34 +106,44 @@ namespace EntityFramework_Version.BS_Layer
             }
             else if (Lua_Chon_Thong_Ke == "Year")
             {
-                var result_muon = from p in from m in qlnsentity.Muons
-                                            where m.DaThanhToan == true && m.NgayMuon > Thoi_Gian_Bat_Dau
-                                            from i in qlnsentity.Muas
-                                            where i.DaThanhToan == true && i.NgayMua > Thoi_Gian_Bat_Dau
-                                            select new
-                                            {
-                                                NgayMuon = m.NgayMuon,
-                                                GiaMuon = m.CuonSach.DauSach.GiaMuon,
-                                                TienPhat = m.TienPhat,
-                                                GiaMua = i.CuonSach.DauSach.GiaMua
-                                            }
-                                  group p by p.NgayMuon.Value.Year into a
+                var result_muon = from j in (from k in from p in qlnsentity.Muas
+                                                       where p.DaThanhToan == true && p.NgayMua > Thoi_Gian_Bat_Dau
+                                                       select p
+                                             group k by k.NgayMua.Value.Year into a
+                                             select new
+                                             {
+                                                 Thang = a.Key,
+                                                 GiaMua = a.Sum(x => x.CuonSach.DauSach.GiaMua)
+                                             })
+                                  join e in (from k in from p in qlnsentity.Muons
+                                                       where p.DaThanhToan == true && p.NgayMuon > Thoi_Gian_Bat_Dau
+                                                       select p
+                                             group k by k.NgayMuon.Value.Year into a
+                                             select new
+                                             {
+                                                 Thang = a.Key,
+                                                 GiaMuon = a.Sum(x => x.CuonSach.DauSach.GiaMuon),
+                                                 TienPhat = a.Sum(x => x.TienPhat)
+                                             }) on j.Thang equals e.Thang into temp
+                                  from e in temp.DefaultIfEmpty()
                                   select new
                                   {
-                                      m = a.Key,
-                                      g = a.Sum(x => x.GiaMuon),
-                                      z = a.Sum(x => x.TienPhat),
-                                      t = a.Sum(x => x.GiaMua)
+
+
+                                      Thang = e.Thang != null ? e.Thang : j.Thang,
+                                      GiaMuon = e.GiaMuon != null ? e.GiaMuon : 0,
+                                      TienPhat = e.TienPhat != null ? e.TienPhat : 0,
+                                      GiaMua = j.GiaMua != null ? j.GiaMua : 0
                                   };
                 dataTable.Columns.Add(Lua_Chon_Thong_Ke);
                 dataTable.Columns.Add("SoTienChoMuon");
-                dataTable.Columns.Add("SOTienPhat");
-                dataTable.Columns.Add("SOTIenBan");
+                dataTable.Columns.Add("SoTienPhat");
+                dataTable.Columns.Add("SoTienBan");
 
 
                 foreach (var muon in result_muon)
                 {
-                    dataTable.Rows.Add(muon.m, muon.g, muon.z, muon.t);
+                    dataTable.Rows.Add(muon.Thang, muon.GiaMuon, muon.TienPhat, muon.GiaMua);
                 }
 
                 int r = dataTable.Rows.Count;
@@ -134,9 +156,6 @@ namespace EntityFramework_Version.BS_Layer
                 }
 
             }
-
-
-
             return (dataTable, tong_tien_cho_muon, tong_tien_phat, tong_tien_ban_duoc);
 
         }

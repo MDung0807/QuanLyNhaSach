@@ -17,7 +17,7 @@ namespace EntityFramework_Version
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Thong_Ke_Doanh_Thu());
+            Application.Run(new Form_Home());
         }
     }
 }

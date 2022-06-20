@@ -56,7 +56,6 @@ D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Borrow_Pay.resources
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Buy_Bill.resources
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.View_Layer.Form_Buy_Pay.resources
-D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\obj\Debug\EntityFramework_Version.form_report.resources
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\Entity_Version\bin\Debug\SqlServerTypes\x86\msvcr120.dll

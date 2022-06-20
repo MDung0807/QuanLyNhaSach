@@ -19,7 +19,17 @@ namespace Report
 
         private void Form1_Load(object sender, EventArgs e)
         {
+           
+        }
 
+        private void dtYear_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            this.thongKeMuaBanTableAdapter.FillBy(this.qLNhaSachDataSet.ThongKeMuaBan, dtYear.Value.Year);
             this.reportViewer1.RefreshReport();
         }
     }

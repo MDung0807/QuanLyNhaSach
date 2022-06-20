@@ -14,7 +14,7 @@ namespace EntityFramework_Version.View_Layer
     public partial class Form_Thong_Ke_Doanh_Thu : Form
     {
         Thong_Ke thong_ke = new Thong_Ke();
-        string option;
+        string option = null;
         public Form_Thong_Ke_Doanh_Thu()
         {
             InitializeComponent();
@@ -28,6 +28,8 @@ namespace EntityFramework_Version.View_Layer
         {
             try
             {
+                while (option == null)
+                    MessageBox.Show("Chưa chọn chức năng thống kê");
                 var result = thong_ke.TK_Hoat_Dong_Mua_Ban(option, Convert.ToDateTime(dtNgayBatDau.Value));
                 dgv_ThongKeLoiNhuan.DataSource = result.Item1;
 
@@ -50,12 +52,17 @@ namespace EntityFramework_Version.View_Layer
 
         private void rbThang_CheckedChanged(object sender, EventArgs e)
         {
-            this.option = "Moth";
+            this.option = "Month";
         }
 
         private void rbNam_CheckedChanged(object sender, EventArgs e)
         {
             this.option = "Year";
+        }
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
