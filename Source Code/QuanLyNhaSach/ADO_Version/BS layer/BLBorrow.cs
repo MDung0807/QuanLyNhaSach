@@ -27,7 +27,7 @@ namespace ADO_Version.BS_layer
         }
         public DataSet LayMaCuon()
         {
-            return db.ExecuteQueryDataSet("Select MaCuon From CuonSach where FlagXoa='False'", CommandType.Text);
+            return db.ExecuteQueryDataSet("Select MaCuon From CuonSach", CommandType.Text);
         }
         public bool MuonSach(string MaCuon, string MaKhachHang, string NgayMuon, string HanTra, string DangMuon, ref string err)
         {
@@ -54,7 +54,7 @@ namespace ADO_Version.BS_layer
         {
             string sqlString = "Update Muon Set NgayMuon='" +
                 NgayMuon + "',NgayTra=NULL,HanTra='" +
-                HanTra + "',TienPhat=0,DangMuon='" +
+                HanTra + "',TienPhat=NULL,DangMuon='" +
                 DangMuon +
                 "', DaThanhToan='False' Where MaCuon='" +
                 MaCuon + "' and MaKH='" +
@@ -72,6 +72,10 @@ namespace ADO_Version.BS_layer
         public DataSet KiemTraCSDangMuon(string MaCuon)
         {
             return db.ExecuteQueryDataSet("Select Count(*) From CuonSach Where MaCuon='" + MaCuon + "' and FlagXoa='True'", CommandType.Text);
+        }
+        public DataSet LayHanTra(string MaCuon, string MaKhachHang)
+        {
+            return db.ExecuteQueryDataSet("select HanTra from Muon where MaCuon LIKE '%" + MaCuon + "%' and MaKH LIKE '%" + MaKhachHang + "%'", CommandType.Text);
         }
     }
 }

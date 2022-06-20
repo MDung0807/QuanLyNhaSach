@@ -14,7 +14,7 @@ namespace EntityFramework_Version.View_Layer
     public partial class Form_Login : Form
     {
         string quyen = null;
-        bool flag = false;
+
 
         Login Login = new Login();
 
@@ -28,14 +28,6 @@ namespace EntityFramework_Version.View_Layer
             txtUsername.ResetText();
             txtPassword.ResetText();
         }
-
-        void set_default()
-        {
-            this.flag = false;
-            txtPassword.Text = "Password";
-            txtUsername.Text = "User";
-        }
-
         private void radioNhanVien_CheckedChanged(object sender, EventArgs e)
         {
             this.quyen = "Nhanvien";
@@ -51,17 +43,11 @@ namespace EntityFramework_Version.View_Layer
         {
             Form fmFindPass = new Form_Forget_Password();
             fmFindPass.ShowDialog();
-            set_default();
-
-
         }
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
-            set_default();
-
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -75,8 +61,7 @@ namespace EntityFramework_Version.View_Layer
 
                     Form fmEmployee = new Form_Staff("Nhân Viên " + user);
                     fmEmployee.ShowDialog();
-                    set_default();
-
+                    Clear();
                 }
                 else
                 {
@@ -88,8 +73,8 @@ namespace EntityFramework_Version.View_Layer
                 if (Login.Check_Login_IsTrue(user, pass, quyen))
                 {
                     Form fmManager = new Form_Manager();
-                    set_default();
                     fmManager.ShowDialog();
+                    Clear();
 
                 }
                 else
@@ -136,13 +121,36 @@ namespace EntityFramework_Version.View_Layer
             }
         }
 
-        private void txtUsername_TextChanged(object sender, EventArgs e)
+        private void txtUsername_Click(object sender, EventArgs e)
         {
-           if (flag == false)
-            {
-                Clear();
-            }
-           this.flag = true;
+            this.txtUsername.ResetText();
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            this.txtPassword.ResetText();
+        }
+
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "")
+                this.txtUsername.Text = "User Name";
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "")
+                this.txtPassword.Text = "Password";
+        }
+
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            this.txtUsername.ResetText();
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            this.txtPassword.ResetText();
         }
     }
 }

@@ -68,6 +68,28 @@ namespace ADO_Version.View_layer
             }
             return soLuong;
         }
+        DateTime LayHanTra(string MaCuon, string MaKhachHang)
+        {
+            dtBorrow = new DataTable();
+            dtBorrow.Clear();
+
+            DataSet ds;
+            ds = dbBr.LayHanTra(MaCuon, MaKhachHang);
+            dtBorrow = ds.Tables[0];
+
+            DateTime hantra = DateTime.Today;
+
+            for (int i = 0; i < dtBorrow.Rows.Count; i++)
+            {
+                for (int j = 0; j < dtBorrow.Columns.Count; j++)
+                {
+                    object o = dtBorrow.Rows[i].ItemArray[j];
+                    //if you want to get the string
+                    hantra = (DateTime)(o = dtBorrow.Rows[i].ItemArray[j]);
+                }
+            }
+            return hantra;
+        }
         void LoadcmbCustomerID()
         {
             dtBorrow = new DataTable();
@@ -164,6 +186,7 @@ namespace ADO_Version.View_layer
             {
                 MessageBox.Show("Không tìm thấy thông tin!");
             }
+            LoadData();
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -175,13 +198,9 @@ namespace ADO_Version.View_layer
                 int r = dgvBORROW.CurrentCell.RowIndex;
                 DateTime ngaytra = DateTime.Today;
                 int tienphat = 0;
-                DateTime hantra = (DateTime)dgvBORROW.Rows[r].Cells[5].Value;
+                DateTime hantra = LayHanTra(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString());
                 double day = ngaytra.Subtract(hantra).TotalDays;
-                if (this.cmbBookID.SelectedValue == null && (bool)dgvBORROW.Rows[r].Cells[8].Value == true)
-                {
-                    MessageBox.Show("Không thực hiện được!");
-                    return;
-                }    
+    
                 if (day > 0)
                 {
                     tienphat = (int)day*5000;
@@ -190,6 +209,7 @@ namespace ADO_Version.View_layer
                 blBr.CapNhatTraSach(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString(), ngaytra.ToString(), tienphat.ToString(), DangMuon.ToString(), ref err);
                 blBr.CapNhatCuonSach(this.cmbBookID.SelectedValue.ToString(), DangMuon.ToString(), ref err);
                 LoadData();
+                LoadcmbBookID();
                 MessageBox.Show("Đã trả xong!");
             }
             catch (SqlException)

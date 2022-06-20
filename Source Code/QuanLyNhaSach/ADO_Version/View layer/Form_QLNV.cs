@@ -32,7 +32,7 @@ namespace ADO_Version.View_layer
 
                 DataSet ds = dbQLNV.LayNhanVien();
                 dtQLNV = ds.Tables[0];
- 
+
                 dgvQLNV.DataSource = dtQLNV;
                 dgvQLNV.AutoResizeColumns();
 
@@ -64,7 +64,7 @@ namespace ADO_Version.View_layer
                 MessageBox.Show("Không lấy được nội dung trong table QLNV. Lỗi!!!");
             }
         }
-        int KiemTra(string MaNhanVien, string type)
+        int KiemTra(string MaNhanVien, string TaiKhoan, string type)
         {
             dtQLNV = new DataTable();
             dtQLNV.Clear();
@@ -72,8 +72,10 @@ namespace ADO_Version.View_layer
             DataSet ds;
             if (type == "tontai")
                 ds = dbQLNV.KiemTraNVTonTai(MaNhanVien);
-            else
+            else if (type == "daxoa")
                 ds = dbQLNV.KiemTraNVDaXoa(MaNhanVien);
+            else
+                ds = dbQLNV.KiemTraTKTonTai(TaiKhoan);
             dtQLNV = ds.Tables[0];
 
             int soLuong = 0;
@@ -209,14 +211,23 @@ namespace ADO_Version.View_layer
                     BLQLNV blQLNV = new BLQLNV();
                     bool flag = false;
                     string quyen = "Nhanvien";
-                    int kiemtratontai = KiemTra(this.txtStaffID.Text, "tontai");
-                    int kiemtradaxoa = KiemTra(this.txtStaffID.Text, "daxoa");
-                    if (kiemtratontai > 0)
+
+                    int kiemTraTonTai = KiemTra(this.txtStaffID.Text, "NULL", "tontai");
+                    int kiemTraDaXoa = KiemTra(this.txtStaffID.Text, "NULL", "daxoa");
+                    int kiemTraTaiKhoanTonTai = KiemTra("NULL", this.txtUsername.Text, "taikhoantontai");
+
+                    if (kiemTraTonTai > 0)
                     {
                         MessageBox.Show("Nhân viên đã tồn tại!");
                         LoadData();
                     }
-                    else if (kiemtradaxoa > 0)
+                    else if (kiemTraTaiKhoanTonTai > 0)
+                    {
+                        MessageBox.Show("Tên tài khoản đã tồn tại!");
+                        this.txtUsername.ResetText();
+                        this.txtUsername.Focus();
+                    }
+                    else if (kiemTraDaXoa > 0)
                     {
                         blQLNV.CapNhatNhanVienDaXoa(this.txtStaffID.Text, this.txtFullName.Text, this.txtJob.Text, this.txtIncome.Text, this.txtAddress.Text, this.dtpDayOfBirth.Value.ToString(), this.cbSex.Checked.ToString(), this.txtPhone.Text, flag.ToString(), ref err);
                         blQLNV.CapNhatTaiKhoanDaXoa(this.txtStaffID.Text, quyen, this.txtUsername.Text, this.txtPassword.Text, flag.ToString(), ref err);
@@ -248,7 +259,7 @@ namespace ADO_Version.View_layer
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
-            { 
+            {
                 int r = dgvQLNV.CurrentCell.RowIndex;
 
                 string strQLNV = dgvQLNV.Rows[r].Cells[0].Value.ToString();
@@ -283,6 +294,7 @@ namespace ADO_Version.View_layer
         {
             try
             {
+                txtStaffID.Enabled = true;
                 BLQLNV blQLNV = new BLQLNV();
                 dtQLNV = new DataTable();
                 dtQLNV.Clear();
@@ -302,6 +314,7 @@ namespace ADO_Version.View_layer
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            txtStaffID.Enabled = true;
             txtStaffID.ResetText();
             txtFullName.ResetText();
             txtJob.ResetText();

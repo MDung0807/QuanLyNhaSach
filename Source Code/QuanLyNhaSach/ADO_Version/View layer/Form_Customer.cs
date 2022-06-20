@@ -247,6 +247,7 @@ namespace ADO_Version.View_layer
         {
             try
             {
+                txtCustomerID.Enabled = true;
                 BLCustomer blCus = new BLCustomer();
                 dtCustomer = new DataTable();
                 dtCustomer.Clear();
@@ -271,6 +272,7 @@ namespace ADO_Version.View_layer
 
         private void btnCLear_Click(object sender, EventArgs e)
         {
+            txtCustomerID.Enabled = true;
             txtCustomerID.ResetText();
             txtFullName.ResetText();
             txtAddress.ResetText();

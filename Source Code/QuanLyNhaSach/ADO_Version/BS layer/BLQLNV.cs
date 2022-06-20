@@ -113,5 +113,9 @@ namespace ADO_Version.BS_layer
                             MaNhanVien + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
+        public DataSet KiemTraTKTonTai(string TaiKhoan)
+        {
+            return db.ExecuteQueryDataSet("Select Count(*) From TaiKhoan where TenTK='" + TaiKhoan + "' and FlagXoa='False'", CommandType.Text);
+        }
     }
 }

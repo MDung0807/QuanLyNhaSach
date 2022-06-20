@@ -137,5 +137,15 @@ namespace ADO_Version.View_layer
             if (txtPassword.Text == "")
                 this.txtPassword.Text = "Password";
         }
+
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            this.txtUsername.ResetText();
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            this.txtPassword.ResetText();
+        }
     }
 }

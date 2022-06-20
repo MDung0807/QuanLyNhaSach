@@ -14,7 +14,7 @@ namespace EntityFramework_Version.View_Layer
     public partial class Form_Thong_Ke_Doanh_Thu : Form
     {
         Thong_Ke thong_ke = new Thong_Ke();
-        string option = null;
+        string option;
         public Form_Thong_Ke_Doanh_Thu()
         {
             InitializeComponent();
@@ -28,9 +28,6 @@ namespace EntityFramework_Version.View_Layer
         {
             try
             {
-                while (option == null){
-                    MessageBox.Show("Chưa chọn chu kì thống kê");
-                }
                 var result = thong_ke.TK_Hoat_Dong_Mua_Ban(option, Convert.ToDateTime(dtNgayBatDau.Value));
                 dgv_ThongKeLoiNhuan.DataSource = result.Item1;
 

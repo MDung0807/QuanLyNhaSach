@@ -92,6 +92,11 @@ namespace ADO_Version.View_layer
                 BLBuy blBuy = new BLBuy();
                 bool flag = true;
                 DateTime ngaymua = DateTime.Today;
+                if(this.cmbBookID.SelectedValue == null)
+                {
+                    MessageBox.Show("Đã hết sách");
+                    return;
+                }    
                 blBuy.MuaSach(this.cmbBookID.SelectedValue.ToString(), this.cmbCustomerID.SelectedValue.ToString(), ngaymua.ToString(), flag.ToString(), ref err);
                 blBuy.CapNhatCuonSach(this.cmbBookID.SelectedValue.ToString(), flag.ToString(), ref err);
                 LoadData();
