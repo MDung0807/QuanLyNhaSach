@@ -70,3 +70,4 @@ C:\Users\User\OneDrive\Máy tính\QuanLyNhaSach\Source Code\QuanLyNhaSach\ADO_Ve
 C:\Users\User\OneDrive\Máy tính\QuanLyNhaSach\Source Code\QuanLyNhaSach\ADO_Version\obj\Debug\ADO_Version.exe
 C:\Users\User\OneDrive\Máy tính\QuanLyNhaSach\Source Code\QuanLyNhaSach\ADO_Version\obj\Debug\ADO_Version.pdb
 C:\Users\User\OneDrive\Máy tính\QuanLyNhaSach\Source Code\QuanLyNhaSach\ADO_Version\obj\Debug\ADO_Version.Form_Thong_Ke_Doanh_Thu.resources
+D:\Nam2(2021-2022)\HK2\Lập trình window\Project _Finally\QuanLyNhaSach\Source Code\QuanLyNhaSach\ADO_Version\obj\Debug\ADO_Version.Form_Thong_Ke_Doanh_Thu.resources

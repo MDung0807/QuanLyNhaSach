@@ -14,7 +14,7 @@ namespace EntityFramework_Version.View_Layer
     public partial class Form_Login : Form
     {
         string quyen = null;
-
+        bool flag = false;
 
         Login Login = new Login();
 
@@ -28,6 +28,14 @@ namespace EntityFramework_Version.View_Layer
             txtUsername.ResetText();
             txtPassword.ResetText();
         }
+
+        void set_default()
+        {
+            this.flag = false;
+            txtPassword.Text = "Password";
+            txtUsername.Text = "User";
+        }
+
         private void radioNhanVien_CheckedChanged(object sender, EventArgs e)
         {
             this.quyen = "Nhanvien";
@@ -43,11 +51,17 @@ namespace EntityFramework_Version.View_Layer
         {
             Form fmFindPass = new Form_Forget_Password();
             fmFindPass.ShowDialog();
+            set_default();
+
+
         }
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
+            set_default();
+
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -61,7 +75,8 @@ namespace EntityFramework_Version.View_Layer
 
                     Form fmEmployee = new Form_Staff("Nhân Viên " + user);
                     fmEmployee.ShowDialog();
-                    Clear();
+                    set_default();
+
                 }
                 else
                 {
@@ -73,8 +88,8 @@ namespace EntityFramework_Version.View_Layer
                 if (Login.Check_Login_IsTrue(user, pass, quyen))
                 {
                     Form fmManager = new Form_Manager();
+                    set_default();
                     fmManager.ShowDialog();
-                    Clear();
 
                 }
                 else
@@ -119,6 +134,15 @@ namespace EntityFramework_Version.View_Layer
                 this.ptbPassinvisible1.Visible = false;
                 txtPassword.PasswordChar = '✽';
             }
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+           if (flag == false)
+            {
+                Clear();
+            }
+           this.flag = true;
         }
     }
 }
