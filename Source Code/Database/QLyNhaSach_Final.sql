@@ -113,52 +113,52 @@ Create Table dbo.DauSach(
 	TuaSach nchar(50) NULL,
 	MaNXB char(10) references NXB(MaNXB),
 	MaTG char(10)  references TacGia(MaTG),
-	GiaMua char(20) NULL,
-	GiaMuon char(20) NUll
+	GiaMua int NULL,
+	GiaMuon int NUll
 )
 Go
 
 -- Thêm dữ liệu cho bảng DauSach
-Insert into DauSach Values ('MS01', 'Giao Trinh CSDL', 'NXB01','TG01', '110000','15000')
-Insert into DauSach Values ('MS02', 'Lap Trinh Window', 'NXB02','TG02', '121000','25000')
-Insert into DauSach Values ('MS03', 'Giao Trinh TTHCM', 'NXB06','TG03', '132000','15000')
-Insert into DauSach Values ('MS04', 'Giao Trinh PLDC', 'NXB05','TG04','134000', '15000')
-Insert into DauSach Values ('MS05', 'Dien tu can ban', 'NXB02','TG05', '98000', '25000')
-Insert into DauSach Values ('MS06', 'LT Python', 'NXB03','TG06','65000','15000')
-Insert into DauSach Values ('MS07', 'Tai lieu Toeic No.1', 'NXB03','TG07', '200000','15000')
-Insert into DauSach Values ('MS08', 'Matplotlib', 'NXB06','TG08','190000','16000')
-Insert into DauSach Values ('MS09', 'DMatplotlib for Py', 'NXB01','TG09', '176000', '18000')
-Insert into DauSach Values ('MS10', 'Make me feel', 'NXB02','TG10', '154000', '15000')
-Insert into DauSach Values ('MS11', 'Fairy tail', 'NXB04','TG11', '178000', '15000')
-Insert into DauSach Values ('MS12', 'Champagne', 'NXB03','TG12', '145000', '15000')
-Insert into DauSach Values ('MS13', 'Go to goal', 'NXB01','TG13', '134000', '12000')
-Insert into DauSach Values ('MS14', 'Hat giong tam hon', 'NXB06','TG14', '150000', '15000')
-Insert into DauSach Values ('MS15', 'Boruto', 'NXB02','TG15', '125000', '17000')
-Insert into DauSach Values ('MS16', 'Milky Way', 'NXB07','TG16','95000', '15000')
-Insert into DauSach Values ('MS17', 'Milky Way back', 'NXB07','TG17','78000', '18000')
-Insert into DauSach Values ('MS18', 'Milky go home', 'NXB07','TG18','200000', '15000')
-Insert into DauSach Values ('MS19', 'Milky lost', 'NXB07','TG19','68000', '25000')
-Insert into DauSach Values ('MS20', 'Milky Run home', 'NXB07','TG20','50000', '15000')
-Insert into DauSach Values ('MS21', 'Milky Miss you', 'NXB07','TG21','110000', '15000')
-Insert into DauSach Values ('MS22', N'Tôi là ai', 'NXB04','TG21', '145000', '25000')
-Insert into DauSach Values ('MS23', N'Rừng Na Uy', 'NXB03','TG22', '188000', '19000')
-Insert into DauSach Values ('MS24', N'Thế giới như tôi thấy', 'NXB01','TG13', '150000', '17000')
-Insert into DauSach Values ('MS25', N'Người dưng', 'NXB06','TG14', '156000', '15000')
-Insert into DauSach Values ('MS26', N'Gullible du ký', 'NXB02','TG15', '175000', '27000')
-Insert into DauSach Values ('MS27', N'Gullible du ký 2', 'NXB07','TG15','175000', '25000')
-Insert into DauSach Values ('MS28', N' Nhà giả kim', 'NXB07','TG17','168000', '18000')
-Insert into DauSach Values ('MS29', N'Tội Ác Và Hình Phạt', 'NXB07','TG19','200000', '15000')
-Insert into DauSach Values ('MS30', N'Dạy Con Làm Giàu', 'NXB07','TG17','126000', '25000')
-Insert into DauSach Values ('MS31', N'Cà Phê Cùng Tony', 'NXB07','TG20','79000', '15000')
-Insert into DauSach Values ('MS32', N'Đừng Bao Giờ Bỏ Cuộc', 'NXB07','TG21','110000', '15000')
-Insert into DauSach Values ('MS33', N'Bắt Trẻ Đồng Xanh', 'NXB07','TG30','95000', '15000')
-Insert into DauSach Values ('MS34', N'Ông Già Và Biển Cả', 'NXB07','TG23','78000', '18000')
-Insert into DauSach Values ('MS35', N'Tỷ Phú Bán Giày', 'NXB07','TG24','200000', '15000')
-Insert into DauSach Values ('MS36', N'Đọc Vị Bất Kỳ Ai', 'NXB07','TG25','68000', '25000')
-Insert into DauSach Values ('MS37', N'Bố già', 'NXB07','TG26','50000', '15000')
-Insert into DauSach Values ('MS38', N'Mặc Kệ Thiên Hạ, Sống Như Người Nhật', 'NXB07','TG27','110000', '15000')
-Insert into DauSach Values ('MS39', N'Cuốn Theo Chiều Gió ', 'NXB07','TG28','50000', '15000')
-Insert into DauSach Values ('MS40', N'Đắc Nhân Tâm', 'NXB07','TG29','110000', '15000')
+Insert into DauSach Values ('MS01', 'Giao Trinh CSDL', 'NXB01','TG01', 110000,15000)
+Insert into DauSach Values ('MS02', 'Lap Trinh Window', 'NXB02','TG02', 121000,25000)
+Insert into DauSach Values ('MS03', 'Giao Trinh TTHCM', 'NXB06','TG03', 132000,1500)
+Insert into DauSach Values ('MS04', 'Giao Trinh PLDC', 'NXB05','TG04',134000, 15000)
+Insert into DauSach Values ('MS05', 'Dien tu can ban', 'NXB02','TG05', 98000, 25000)
+Insert into DauSach Values ('MS06', 'LT Python', 'NXB03','TG06',65000,15000)
+Insert into DauSach Values ('MS07', 'Tai lieu Toeic No.1', 'NXB03','TG07', 200000,15000)
+Insert into DauSach Values ('MS08', 'Matplotlib', 'NXB06','TG08',190000,16000)
+Insert into DauSach Values ('MS09', 'DMatplotlib for Py', 'NXB01','TG09', 176000, 18000)
+Insert into DauSach Values ('MS10', 'Make me feel', 'NXB02','TG10', 154000,15000)
+Insert into DauSach Values ('MS11', 'Fairy tail', 'NXB04','TG11', 178000, 15000)
+Insert into DauSach Values ('MS12', 'Champagne', 'NXB03','TG12', 145000, 15000)
+Insert into DauSach Values ('MS13', 'Go to goal', 'NXB01','TG13', 134000, 12000)
+Insert into DauSach Values ('MS14', 'Hat giong tam hon', 'NXB06','TG14', 150000, 15000)
+Insert into DauSach Values ('MS15', 'Boruto', 'NXB02','TG15', 125000, 17000)
+Insert into DauSach Values ('MS16', 'Milky Way', 'NXB07','TG16',95000, 15000)
+Insert into DauSach Values ('MS17', 'Milky Way back', 'NXB07','TG17',78000, 18000)
+Insert into DauSach Values ('MS18', 'Milky go home', 'NXB07','TG18',200000, 15000)
+Insert into DauSach Values ('MS19', 'Milky lost', 'NXB07','TG19',68000, 25000)
+Insert into DauSach Values ('MS20', 'Milky Run home', 'NXB07','TG20',50000, 15000)
+Insert into DauSach Values ('MS21', 'Milky Miss you', 'NXB07','TG21',110000, 15000)
+Insert into DauSach Values ('MS22', N'Tôi là ai', 'NXB04','TG21', 145000, 25000)
+Insert into DauSach Values ('MS23', N'Rừng Na Uy', 'NXB03','TG22', 188000, 19000)
+Insert into DauSach Values ('MS24', N'Thế giới như tôi thấy', 'NXB01','TG13', 150000, 17000)
+Insert into DauSach Values ('MS25', N'Người dưng', 'NXB06','TG14', 156000, 15000)
+Insert into DauSach Values ('MS26', N'Gullible du ký', 'NXB02','TG15', 175000, 27000)
+Insert into DauSach Values ('MS27', N'Gullible du ký 2', 'NXB07','TG15', 175000, 25000)
+Insert into DauSach Values ('MS28', N' Nhà giả kim', 'NXB07','TG17',168000,18000)
+Insert into DauSach Values ('MS29', N'Tội Ác Và Hình Phạt', 'NXB07','TG19',200000, 15000)
+Insert into DauSach Values ('MS30', N'Dạy Con Làm Giàu', 'NXB07','TG17',126000, 25000)
+Insert into DauSach Values ('MS31', N'Cà Phê Cùng Tony', 'NXB07','TG20',79000, 15000)
+Insert into DauSach Values ('MS32', N'Đừng Bao Giờ Bỏ Cuộc', 'NXB07','TG21',110000, 15000)
+Insert into DauSach Values ('MS33', N'Bắt Trẻ Đồng Xanh', 'NXB07','TG30',95000, 15000)
+Insert into DauSach Values ('MS34', N'Ông Già Và Biển Cả', 'NXB07','TG23',78000, 18000)
+Insert into DauSach Values ('MS35', N'Tỷ Phú Bán Giày', 'NXB07','TG24',200000, 15000)
+Insert into DauSach Values ('MS36', N'Đọc Vị Bất Kỳ Ai', 'NXB07','TG25',68000, 25000)
+Insert into DauSach Values ('MS37', N'Bố già', 'NXB07','TG26',50000, 15000)
+Insert into DauSach Values ('MS38', N'Mặc Kệ Thiên Hạ, Sống Như Người Nhật', 'NXB07','TG27',110000, 15000)
+Insert into DauSach Values ('MS39', N'Cuốn Theo Chiều Gió ', 'NXB07','TG28',50000, 15000)
+Insert into DauSach Values ('MS40', N'Đắc Nhân Tâm', 'NXB07','TG29',110000, 15000)
 Go
 
 ---------------------------------------------------------------------
@@ -265,7 +265,7 @@ Create Table dbo.Muon(
 	NgayMuon Date NULL,
 	NgayTra Date NULL,
 	HanTra Date NULL,
-	TienPhat char(20) NULL,
+	TienPhat int NULL,
 	DangMuon bit NOT NULL,
 	DaThanhToan bit NOT NULL,
 	Primary key(MaCuon, MaKH) --Khai báo 2 cột là khóa chính
@@ -274,14 +274,14 @@ Go
 
 -- Thêm dữ liệu cho bảng Muon
 
-Insert into Muon values ('CS06', 'KH06', '2022-3-14', null, '2022-4-14', null, 1,0)
-Insert into Muon values ('CS07', 'KH07', '2022-3-10', '2022-3-14', '2022-4-14', '0', 1,1)
-Insert into Muon values ('CS08', 'KH08', '2022-5-14', null, '2022-6-14', null, 1,0)
-Insert into Muon values ('CS09', 'KH09', '2022-1-14', null, '2022-2-14', null, 1,0)
-Insert into Muon values ('CS10', 'KH10', '2022-3-21', null, '2022-4-21', null, 1,0)
-Insert into Muon values ('CS11', 'KH11', '2022-3-1', null, '2022-4-1', null, 1,0)
-Insert into Muon values ('CS12', 'KH12', '2022-5-1', null, '2022-6-1', null, 1,0)
-Insert into Muon values ('CS13', 'KH13', '2022-2-1', null, '2022-3-1', null, 1,0)
+Insert into Muon values ('CS06', 'KH06', '2022-3-14', null, '2022-4-14', 0, 1,0)
+Insert into Muon values ('CS07', 'KH07', '2022-3-10', '2022-3-14', '2022-4-14',0, 1,1)
+Insert into Muon values ('CS08', 'KH08', '2022-5-14', null, '2022-6-14', 0, 1,0)
+Insert into Muon values ('CS09', 'KH09', '2022-1-14', null, '2022-2-14', 0, 1,0)
+Insert into Muon values ('CS10', 'KH10', '2022-3-21', null, '2022-4-21', 0, 1,0)
+Insert into Muon values ('CS11', 'KH11', '2022-3-1', null, '2022-4-1', 0, 1,0)
+Insert into Muon values ('CS12', 'KH12', '2022-5-1', null, '2022-6-1', 0, 1,0)
+Insert into Muon values ('CS13', 'KH13', '2022-2-1', null, '2022-3-1', 0, 1,0)
 
 
 --Insert into Muon values('CS01', 'KH01','2022-3-20', '2022-3-15','2022-4-20',0,'0','1')
