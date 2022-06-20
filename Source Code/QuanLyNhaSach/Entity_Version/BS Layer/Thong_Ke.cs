@@ -10,71 +10,11 @@ namespace EntityFramework_Version.BS_Layer
 {
     internal class Thong_Ke
     {
-        public (int, int, int, DataTable) Thong_Ke_Tu_Viec_Mua_Va_Muon_Sach ()
+       
+        public DataTable Thong_Ke_SL_Sach_Tren_Moi_Dau_Sach ()
         {
-            int sum_muon = So_Tien_Cho_Muon_Sach();
-            int sum_ban = So_Tien_Ban_Sach() ;
-            int nop_phat = So_Tien_Phat();
-            DataTable dataTable = Thong_Ke_SL_Sach_Tren_Moi_Dau_Sach();
-           
-            return (sum_muon, sum_ban, nop_phat, dataTable);
-        }
 
-        int So_Tien_Cho_Muon_Sach()
-        {
-            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
 
-            var result_muon = from p in qlnsentity.Muons
-                              where p.DaThanhToan == true
-                              select p;
-
-            int sum_muon = 0;
-
-            foreach (var muon in result_muon)
-            {
-                sum_muon += Convert.ToInt32(muon.CuonSach.DauSach.GiaMuon);
-            }
-            
-            return sum_muon;
-        }
-
-        int So_Tien_Ban_Sach ()
-        {
-            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
-
-            var result_mua = from p in qlnsentity.Muas
-                             where p.DaThanhToan == true
-                             select p;
-
-            int sum_ban = 0;
-            foreach (var mua in result_mua)
-            {
-                sum_ban += Convert.ToInt32(mua.CuonSach.DauSach.GiaMua);
-            }
-
-            return sum_ban;
-        }
-        
-        int So_Tien_Phat()
-        {
-            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
-
-            var result_muon = from p in qlnsentity.Muons
-                              where p.DaThanhToan == true
-                              select p;
-
-            int nop_phat = 0;
-
-            foreach (var phat in result_muon)
-            {
-                nop_phat += Convert.ToInt32(phat.TienPhat);
-            }
-
-            return nop_phat;
-        }
-
-        DataTable Thong_Ke_SL_Sach_Tren_Moi_Dau_Sach ()
-        {
             QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
 
             var result_dau_sach = from p in qlnsentity.CuonSaches
@@ -90,8 +30,8 @@ namespace EntityFramework_Version.BS_Layer
             DataTable dataTable = new DataTable();
 
             dataTable.Columns.Add("MaSach");
-            dataTable.Columns.Add("TenSach");
-            dataTable.Columns.Add("SL");
+            dataTable.Columns.Add("TuaSach");
+            dataTable.Columns.Add("SoLuong");
 
             foreach (var item in result_dau_sach)
             {
@@ -100,5 +40,106 @@ namespace EntityFramework_Version.BS_Layer
 
             return dataTable;
         }
+
+        public (DataTable, int, int, int) TK_Hoat_Dong_Mua_Ban(string Lua_Chon_Thong_Ke, DateTime Thoi_Gian_Bat_Dau)
+        {
+            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
+            DataTable dataTable = new DataTable();
+            int tong_tien_ban_duoc = 0;
+            int tong_tien_cho_muon = 0;
+            int tong_tien_phat = 0;
+
+
+            if (Lua_Chon_Thong_Ke == "Moth")
+            {
+                var result_muon = from p in from m in qlnsentity.Muons
+                                            where m.DaThanhToan == true && m.NgayMuon > Thoi_Gian_Bat_Dau
+                                            from i in qlnsentity.Muas
+                                            where i.DaThanhToan == true && i.NgayMua > Thoi_Gian_Bat_Dau
+                                            select new
+                                            {
+                                                NgayMuon = m.NgayMuon,
+                                                GiaMuon = m.CuonSach.DauSach.GiaMuon,
+                                                TienPhat = m.TienPhat,
+                                                GiaMua = i.CuonSach.DauSach.GiaMua
+                                            }
+                                  group p by p.NgayMuon.Value.Month into a
+                                  select new
+                                  {
+                                      m = a.Key,
+                                      g = a.Sum(x => x.GiaMuon),
+                                      z = a.Sum(x => x.TienPhat),
+                                      t = a.Sum(x => x.GiaMua)
+                                  };
+                dataTable.Columns.Add(Lua_Chon_Thong_Ke);
+                dataTable.Columns.Add("SoTienChoMuon");
+                dataTable.Columns.Add("SOTienPhat");
+                dataTable.Columns.Add("SOTIenBan");
+
+
+                foreach (var muon in result_muon)
+                {
+                    dataTable.Rows.Add(muon.m, muon.g, muon.z, muon.t);
+                }
+
+                int r = dataTable.Rows.Count;
+               
+                for (int i = 0; i < r; i++)
+                {
+                    tong_tien_ban_duoc += Convert.ToInt32(dataTable.Rows[i][3]);
+                    tong_tien_cho_muon += Convert.ToInt32(dataTable.Rows[i][1]);
+                    tong_tien_phat += Convert.ToInt32(dataTable.Rows[i][2]);
+                }
+
+            }
+            else if (Lua_Chon_Thong_Ke == "Year")
+            {
+                var result_muon = from p in from m in qlnsentity.Muons
+                                            where m.DaThanhToan == true && m.NgayMuon > Thoi_Gian_Bat_Dau
+                                            from i in qlnsentity.Muas
+                                            where i.DaThanhToan == true && i.NgayMua > Thoi_Gian_Bat_Dau
+                                            select new
+                                            {
+                                                NgayMuon = m.NgayMuon,
+                                                GiaMuon = m.CuonSach.DauSach.GiaMuon,
+                                                TienPhat = m.TienPhat,
+                                                GiaMua = i.CuonSach.DauSach.GiaMua
+                                            }
+                                  group p by p.NgayMuon.Value.Year into a
+                                  select new
+                                  {
+                                      m = a.Key,
+                                      g = a.Sum(x => x.GiaMuon),
+                                      z = a.Sum(x => x.TienPhat),
+                                      t = a.Sum(x => x.GiaMua)
+                                  };
+                dataTable.Columns.Add(Lua_Chon_Thong_Ke);
+                dataTable.Columns.Add("SoTienChoMuon");
+                dataTable.Columns.Add("SOTienPhat");
+                dataTable.Columns.Add("SOTIenBan");
+
+
+                foreach (var muon in result_muon)
+                {
+                    dataTable.Rows.Add(muon.m, muon.g, muon.z, muon.t);
+                }
+
+                int r = dataTable.Rows.Count;
+
+                for (int i = 0; i < r; i++)
+                {
+                    tong_tien_ban_duoc += Convert.ToInt32(dataTable.Rows[i][3]);
+                    tong_tien_cho_muon += Convert.ToInt32(dataTable.Rows[i][1]);
+                    tong_tien_phat += Convert.ToInt32(dataTable.Rows[i][2]);
+                }
+
+            }
+
+
+
+            return (dataTable, tong_tien_cho_muon, tong_tien_phat, tong_tien_ban_duoc);
+
+        }
+
     }
 }

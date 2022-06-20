@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EntityFramework_Version.View_Layer;
 
-namespace Entity_Version
+namespace EntityFramework_Version
 {
     internal static class Program
     {
@@ -17,7 +17,7 @@ namespace Entity_Version
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Home());
+            Application.Run(new Form_Thong_Ke_Doanh_Thu());
         }
     }
 }

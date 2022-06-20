@@ -17,8 +17,8 @@
     <Property Name="TuaSach" Type="nchar" MaxLength="50" />
     <Property Name="MaNXB" Type="char" MaxLength="10" />
     <Property Name="MaTG" Type="char" MaxLength="10" />
-    <Property Name="GiaMua" Type="char" MaxLength="20" />
-    <Property Name="GiaMuon" Type="char" MaxLength="20" />
+    <Property Name="GiaMua" Type="int" />
+    <Property Name="GiaMuon" Type="int" />
   </EntityType>
   <EntityType Name="KhachHang">
     <Key>
@@ -51,7 +51,7 @@
     <Property Name="NgayMuon" Type="date" />
     <Property Name="NgayTra" Type="date" />
     <Property Name="HanTra" Type="date" />
-    <Property Name="TienPhat" Type="char" MaxLength="20" />
+    <Property Name="TienPhat" Type="int" />
     <Property Name="DangMuon" Type="bit" Nullable="false" />
     <Property Name="DaThanhToan" Type="bit" Nullable="false" />
   </EntityType>

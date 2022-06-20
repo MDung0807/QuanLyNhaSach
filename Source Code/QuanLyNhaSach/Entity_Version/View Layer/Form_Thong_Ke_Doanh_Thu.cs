@@ -14,6 +14,7 @@ namespace EntityFramework_Version.View_Layer
     public partial class Form_Thong_Ke_Doanh_Thu : Form
     {
         Thong_Ke thong_ke = new Thong_Ke();
+        string option;
         public Form_Thong_Ke_Doanh_Thu()
         {
             InitializeComponent();
@@ -25,15 +26,16 @@ namespace EntityFramework_Version.View_Layer
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-           try
+            try
             {
-                var result = thong_ke.Thong_Ke_Tu_Viec_Mua_Va_Muon_Sach();
-                txtThongKe_Ban.Text = Convert.ToString(result.Item2.ToString());
-                txtThongKe_Muon.Text = Convert.ToString(result.Item1.ToString());
-                txt_ThongKe_Phat.Text = Convert.ToString(result.Item3.ToString());
-                txtTongTien.Text = Convert.ToString(result.Item1 + result.Item2 + result.Item3);
-                dgv_ThongKeDauSach.DataSource = result.Item4;
+                var result = thong_ke.TK_Hoat_Dong_Mua_Ban(option, Convert.ToDateTime(dtNgayBatDau.Value));
+                dgv_ThongKeLoiNhuan.DataSource = result.Item1;
 
+                txtThongKe_Ban.Text = Convert.ToString(result.Item4.ToString());
+                txtThongKe_Muon.Text = Convert.ToString(result.Item2.ToString());
+                txt_ThongKe_Phat.Text = Convert.ToString(result.Item3.ToString());
+                txtTongTien.Text = Convert.ToString(result.Item2 + result.Item3 + result.Item4);
+                dgv_ThongKeDauSach.DataSource = thong_ke.Thong_Ke_SL_Sach_Tren_Moi_Dau_Sach();
             }
             catch
             {
@@ -44,6 +46,21 @@ namespace EntityFramework_Version.View_Layer
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void rbTuan_CheckedChanged(object sender, EventArgs e)
+        {
+            this.option = "Week";
+        }
+
+        private void rbThang_CheckedChanged(object sender, EventArgs e)
+        {
+            this.option = "Moth";
+        }
+
+        private void rbNam_CheckedChanged(object sender, EventArgs e)
+        {
+            this.option = "Year";
         }
     }
 }

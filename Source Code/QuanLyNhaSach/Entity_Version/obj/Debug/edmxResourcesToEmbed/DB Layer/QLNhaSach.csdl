@@ -20,8 +20,8 @@
     <Property Name="TuaSach" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
     <Property Name="MaNXB" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
     <Property Name="MaTG" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="GiaMua" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-    <Property Name="GiaMuon" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="GiaMua" Type="Int32" />
+    <Property Name="GiaMuon" Type="Int32" />
     <NavigationProperty Name="CuonSaches" Relationship="Self.FK__CuonSach__Masach__2E1BDC42" FromRole="DauSach" ToRole="CuonSach" />
     <NavigationProperty Name="NXB" Relationship="Self.FK__DauSach__MaNXB__2A4B4B5E" FromRole="DauSach" ToRole="NXB" />
     <NavigationProperty Name="TacGia" Relationship="Self.FK__DauSach__MaTG__2B3F6F97" FromRole="DauSach" ToRole="TacGia" />
@@ -61,7 +61,7 @@
     <Property Name="NgayMuon" Type="DateTime" Precision="0" />
     <Property Name="NgayTra" Type="DateTime" Precision="0" />
     <Property Name="HanTra" Type="DateTime" Precision="0" />
-    <Property Name="TienPhat" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="TienPhat" Type="Int32" />
     <Property Name="DangMuon" Type="Boolean" Nullable="false" />
     <Property Name="DaThanhToan" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="CuonSach" Relationship="Self.FK__Muon__MaCuon__30F848ED" FromRole="Muon" ToRole="CuonSach" />
@@ -207,7 +207,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="QLNhaSachEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="QLNhaSachEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CuonSaches" EntityType="Self.CuonSach" />
     <EntitySet Name="DauSaches" EntityType="Self.DauSach" />
     <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />

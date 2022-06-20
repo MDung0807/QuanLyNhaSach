@@ -19,7 +19,7 @@ namespace EntityFramework_Version.DB_Layer
         public Nullable<System.DateTime> NgayMuon { get; set; }
         public Nullable<System.DateTime> NgayTra { get; set; }
         public Nullable<System.DateTime> HanTra { get; set; }
-        public string TienPhat { get; set; }
+        public Nullable<int> TienPhat { get; set; }
         public bool DangMuon { get; set; }
         public bool DaThanhToan { get; set; }
     

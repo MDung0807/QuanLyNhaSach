@@ -73,7 +73,7 @@ namespace EntityFramework_Version.BS_Layer
             muon.NgayTra = null;
             muon.DangMuon = true;
             muon.HanTra = NgMuon.AddMonths(1);
-            muon.TienPhat = "0";
+            muon.TienPhat = 0;
             muon.DaThanhToan = false;
 
             qlnsentity.Muons.Add(muon);
@@ -99,7 +99,7 @@ namespace EntityFramework_Version.BS_Layer
             {
                 TimeSpan interval = Convert.ToDateTime(result.NgayTra).Subtract(Convert.ToDateTime(result.HanTra));
                 int date = interval.Days;
-                result.TienPhat = Convert.ToString(date * 5000);
+                result.TienPhat = date * 5000;
             }    
 
             qlnsentity.SaveChanges();

@@ -24,8 +24,8 @@ namespace EntityFramework_Version.DB_Layer
         public string TuaSach { get; set; }
         public string MaNXB { get; set; }
         public string MaTG { get; set; }
-        public string GiaMua { get; set; }
-        public string GiaMuon { get; set; }
+        public Nullable<int> GiaMua { get; set; }
+        public Nullable<int> GiaMuon { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CuonSach> CuonSaches { get; set; }
