@@ -108,9 +108,15 @@ namespace EntityFramework_Version.BS_Layer
             return dataTable;
         }
 
-        public void Xoa_KH (string MaKH)
+        public void Xoa_KH (string MaKH ,ref string comm)
         {
             QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
+            if (Check_KH_DangMuon(MaKH))
+            {
+                comm = "Khách hàng đang mượn sách, không thể xóa";
+                return;
+            }
+            comm = "Khách hàng đã bị xóa thành công";
 
             var result = (from p in qlnsentity.KhachHangs
                           where p.MaKH == MaKH
@@ -120,5 +126,29 @@ namespace EntityFramework_Version.BS_Layer
 
             qlnsentity.SaveChanges();
         }
+        
+        bool Check_KH_DangMuon (string MaKH)
+        {
+            QLNhaSachEntities qlnsentity = new QLNhaSachEntities();
+
+            var result = (from p in qlnsentity.Muons
+                          where p.MaKH == MaKH
+                          select p);
+
+            if (result != null)
+            {
+                foreach(var item in result)
+                {
+                    if (item.DangMuon == true)
+                        return true;
+                }
+                return false;
+            }
+
+            return false;
+        }
+
+    
     }
+    
 }

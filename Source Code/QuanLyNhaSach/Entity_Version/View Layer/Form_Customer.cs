@@ -14,6 +14,7 @@ namespace EntityFramework_Version.View_Layer
     public partial class Form_Customer : Form
     {
         string option = null;
+        string result = null;
         QLKhachHang dpKhachHang = new QLKhachHang();
         public Form_Customer()
         {
@@ -131,9 +132,9 @@ namespace EntityFramework_Version.View_Layer
                 {
                     string MaKH;
                     MaKH = txtCustomerID.Text.Trim();
-                    dpKhachHang.Xoa_KH(MaKH);
+                    dpKhachHang.Xoa_KH(MaKH, ref result);
 
-                    MessageBox.Show("Bạn đã xóa thành công");
+                    MessageBox.Show(result);
                     ReLoad();
                 }
                 catch
