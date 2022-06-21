@@ -244,5 +244,14 @@ namespace EntityFramework_Version.View_Layer
         {
 
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            btnAdd.Enabled = true;
+            btnSearch.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
+            this.option = null;
+        }
     }
 }

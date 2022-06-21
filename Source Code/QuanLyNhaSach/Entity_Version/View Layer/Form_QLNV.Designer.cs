@@ -69,6 +69,7 @@
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPassvisible1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPassinvisible1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -92,7 +93,7 @@
             this.ptbPassvisible1.BackgroundImage = global::EntityFramework_Version.Properties.Resources.backcolorlogin;
             this.ptbPassvisible1.Image = global::EntityFramework_Version.Properties.Resources.icons8_eye_64;
             this.ptbPassvisible1.Location = new System.Drawing.Point(272, 365);
-            this.ptbPassvisible1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ptbPassvisible1.Margin = new System.Windows.Forms.Padding(2);
             this.ptbPassvisible1.Name = "ptbPassvisible1";
             this.ptbPassvisible1.Size = new System.Drawing.Size(26, 18);
             this.ptbPassvisible1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -106,7 +107,7 @@
             this.ptbPassinvisible1.BackgroundImage = global::EntityFramework_Version.Properties.Resources.backcolorlogin;
             this.ptbPassinvisible1.Image = global::EntityFramework_Version.Properties.Resources.icons8_invisible_64;
             this.ptbPassinvisible1.Location = new System.Drawing.Point(272, 365);
-            this.ptbPassinvisible1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ptbPassinvisible1.Margin = new System.Windows.Forms.Padding(2);
             this.ptbPassinvisible1.Name = "ptbPassinvisible1";
             this.ptbPassinvisible1.Size = new System.Drawing.Size(26, 19);
             this.ptbPassinvisible1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -153,7 +154,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(154, 490);
+            this.btnClear.Location = new System.Drawing.Point(95, 414);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(89, 32);
             this.btnClear.TabIndex = 141;
@@ -221,7 +222,7 @@
             // 
             this.dtpDayOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDayOfBirth.Location = new System.Drawing.Point(110, 223);
-            this.dtpDayOfBirth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDayOfBirth.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDayOfBirth.Name = "dtpDayOfBirth";
             this.dtpDayOfBirth.Size = new System.Drawing.Size(151, 20);
             this.dtpDayOfBirth.TabIndex = 134;
@@ -230,7 +231,7 @@
             // 
             this.cbSex.AutoSize = true;
             this.cbSex.Location = new System.Drawing.Point(110, 254);
-            this.cbSex.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSex.Margin = new System.Windows.Forms.Padding(2);
             this.cbSex.Name = "cbSex";
             this.cbSex.Size = new System.Drawing.Size(48, 17);
             this.cbSex.TabIndex = 133;
@@ -484,11 +485,23 @@
             this.soDT.ReadOnly = true;
             this.soDT.Width = 125;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Location = new System.Drawing.Point(154, 490);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(89, 32);
+            this.btnHuy.TabIndex = 149;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // Form_QLNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1230, 585);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.dgvQLNV);
             this.Controls.Add(this.ptbPassvisible1);
             this.Controls.Add(this.ptbPassinvisible1);
@@ -574,5 +587,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn soDT;
+        private System.Windows.Forms.Button btnHuy;
     }
 }

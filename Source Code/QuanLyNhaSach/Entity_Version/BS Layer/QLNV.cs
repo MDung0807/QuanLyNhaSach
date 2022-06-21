@@ -46,7 +46,7 @@ namespace EntityFramework_Version.BS_Layer
             foreach (var item in result)
             {
                 if (item.FlagXoa == false)
-                    dataTable.Rows.Add(item.MaNV, item.TenTK, item.CongViec, item.Luong, item.DiaChi, item.NgaySinh, item.GioiTinh, item.soDT);
+                    dataTable.Rows.Add(item.MaNV, item.TenNV, item.CongViec, item.Luong, item.DiaChi, item.NgaySinh, item.GioiTinh, item.soDT);
             }
 
             return dataTable;
@@ -136,7 +136,7 @@ namespace EntityFramework_Version.BS_Layer
             foreach (var item in result)
             {
                 if (item.FlagXoa == false)
-                    dataTable.Rows.Add(item.MaNV, item.TenTK, item.CongViec, item.Luong, item.DiaChi, item.NgaySinh, item.GioiTinh, item.soDT);
+                    dataTable.Rows.Add(item.MaNV, item.TenNV, item.CongViec, item.Luong, item.DiaChi, item.NgaySinh, item.GioiTinh, item.soDT);
             }
 
             return dataTable;
