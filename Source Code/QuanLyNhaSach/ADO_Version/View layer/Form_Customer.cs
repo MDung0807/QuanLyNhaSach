@@ -66,8 +66,10 @@ namespace ADO_Version.View_layer
             DataSet ds;
             if (type == "tontai")
                 ds = dbCustomer.KiemTraKHTonTai(MaKhachHang);
-            else
+            else if (type == "daxoa")
                 ds = dbCustomer.KiemTraKHDaXoa(MaKhachHang);
+            else
+                ds = dbCustomer.KiemTraKHDangMuon(MaKhachHang);
             dtCustomer = ds.Tables[0];
 
             int soLuong = 0;
@@ -228,9 +230,19 @@ namespace ADO_Version.View_layer
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (traloi == DialogResult.Yes)
                 {
-                    dbCustomer.XoaKhachHang(ref err, strCustomer, flag.ToString());
-                    LoadData();
-                    MessageBox.Show("Đã xóa xong!");
+                    int kiemtradangmuon = KiemTra(this.txtCustomerID.Text, "dangmuon");
+
+                    if (kiemtradangmuon > 0)
+                    {
+                        MessageBox.Show("Khách Hàng đang mượn sách!");
+                        return;
+                    }
+                    else
+                    {
+                        dbCustomer.XoaKhachHang(ref err, strCustomer, flag.ToString());
+                        LoadData();
+                        MessageBox.Show("Đã xóa xong!");
+                    }    
                 }
                 else
                 {

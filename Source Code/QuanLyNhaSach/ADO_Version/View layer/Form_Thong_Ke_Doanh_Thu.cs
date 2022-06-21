@@ -71,7 +71,7 @@ namespace ADO_Version
                 MessageBox.Show("Không tìm thấy thông tin!");
             }
         }
-        void TinhTienThang(int NgayBatDau)
+        void TinhTienThang(string NgayBatDau)
         {
             dtThongKe = new DataTable();
             dtThongKe.Clear();
@@ -84,7 +84,7 @@ namespace ADO_Version
             for (int i = 1; i < dtThongKe.Columns.Count; i++)
             {
                 int tong = 0;
-                for (int j = 1; j < dtThongKe.Rows.Count; j++)
+                for (int j = 0; j < dtThongKe.Rows.Count; j++)
                 {
                     object o = dtThongKe.Rows[j].ItemArray[i];
                     //if you want to get the string
@@ -119,7 +119,7 @@ namespace ADO_Version
             }
             this.txtTongTien.Text = tongTien.ToString();
         }
-        void LoadTinhTienThang(int NgayBatDau)
+        void LoadTinhTienThang(string NgayBatDau)
         {
             TinhTienThang(NgayBatDau);
             int tongTien = Int32.Parse(this.txtThongKe_Ban.Text) + Int32.Parse(this.txtThongKe_Muon.Text) + Int32.Parse(this.txt_ThongKe_Phat.Text);
@@ -143,7 +143,7 @@ namespace ADO_Version
                 MessageBox.Show("Không lấy được nội dung . Lỗi!!!");
             }
         }
-        void LoadThongKeTheoThang(int NgayBatDau)
+        void LoadThongKeTheoThang(string NgayBatDau)
         {
             try
             {
@@ -180,8 +180,8 @@ namespace ADO_Version
             }
             else if (rbThang.Checked)
             {
-                LoadThongKeTheoThang(Int32.Parse(this.dtNgayBatDau.Value.Year.ToString()));
-                LoadTinhTienThang(Int32.Parse(this.dtNgayBatDau.Value.Year.ToString()));
+                LoadThongKeTheoThang(this.dtNgayBatDau.Value.ToShortDateString().ToString());
+                LoadTinhTienThang(this.dtNgayBatDau.Value.ToShortDateString().ToString());
             }
         }
     }

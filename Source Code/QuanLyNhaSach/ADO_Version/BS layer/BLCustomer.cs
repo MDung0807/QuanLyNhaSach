@@ -75,5 +75,9 @@ namespace ADO_Version.BS_layer
                             MaKhachHang + "'";
             return db.MyExecuteNonQuery(sqlString, CommandType.Text, ref err);
         }
+        public DataSet KiemTraKHDangMuon(string MaKhachHang)
+        {
+            return db.ExecuteQueryDataSet("select count(M.MaKH) from KhachHang as KH, Muon as M where KH.MaKH = M.MaKH and M.DangMuon = 'True' and M.MaKH LIKE '%" + MaKhachHang + "%'", CommandType.Text);
+        }
     }
 }
