@@ -29,7 +29,7 @@ namespace Report
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
-            this.thongKeMuaBanTableAdapter.FillBy(this.qLNhaSachDataSet.ThongKeMuaBan, dtYear.Value.Year);
+            //this.thongKeMuaBanTableAdapter.FillBy(this.qLNhaSachDataSet.ThongKeMuaBan, dtYear.Value.Year);
             this.reportViewer1.RefreshReport();
         }
     }
